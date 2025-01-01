@@ -1,23 +1,44 @@
+import { config } from "dotenv";
 import { z } from "zod";
-import { configDotenv } from "dotenv";
-configDotenv();
-const envSchema = z.object({
-  VK_CLIENT_ID: z.string().min(1, "VK_CLIENT_ID is required"),
-  VK_CLIENT_SECRET: z.string().min(1, "VK_CLIENT_SECRET is required"),
-  YANDEX_CLIENT_ID: z.string().min(1, "YANDEX_CLIENT_ID is required"),
-  YANDEX_CLIENT_SECRET: z.string().min(1, "YANDEX_CLIENT_SECRET is required"),
-  NEXTAUTH_URL: z.string().url("NEXTAUTH_URL must be a valid URL"),
-  NEXTAUTH_SECRET: z.string().min(1, "NEXTAUTH_SECRET is required"),
+
+config();
+
+export const EnvSchema = z.object({
+  NODE_ENV: z.enum(["development", "production", "test"]),
+  NEXT_PUBLIC_VK_CLIENT_ID: z.string().min(1, "VK_CLIENT_ID is required"),
+  NEXT_PUBLIC_VK_CLIENT_SECRET: z
+    .string()
+    .min(1, "VK_CLIENT_SECRET is required"),
+  NEXT_PUBLIC_YANDEX_CLIENT_ID: z
+    .string()
+    .min(1, "YANDEX_CLIENT_ID is required"),
+  NEXT_PUBLIC_YANDEX_CLIENT_SECRET: z
+    .string()
+    .min(1, "YANDEX_CLIENT_SECRET is required"),
 });
 
-export const validateEnv = () => {
-  try {
-    envSchema.parse(process.env);
-    console.log("Environment variables are valid");
-  } catch (e) {
-    if (e instanceof z.ZodError) {
-      console.error("Invalid environment variables:", e.errors);
-      process.exit(1);
+const envObj = {
+  NODE_ENV: process.env.NODE_ENV,
+  NEXT_PUBLIC_VK_CLIENT_ID: process.env.NEXT_PUBLIC_VK_CLIENT_ID,
+  NEXT_PUBLIC_VK_CLIENT_SECRET: process.env.NEXT_PUBLIC_VK_CLIENT_SECRET,
+  NEXT_PUBLIC_YANDEX_CLIENT_ID: process.env.NEXT_PUBLIC_YANDEX_CLIENT_ID,
+  NEXT_PUBLIC_YANDEX_CLIENT_SECRET:
+    process.env.NEXT_PUBLIC_YANDEX_CLIENT_SECRET,
+};
+console.log(envObj);
+let _env;
+
+try {
+  _env = EnvSchema.parse(envObj);
+} catch (error) {
+  if (!process.env.SKIP_ENV_VALIDATION) {
+    if (error instanceof z.ZodError) {
+      console.error("Validation error:", error.errors);
+    } else {
+      console.error("Unknown error:", error);
     }
   }
-};
+  process.exit(1);
+}
+
+export const env = _env;
