@@ -39,5 +39,5 @@ jobs:
             cd landing
             git pull origin main
             npm install
-            npm run build
+            npm run build:prod
             pm2 restart web
