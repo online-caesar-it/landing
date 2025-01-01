@@ -3,7 +3,9 @@
 import React from "react";
 
 import { signIn } from "next-auth/react";
+import { env } from "@/env";
 const SignIn = () => {
+  console.log(env);
   return (
     <div
       style={{
