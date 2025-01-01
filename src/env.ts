@@ -31,13 +31,10 @@ try {
   _env = EnvSchema.parse(envObj);
 } catch (error) {
   if (!process.env.SKIP_ENV_VALIDATION) {
-    if (error instanceof z.ZodError) {
-      console.error("Validation error:", error.errors);
-    } else {
-      console.error("Unknown error:", error);
-    }
+    console.error(error);
     process.exit(1);
   }
+  console.log("SKIP ENV VALIDATION");
 }
 
 export const env = _env;
