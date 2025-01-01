@@ -15,6 +15,7 @@ export const EnvSchema = z.object({
   NEXT_PUBLIC_YANDEX_CLIENT_SECRET: z
     .string()
     .min(1, "YANDEX_CLIENT_SECRET is required"),
+  NEXT_PUBLIC_API_URL: z.string().min(1, "NEXT_PUBLIC_API_URL is required"),
 });
 
 const envObj = {
@@ -24,6 +25,7 @@ const envObj = {
   NEXT_PUBLIC_YANDEX_CLIENT_ID: process.env.NEXT_PUBLIC_YANDEX_CLIENT_ID,
   NEXT_PUBLIC_YANDEX_CLIENT_SECRET:
     process.env.NEXT_PUBLIC_YANDEX_CLIENT_SECRET,
+  NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
 };
 let _env;
 

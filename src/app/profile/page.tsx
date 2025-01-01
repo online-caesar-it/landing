@@ -5,12 +5,12 @@ import React from "react";
 
 const Page = () => {
   const { data: session } = useSession();
-  console.log(session?.user);
+  console.log(session);
 
   return (
     <div style={{ textAlign: "center", marginTop: "50px" }}>
-      {/* <h1> {session.user.name}</h1> */}
-      {/* <p> {session.user.email}</p> */}
+      <h1> {session?.user?.name}</h1>
+      <p> {session?.user?.email}</p>
       <button onClick={() => signOut()}>Sign Out</button>
     </div>
   );
