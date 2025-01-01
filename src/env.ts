@@ -25,7 +25,6 @@ const envObj = {
   NEXT_PUBLIC_YANDEX_CLIENT_SECRET:
     process.env.NEXT_PUBLIC_YANDEX_CLIENT_SECRET,
 };
-console.log(envObj);
 let _env;
 
 try {
@@ -37,8 +36,8 @@ try {
     } else {
       console.error("Unknown error:", error);
     }
+    process.exit(1);
   }
-  process.exit(1);
 }
 
 export const env = _env;

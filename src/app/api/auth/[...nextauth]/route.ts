@@ -6,12 +6,12 @@ import YandexProvider from "next-auth/providers/yandex";
 const authOptions = {
   providers: [
     VKProvider({
-      clientId: env.NEXT_PUBLIC_VK_CLIENT_ID,
-      clientSecret: env.NEXT_PUBLIC_VK_CLIENT_SECRET,
+      clientId: env?.NEXT_PUBLIC_VK_CLIENT_ID || "",
+      clientSecret: env?.NEXT_PUBLIC_VK_CLIENT_SECRET || "",
     }),
     YandexProvider({
-      clientId: env.NEXT_PUBLIC_YANDEX_CLIENT_ID,
-      clientSecret: env.NEXT_PUBLIC_YANDEX_CLIENT_SECRET,
+      clientId: env?.NEXT_PUBLIC_YANDEX_CLIENT_ID || "",
+      clientSecret: env?.NEXT_PUBLIC_YANDEX_CLIENT_SECRET || "",
     }),
   ],
   secret: process.env.NEXTAUTH_SECRET,
