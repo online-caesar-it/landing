@@ -1,6 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
 import AuthForm from "./auth-form";
-import { api } from "@/shared/api/api";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 
@@ -19,15 +18,16 @@ const RegisterForm = () => {
         return response.data;
       }
     },
-    onError: (error: any) => {
-      console.error(
-        "Registration error:",
-        error.response?.data || error.message
-      );
-      alert(
-        "Error during registration: " +
-          (error.response?.data?.message || error.message)
-      );
+    onError: (error) => {
+      // console.error(
+      //   "Registration error:",
+      //   error.response?.data || error.message
+      // );
+      // alert(
+      //   "Error during registration: " +
+      //     (error.response?.data?.message || error.message)
+      // );
+      console.log(error);
     },
     onSuccess: async (data) => {
       console.log(data);
