@@ -13,7 +13,7 @@ const RegisterForm = () => {
         ...data,
         role: "schedule",
       });
-      
+
       return response.data;
     },
     onError: (error: any) => {
@@ -26,10 +26,13 @@ const RegisterForm = () => {
           (error.response?.data?.message || error.message)
       );
     },
-    onSuccess: async(data) => {
+    onSuccess: async (data) => {
+      console.log(data);
       await signIn("credentials", {
         ...data,
-        role: "schedule",
+        user: data.user,
+        userConfig: data.userConfig,
+        role: "schedule1",
         redirect: false,
       });
       router.push("/profile");
