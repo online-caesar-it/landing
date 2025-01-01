@@ -13,13 +13,7 @@ const RegisterForm = () => {
         ...data,
         role: "schedule",
       });
-      console.log(
-        await signIn("credentials", {
-          ...data,
-          role: "schedule",
-          redirect: false,
-        })
-      );
+      
       return response.data;
     },
     onError: (error: any) => {
@@ -32,7 +26,12 @@ const RegisterForm = () => {
           (error.response?.data?.message || error.message)
       );
     },
-    onSuccess: (data: { token: string }) => {
+    onSuccess: async(data) => {
+      await signIn("credentials", {
+        ...data,
+        role: "schedule",
+        redirect: false,
+      });
       router.push("/profile");
     },
   });
