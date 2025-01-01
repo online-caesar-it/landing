@@ -9,12 +9,15 @@ const RegisterForm = () => {
 
   const mutation = useMutation({
     mutationFn: async (data: { email: string; password: string }) => {
-      const response = await api.post("/auth/register", {
+      const response = await signIn("credentials", {
         ...data,
-        role: "schedule",
+        role: "schedule1",
+        redirect: false,
       });
-
-      return response.data;
+      console.log(response);
+      if (response?.ok) {
+        return response.data;
+      }
     },
     onError: (error: any) => {
       console.error(
@@ -28,13 +31,7 @@ const RegisterForm = () => {
     },
     onSuccess: async (data) => {
       console.log(data);
-      await signIn("credentials", {
-        ...data,
-        user: data.user,
-        userConfig: data.userConfig,
-        role: "schedule1",
-        redirect: false,
-      });
+
       router.push("/profile");
     },
   });
