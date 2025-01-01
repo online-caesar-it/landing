@@ -48,9 +48,9 @@ export const authOptions: NextAuthOptions = {
           }
 
           throw new Error(data.message || "Failed to register");
-        } catch (error: any) {
+        } catch (error) {
           console.error("Error during authorization:", error);
-          throw new Error(error.message || "Authorization failed");
+          throw new Error("Authorization failed");
         }
       },
     }),
