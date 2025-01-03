@@ -1,4 +1,6 @@
-import React from "react";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 type AuthFormProps = {
@@ -6,6 +8,9 @@ type AuthFormProps = {
 };
 
 const AuthForm = ({ submit }: AuthFormProps) => {
+  const session = useSession();
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -17,15 +22,16 @@ const AuthForm = ({ submit }: AuthFormProps) => {
     },
   });
 
-  const onSubmit = (data: { email: string; password: string }) => {
+  const onSubmit = handleSubmit((data: { email: string; password: string }) => {
     submit(data);
-  };
-
+  });
+  useEffect(() => {
+    if (session.status === "authenticated") {
+      router.push("/");
+    }
+  }, [session.status]);
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      style={{ maxWidth: "400px", margin: "0 auto" }}
-    >
+    <form onSubmit={onSubmit} style={{ maxWidth: "400px", margin: "0 auto" }}>
       <div style={{ marginBottom: "16px" }}>
         <label
           htmlFor="email"
@@ -35,13 +41,8 @@ const AuthForm = ({ submit }: AuthFormProps) => {
         </label>
         <input
           id="email"
-          type="email"
           {...register("email", {
             required: "Email is required",
-            pattern: {
-              value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-              message: "Invalid email format",
-            },
           })}
           style={{
             width: "100%",

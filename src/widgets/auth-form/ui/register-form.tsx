@@ -1,38 +1,34 @@
 import { useMutation } from "@tanstack/react-query";
 import AuthForm from "./auth-form";
-import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
+import { AxiosError } from "axios";
+import { register } from "@/shared/api/auth/register";
 
 const RegisterForm = () => {
-  const router = useRouter();
-
   const mutation = useMutation({
-    mutationFn: async (data: { email: string; password: string }) => {
-      const response = await signIn("credentials", {
-        ...data,
-        role: "schedule1",
-        redirect: false,
-      });
-      console.log(response);
-      if (response?.ok) {
+    mutationFn: async (data: {
+      email: string | null;
+      password: string | null;
+    }) => {
+      try {
+        const response = await register(data);
         return response.data;
+      } catch (error) {
+        return error;
       }
     },
-    onError: (error) => {
-      // console.error(
-      //   "Registration error:",
-      //   error.response?.data || error.message
-      // );
-      // alert(
-      //   "Error during registration: " +
-      //     (error.response?.data?.message || error.message)
-      // );
-      console.log(error);
+    onError: (error: AxiosError<{ message: string }>) => {
+      console.error(
+        "Registration error:",
+        error.response?.data || error.message
+      );
+      alert(
+        "Error during registration: " +
+          (error.response?.data?.message || error.message)
+      );
     },
     onSuccess: async (data) => {
-      console.log(data);
-
-      router.push("/profile");
+      console.log(await signIn("credentials", data));
     },
   });
 

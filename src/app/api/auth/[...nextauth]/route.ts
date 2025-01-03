@@ -1,10 +1,11 @@
 import { env } from "@/env";
-import NextAuth, { NextAuthOptions } from "next-auth";
+import { TUserType } from "@/shared/types/user-type";
+import NextAuth, { AuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import VKProvider from "next-auth/providers/vk";
 import YandexProvider from "next-auth/providers/yandex";
 
-export const authOptions: NextAuthOptions = {
+export const authOptions: AuthOptions = {
   providers: [
     VKProvider({
       clientId: env?.NEXT_PUBLIC_VK_CLIENT_ID || "",
@@ -17,70 +18,68 @@ export const authOptions: NextAuthOptions = {
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        email: { label: "Email", type: "text" },
+        email: { label: "Email", type: "text", placeholder: "email" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials) {
-        if (!credentials) {
-          throw new Error("Missing credentials");
-        }
-
-        try {
-          const response = await fetch(
-            `${env?.NEXT_PUBLIC_API_URL}/auth/register`,
-            {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(credentials),
-            }
-          );
-
-          const data = await response.json();
-          console.log(data);
-          if (response.ok && data.token) {
-            return {
-              id: data.user.id, // Передаем ID пользователя
-              email: data.user.email,
-              name: data.user.name,
-              role: data.role,
-              token: data.token, // Токен для дальнейшего использования
-            };
+      async authorize(_, req) {
+        const response = await fetch(
+          `${env?.NEXT_PUBLIC_API_URL}/user/getSelf`,
+          {
+            method: "GET",
+            headers: {
+              Authorization: `Bearer ${req?.body?.token}`,
+            },
           }
-
-          throw new Error(data.message || "Failed to register");
-        } catch (error) {
-          console.error("Error during authorization:", error);
-          throw new Error("Authorization failed");
+        );
+        const user = await response.json();
+        if (user) {
+          return {
+            id: user.user.id,
+            email: user.userConfig.email,
+            role: user.user.role,
+            firstName: user.user.firstName,
+            secondName: user.user.secondName,
+            lastName: user.user.lastName,
+            avatar: user.user.avatar,
+          };
+        } else {
+          return null;
         }
       },
     }),
   ],
-  secret: process.env.NEXTAUTH_SECRET,
-  session: {
-    strategy: "jwt",
-  },
   callbacks: {
     async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id;
-        token.email = user.email;
-        token.name = user.name;
-        token.role = user.role;
-        token.accessToken = user.token;
+      const myUser = user as TUserType;
+      if (myUser) {
+        token.id = token.id;
+        token.email = token.email;
+        token.role = myUser.role;
+        token.firstName = myUser.firstName;
+        token.secondName = myUser.secondName;
+        token.lastName = myUser.lastName;
+        token.avatar = myUser.avatar;
       }
       return token;
     },
     async session({ session, token }) {
       session.user = {
-        id: token.id,
-        email: token.email,
-        name: token.name,
-        role: token.role,
+        ...token,
+        image: token.picture || (token.avatar as string | null | undefined),
       };
-      session.accessToken = token.accessToken;
       return session;
     },
   },
+  pages: {
+    signIn: "/auth/signin",
+    signOut: "/auth/signout",
+    newUser: "/",
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+  session: {
+    strategy: "jwt",
+  },
+
   debug: true,
 };
 
