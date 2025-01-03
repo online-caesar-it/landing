@@ -28,7 +28,7 @@ const RegisterForm = () => {
       );
     },
     onSuccess: async (data) => {
-      console.log(await signIn("credentials", data));
+      await signIn("credentials", data);
     },
   });
 
