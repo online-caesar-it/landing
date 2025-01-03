@@ -45,7 +45,7 @@ const RegisterForm = () => {
       <h2>Register</h2>
       <AuthForm submit={onSubmit} />
       <button onClick={() => signIn("yandex")}>yandex</button>
-      <button onClick={() => signIn("vk", { redirect: false })}>vk</button>
+      <button onClick={() => signIn("vk")}>vk</button>
     </div>
   );
 };
