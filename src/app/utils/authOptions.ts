@@ -5,16 +5,11 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import VKProvider from "next-auth/providers/vk";
 import YandexProvider from "next-auth/providers/yandex";
 
-const apiVersion = "5.199";
 export const authOptions: AuthOptions = {
   providers: [
     VKProvider({
       clientId: env?.NEXT_PUBLIC_VK_CLIENT_ID || "",
       clientSecret: env?.NEXT_PUBLIC_VK_CLIENT_SECRET || "",
-      accessTokenUrl: `https://oauth.vk.com/access_token?v=${apiVersion}`,
-      requestTokenUrl: `https://oauth.vk.com/access_token?v=${apiVersion}`,
-      authorization: `https://oauth.vk.com/authorize?response_type=code&v=${apiVersion}`,
-      profileUrl: `https://api.vk.com/method/users.get?fields=photo_100&v=${apiVersion}`,
     }),
     YandexProvider({
       clientId: env?.NEXT_PUBLIC_YANDEX_CLIENT_ID || "",
