@@ -10,6 +10,13 @@ export const authOptions: AuthOptions = {
     VKProvider({
       clientId: env?.NEXT_PUBLIC_VK_CLIENT_ID || "",
       clientSecret: env?.NEXT_PUBLIC_VK_CLIENT_SECRET || "",
+      authorization: {
+        url: "https://oauth.vk.com/authorize",
+        params: {
+          scope: "email",
+          v: "5.131",
+        },
+      },
     }),
     YandexProvider({
       clientId: env?.NEXT_PUBLIC_YANDEX_CLIENT_ID || "",
