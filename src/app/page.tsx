@@ -1,8 +1,13 @@
 "use client";
 
+import Header from "@/widgets/header/ui/header";
+
 const Page = () => {
-  console.log(process.env.YANDEX_CLIENT_ID);
-  return <div>page</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 };
 
 export default Page;
