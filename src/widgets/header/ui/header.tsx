@@ -14,13 +14,16 @@ const Header = () => {
         email: session?.user?.email || "",
         avatar: session?.user?.image,
       });
+      console.log("SIGN IN CREDS");
       await signIn("credentials", data);
+      console.log("SIGN IN CREDS2");
     } catch (error) {
       return error;
     }
   };
   useEffect(() => {
     if (status === "authenticated") {
+      console.log("REGISTER_USER");
       registerUser();
     }
   }, [status]);
