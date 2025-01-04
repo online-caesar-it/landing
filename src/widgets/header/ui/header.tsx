@@ -11,7 +11,7 @@ const Header = () => {
   const registerUser = async () => {
     try {
       const { data } = await register({
-        email: session?.user?.email,
+        email: session?.user?.email || "",
         avatar: session?.user?.image,
       });
       await signIn("credentials", data);

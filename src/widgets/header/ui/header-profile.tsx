@@ -8,7 +8,7 @@ const HeaderProfile = () => {
   return (
     <button onClick={() => router.push("/profile")}>
       <Image src={session?.user?.image || ""} width={200} height={200} alt="" />
-      <h2>{session?.user?.email}</h2>
+      <h2>{session?.user?.email || ""}</h2>
     </button>
   );
 };
