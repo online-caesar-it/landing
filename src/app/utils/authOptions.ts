@@ -29,6 +29,7 @@ export const authOptions: AuthOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(_, req) {
+        console.log("AUTHO");
         const response = await fetch(
           `${env?.NEXT_PUBLIC_API_URL}/user/getSelf`,
           {
@@ -39,6 +40,7 @@ export const authOptions: AuthOptions = {
           }
         );
         const user = await response.json();
+        console.log(user, "USER");
         if (user) {
           return {
             id: user.user.id,
@@ -90,6 +92,4 @@ export const authOptions: AuthOptions = {
   session: {
     strategy: "jwt",
   },
-
-  debug: true,
 };
