@@ -1,19 +1,12 @@
 "use client";
 
-import { signOut, useSession } from "next-auth/react";
+import { useSession } from "@/shared/hooks/useSession";
 import React from "react";
 
 const Page = () => {
-  const { data: session } = useSession();
-  console.log(session);
-
-  return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
-      <h1> {session?.user?.name}</h1>
-      <p> {session?.user?.email}</p>
-      <button onClick={() => signOut()}>Sign Out</button>
-    </div>
-  );
+  const { data } = useSession();
+  console.log(data)
+  return <div style={{ textAlign: "center", marginTop: "50px" }}></div>;
 };
 
 export default Page;

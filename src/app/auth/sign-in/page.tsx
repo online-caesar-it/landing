@@ -1,9 +1,9 @@
 "use client";
 
-import RegisterForm from "@/widgets/auth-form/ui/register-form";
+import SignInForm from "@/widgets/auth-form/ui/sign-in-form";
 import React from "react";
 const SignIn = () => {
-  return <RegisterForm />;
+  return <SignInForm />;
 };
 
 export default SignIn;
