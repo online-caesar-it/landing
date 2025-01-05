@@ -1,13 +1,30 @@
 "use client";
 
-import { authApi, SignUpByEmail } from "@/shared/api/auth.api";
+import { authApi } from "@/shared/api/auth.api";
 import { useMutation } from "@tanstack/react-query";
 import { useForm, useWatch } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const signUpSchema = z.object({
+  email: z.string().min(5).email("Введите корректный email"),
+  firstName: z.string().min(2, "Имя должно быть длиннее 2 символов"),
+  surname: z.string().min(2, "Фамилия должна быть длиннее 2 символов"),
+  patronymic: z.string().optional(),
+  phone: z
+    .string()
+    .regex(/^\+?[1-9]\d{1,14}$/, "Введите корректный номер телефона"),
+});
+
+type SignUpFormInputs = z.infer<typeof signUpSchema>;
 
 const SignUpForm = () => {
-  // TODO: add validation by zod
-  const { handleSubmit, ...form } = useForm<SignUpByEmail>();
+  const { handleSubmit, register, formState, ...form } =
+    useForm<SignUpFormInputs>({
+      resolver: zodResolver(signUpSchema),
+    });
   const formValues = useWatch(form);
+  const { errors } = formState;
 
   const { mutate } = useMutation({
     mutationKey: ["sign-up-by-email"],
@@ -23,41 +40,67 @@ const SignUpForm = () => {
       <div>
         <h2>Sign up</h2>
 
-        <form
-          {...form}
-          onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col gap-2"
-        >
-          <input
-            className="text-gray-800 p-2"
-            placeholder="email"
-            type="email"
-            {...form.register("email")}
-          />
-          <input
-            className="text-gray-800 p-2"
-            placeholder="Имя"
-            type="text"
-            {...form.register("firstName")}
-          />
-          <input
-            className="text-gray-800 p-2"
-            placeholder="Фамилия"
-            type="text"
-            {...form.register("surname")}
-          />
-          <input
-            className="text-gray-800 p-2"
-            placeholder="Отчество"
-            type="text"
-            {...form.register("patronymic")}
-          />
-          <input
-            className="text-gray-800 p-2"
-            placeholder="Телефон"
-            type="phone"
-            {...form.register("phone")}
-          />
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-2">
+          <div>
+            <input
+              className="text-gray-800 p-2"
+              placeholder="email"
+              type="email"
+              {...register("email")}
+            />
+            {errors.email && (
+              <p className="text-red-500">{errors.email.message}</p>
+            )}
+          </div>
+
+          <div>
+            <input
+              className="text-gray-800 p-2"
+              placeholder="Имя"
+              type="text"
+              {...register("firstName")}
+            />
+            {errors.firstName && (
+              <p className="text-red-500">{errors.firstName.message}</p>
+            )}
+          </div>
+
+          <div>
+            <input
+              className="text-gray-800 p-2"
+              placeholder="Фамилия"
+              type="text"
+              {...register("surname")}
+            />
+            {errors.surname && (
+              <p className="text-red-500">{errors.surname.message}</p>
+            )}
+          </div>
+
+          <div>
+            <input
+              className="text-gray-800 p-2"
+              placeholder="Отчество"
+              type="text"
+              {...register("patronymic")}
+            />
+          </div>
+
+          <div>
+            <input
+              className="text-gray-800 p-2"
+              placeholder="Телефон"
+              type="tel"
+              {...register("phone")}
+            />
+            {errors.phone && (
+              <p className="text-red-500">{errors.phone.message}</p>
+            )}
+          </div>
+
+          <button type="submit" className="bg-yellow-900">
+            Отправить
+          </button>
         </form>
 
         <div className="flex flex-col gap-2">

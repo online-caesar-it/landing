@@ -1,8 +1,9 @@
 "use client";
 
+import SignInForm from "@/widgets/auth-form/ui/sign-in-form";
 import React from "react";
 const SignIn = () => {
-  return <div>sign in</div>;
+  return <SignInForm />;
 };
 
 export default SignIn;
