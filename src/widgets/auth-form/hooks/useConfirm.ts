@@ -27,7 +27,10 @@ export const useConfirm = () => {
       const response = await authApi.verifySignIn(token);
       if (response.data) {
         setMessage("Вход завершен! Перенаправляем...");
-        localStorageToken.setToken(response.data.accessToken);
+        localStorageToken.setAccessToken(response.data.accessToken);
+        localStorageToken.setRefreshToken(
+          response.data.user.config.refresh_token
+        );
       }
       router.push("/");
       console.log(response.data);
@@ -44,7 +47,10 @@ export const useConfirm = () => {
 
       if (response.data) {
         setMessage("Регистрация завершена! Перенаправляем...");
-        localStorageToken.setToken(response.data.accessToken);
+        localStorageToken.setAccessToken(response.data.accessToken);
+        localStorageToken.setRefreshToken(
+          response.data.user.config.refresh_token
+        );
       }
       router.push("/");
       console.log(response.data);

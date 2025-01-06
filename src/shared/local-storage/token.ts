@@ -1,11 +1,23 @@
-const setToken = (token: string) => localStorage.setItem("access-token", token);
+const setAccessToken = (token: string) =>
+  localStorage.setItem("access-token", token);
 
-const getToken = () => localStorage.getItem("access-token");
+const getAccessToken = () => localStorage.getItem("access-token");
 
-const deleteToken = () => localStorage.removeItem("access-token");
+const deleteAccessToken = () => localStorage.removeItem("access-token");
+
+const setRefreshToken = (token: string) =>
+  localStorage.setItem("refresh-token", token);
+
+const getRefreshToken = () => localStorage.getItem("refresh-token");
+
+const deleteRefreshToken = () => localStorage.removeItem("refresh-token");
+
 
 export const localStorageToken = {
-  setToken,
-  getToken,
-  deleteToken,
+  setAccessToken,
+  getAccessToken,
+  deleteAccessToken,
+  setRefreshToken,
+  getRefreshToken,
+  deleteRefreshToken,
 };
