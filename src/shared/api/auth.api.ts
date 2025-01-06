@@ -19,6 +19,14 @@ export type UserType = {
   id: string;
   surname: string;
   patronymic: string;
+  config: UserConfigType;
+};
+export type UserConfigType = {
+  email: string;
+  id: string;
+  phone_number: string;
+  refresh_token: string;
+  userId: string;
 };
 const registerByEmail = async (data: SignUpByEmail) => {
   return await api.post("/auth/sign-up/by-email", data);
@@ -37,7 +45,6 @@ const verifySignUp = async (
   });
 };
 const loginByEmail = async ({ email }: { email?: string }) => {
-  console.log(email);
   return await api.post("/auth/sign-in/by-email", {
     email,
   });
@@ -49,6 +56,21 @@ const verifySignIn = async (
     token,
   });
 };
+const refreshToken = async (
+  refreshToken: string
+): Promise<{
+  data: {
+    message: string;
+    tokens: {
+      accessToken: string;
+      refreshToken: string;
+    };
+  };
+}> => {
+  return await api.post("/auth/refresh", {
+    refreshToken,
+  });
+};
 export const authApi = {
   registerByEmail,
   registerByYandex,
@@ -56,4 +78,5 @@ export const authApi = {
   verifySignUp,
   loginByEmail,
   verifySignIn,
+  refreshToken,
 };
