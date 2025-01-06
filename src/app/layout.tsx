@@ -1,20 +1,18 @@
-"use client";
-
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import "./globals.css";
+import "./_styles/globals.css";
+import MainLayout from "@/widgets/layouts/ui/main-layout";
+import { Providers } from "./_providers/providers";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const queryClient = new QueryClient();
   return (
     <html lang="en">
       <body>
-        <QueryClientProvider client={queryClient}>
-          {children}
-        </QueryClientProvider>
+        <Providers>
+          <MainLayout>{children}</MainLayout>
+        </Providers>
       </body>
     </html>
   );

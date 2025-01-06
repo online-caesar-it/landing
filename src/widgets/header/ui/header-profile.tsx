@@ -1,14 +1,14 @@
-import { useRouter } from "next/navigation";
+import { useSession } from "@/shared/hooks/useSession";
+import Link from "next/link";
 
 const HeaderProfile = () => {
-  const router = useRouter();
-
+  const { session } = useSession();
   return (
-    <button onClick={() => router.push("/profile")}>
-      {/* <h3>{session?.user?.role}</h3>
-      <Image src={session?.user?.image || ""} width={200} height={200} alt="" />
-      <h2>{session?.user?.email || ""}</h2> */}
-    </button>
+    <Link href={"/profile"}>
+      <p>
+        {session?.firstName} {session?.surname}
+      </p>
+    </Link>
   );
 };
 

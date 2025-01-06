@@ -6,10 +6,10 @@ const If = ({
   when,
 }: {
   children: ReactNode;
-  elseComponent: ReactNode;
-  when: boolean;
+  elseComponent?: ReactNode;
+  when: unknown;
 }) => {
-  return <>{when ? children : elseComponent}</>;
+  return <>{!!when ? children : elseComponent}</>;
 };
 
 export default If;

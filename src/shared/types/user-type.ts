@@ -1,11 +1,9 @@
-type IRoleUserType = "user" | "admin";
+type TRoleUserType = "user" | "admin";
 
-export type TUserType = {
+export type TUser = {
   id: string;
-  email: string;
-  role: IRoleUserType;
   firstName: string;
-  secondName: string;
-  avatar: string;
-  lastName: string;
+  surname: string;
+  patronymic: string;
+  role: TRoleUserType;
 };

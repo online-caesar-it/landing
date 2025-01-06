@@ -1,11 +1,11 @@
 "use client";
 
-import Header from "@/widgets/header/ui/header";
+import CoursesBlock from "@/widgets/courses/ui/courses-block";
 
 const Page = () => {
   return (
     <div>
-      <Header />
+      <CoursesBlock />
     </div>
   );
 };
