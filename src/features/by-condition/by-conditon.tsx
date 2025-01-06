@@ -1,15 +1,15 @@
 import { ReactNode } from "react";
 
-const ByCondition = ({
+const If = ({
   children,
-  fallback,
-  condition,
+  elseComponent,
+  when,
 }: {
   children: ReactNode;
-  fallback: ReactNode;
-  condition: boolean;
+  elseComponent: ReactNode;
+  when: boolean;
 }) => {
-  return <>{condition ? children : fallback}</>;
+  return <>{when ? children : elseComponent}</>;
 };
 
-export default ByCondition;
+export default If;
