@@ -3,7 +3,7 @@ import SectionLayout from "@/widgets/layouts/ui/section-layout";
 
 const CoursesBlock = () => {
   return (
-    <SectionLayout className="py-[200px]">
+    <SectionLayout className="py-[200px] h-[800px]">
       <CoursesListCascade />
     </SectionLayout>
   );
