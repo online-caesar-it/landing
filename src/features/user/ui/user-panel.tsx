@@ -2,7 +2,7 @@
 
 import UserAvatar from "@/entities/user/ui/user-avatar";
 import If from "@/features/by-condition/by-condition";
-import { useSession } from "@/shared/hooks/useSession";
+import { useSession } from "@/shared/hooks/use-session";
 import Link from "next/link";
 
 const UserPanel = () => {
