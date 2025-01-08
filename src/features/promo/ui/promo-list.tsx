@@ -48,28 +48,21 @@ const data = [
 
 const PromoList = () => {
   return (
-    <div>
-      <Swiper
-        className="pb-[20px]"
-        scrollbar={{
-          hide: true,
-        }}
-        modules={[Scrollbar]}
-        spaceBetween={50}
-        slidesPerView={3}
-      >
-        {data.map((it) => (
-          <SwiperSlide key={it.id}>
-            <PromoCard />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      {/* <div className="flex gap-4 w-full overflow-x-scroll">
-        {data.map((it) => (
-          <PromoCard key={it.id} />
-        ))}
-      </div> */}
-    </div>
+    <Swiper
+      className="pb-[20px]"
+      scrollbar={{
+        hide: true,
+      }}
+      modules={[Scrollbar]}
+      spaceBetween={50}
+      slidesPerView={3}
+    >
+      {data.map((it) => (
+        <SwiperSlide key={it.id}>
+          <PromoCard />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 };
 
