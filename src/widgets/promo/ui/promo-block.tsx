@@ -6,8 +6,8 @@ import PromoList from "@/features/promo/ui/promo-list";
 const PromoBlock = () => {
   return (
     <div className={twMerge(styles.gradient)}>
-      <SectionLayout className="mx-0 ml-auto">
-        <div className="h-[400px] overflow-hidden">
+      <SectionLayout>
+        <div className="h-[400px]">
           <PromoList />
         </div>
       </SectionLayout>
