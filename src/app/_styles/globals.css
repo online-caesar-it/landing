@@ -12,9 +12,15 @@
 
 html, body, .main {
   min-height: 100vh;
+  position: relative;
 }
 
 .main {
   display: flex;
   flex-direction: column;
+}
+header {
+  overflow: unset;
+  margin: 0;
+  padding: 0;
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import UserAvatar from "@/entities/user/ui/user-avatar";
-import If from "@/features/by-condition/by-condition";
+import If from "@/features/abstract/If";
 import { useSession } from "@/shared/hooks/use-session";
 import Link from "next/link";
 

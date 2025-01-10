@@ -4,9 +4,9 @@ import { ReactNode } from "react";
 
 const MainLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="main">
+    <div>
       <Header />
-      <main className="flex-1">{children}</main>
+      <main className="main">{children}</main>
       <Footer />
     </div>
   );
