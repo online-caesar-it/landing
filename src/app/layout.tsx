@@ -22,7 +22,7 @@ export default function RootLayout({
       lang="ru"
       className={`${introFriday.variable} ${grecoRoman.variable}`}
     >
-      <body className={"bg-bgMain"}>
+      <body className={"bg-grey-85"}>
         <Providers>
           <MainLayout>{children}</MainLayout>
         </Providers>

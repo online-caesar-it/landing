@@ -10,10 +10,12 @@ const Button = ({
   return (
     <button
       {...rest}
-      className={twMerge("bg-buttonPrimary rounded-full", rest.className)}
+      className={twMerge("bg-blue-10 rounded-full", rest.className)}
     >
       <span
-        className={"text-textButton text-2xl font-normal uppercase font-intro"}
+        className={
+          "text-button-primary text-2xl font-normal uppercase font-intro"
+        }
       >
         {children}
       </span>

@@ -10,7 +10,7 @@ const Nav = () => {
           <div className={"flex items-center"}>
             <Link
               className={
-                "text-blue20 uppercase font-normal font-intro text-3xl"
+                "text-blue-20 uppercase font-normal font-intro text-3xl"
               }
               href={item.link}
             >
