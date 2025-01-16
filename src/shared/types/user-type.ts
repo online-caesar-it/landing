@@ -1,4 +1,4 @@
-type TRoleUserType = "user" | "admin";
+export type TRoleUserType = "student" | "admin" | "educator";
 
 export type TUser = {
   id: string;

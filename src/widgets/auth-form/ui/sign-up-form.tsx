@@ -28,7 +28,11 @@ const SignUpForm = () => {
 
   const { mutate } = useMutation({
     mutationKey: ["sign-up-by-email"],
-    mutationFn: () => authApi.registerByEmail(formValues),
+    mutationFn: () =>
+      authApi.registerByEmail({
+        ...formValues,
+        role: "student",
+      }),
   });
 
   const onSubmit = () => {

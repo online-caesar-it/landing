@@ -1,3 +1,4 @@
+import { TRoleUserType } from "../types/user-type";
 import { api } from "./api";
 
 export type SignUpByEmail = {
@@ -6,6 +7,7 @@ export type SignUpByEmail = {
   surname?: string;
   patronymic?: string;
   phone?: string;
+  role: TRoleUserType;
 };
 export type UserPromiseType = {
   accessToken: string;
@@ -14,7 +16,7 @@ export type UserPromiseType = {
 };
 export type UserType = {
   avatar: string;
-  role: string;
+  role: TRoleUserType;
   firstName: string;
   id: string;
   surname: string;
