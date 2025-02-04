@@ -24,10 +24,12 @@ export const CustomSwiper = <E extends { id: number }>({
 					slidesPerView: 1,
 				},
 				768: {
-					slidesPerView: 1.25,
+					slidesPerView: 1.24,
+					centeredSlides: true,
 				},
-				1024: {
-					slidesPerView: 2.1,
+				1025: {
+					slidesPerView: 2.25,
+					centeredSlides: false,
 				},
 			}}
 			{...restProps}

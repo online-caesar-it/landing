@@ -8,7 +8,7 @@ import { PromoCard } from '@/features';
 
 export const Guarantees = () => {
 	return (
-		<SectionLayout id='guarantee'>
+		<SectionLayout id='guarantee' className='mb-section-bottom'>
 			<Plate
 				mode='full-plate'
 				variant='secondary'
@@ -22,7 +22,11 @@ export const Guarantees = () => {
 					</>
 				}
 			/>
-			<CustomSwiper items={promoItems} CardComponent={PromoCard} />
+			<CustomSwiper
+				items={promoItems}
+				CardComponent={PromoCard}
+				className='md:-mt-14'
+			/>
 		</SectionLayout>
 	);
 };

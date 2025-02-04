@@ -27,9 +27,9 @@ export const Plate = (props: PlateProps) => {
 
 	if (mode === 'full-plate') {
 		return (
-			<div className='text-white uppercase rounded-[50px] px-[4.58%] pt-[4.8%] pb-[4.1%] relative overflow-hidden mb-[75px] md:p-[30px] md:rounded-[25px]'>
+			<div className='text-white uppercase rounded-[50px] px-[4.58%] pt-[4.8%] pb-[4.1%] relative overflow-hidden mb-[75px] md:p-[30px] md:rounded-[25px] xsm:p-[20px] xsm:rounded-[20px]'>
 				<div className='relative z-[3]'>
-					<h2 className='text-section-sm leading-[1.3] font-intro max-w-[95%] md:text-2xl'>
+					<h2 className='text-section-sm leading-[1.3] font-intro max-w-[95%] md:text-2xl md:max-w-full'>
 						{title}
 					</h2>
 				</div>

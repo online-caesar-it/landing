@@ -13,7 +13,7 @@ export default {
 			},
 			fontSize: {
 				'section-sm': 'clamp(28px, 2.4vw, 36px)',
-				'section-lg': 'clamp(32px, 3.6vw, 50px)',
+				'section-lg': 'clamp(26px, 5.6vw, 50px)',
 			},
 			backgroundImage: {
 				'linear-purple':
