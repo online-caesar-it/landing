@@ -22,7 +22,7 @@ export const Banner = () => {
 				src='/images/characterPurple.png'
 				alt='Иконка персонажа'
 				className={twMerge(
-					'absolute top-[36%] -left-[8%] scale-[1.3] 3xl:-left-[11%] 3xl:scale-[1] 3xl:top-[26%]',
+					'absolute top-[36%] -left-[8%] scale-[1.3] 4xl:top-[44%] 3xl:-left-[11%] 3xl:scale-[1] 3xl:top-[26%]',
 					style.purpleIcon
 				)}
 			/>
