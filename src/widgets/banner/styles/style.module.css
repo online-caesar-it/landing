@@ -1,9 +1,144 @@
 .title {
-	background: conic-gradient(from 180deg at 50% 50%, rgb(186, 99, 255), rgb(180, 190, 254), rgb(234, 41, 97));
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
-text-fill-color: transparent;
-line-height: 100%;
-letter-spacing: 5%;
+  background: conic-gradient(from 180deg at 50% 50%, rgb(186, 99, 255), rgb(180, 190, 254), rgb(234, 41, 97));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  line-height: 100%;
+  letter-spacing: 5%;
+}
+
+.purpleIcon {}
+
+.yellowIcon {}
+
+.redIcons {}
+
+@media (max-width: 1142px) {
+
+  .purpleIcon,
+  .yellowIcon,
+  .redIcons {
+    scale: 0.85;
+  }
+
+  .purpleIcon {
+    top: 15%;
+    left: -15%;
+  }
+
+  .yellowIcon {
+    top: 20%;
+    left: 45%;
+  }
+
+  .redIcons {
+    top: 20%;
+    right: -14%;
+  }
+}
+
+@media (max-width: 960px) {
+  .purpleIcon {
+    top: 10%;
+    left: -17%;
+  }
+
+  .yellowIcon {
+    top: 35%;
+    left: 45%;
+  }
+
+  .redIcons {
+    top: 15%;
+    right: -16%;
+  }
+}
+
+@media (max-width: 870px) {
+
+  .purpleIcon,
+  .yellowIcon,
+  .redIcons {
+    scale: 0.75;
+  }
+
+  .purpleIcon {
+    top: 5%;
+    left: -20%;
+  }
+
+  .redIcons {
+    top: 5%;
+    right: -20%;
+  }
+}
+
+@media (max-width: 769px) {
+
+  .purpleIcon,
+  .yellowIcon,
+  .redIcons {
+    scale: 0.7;
+  }
+
+  .purpleIcon {
+    top: 5%;
+    left: -25%;
+  }
+
+  .redIcons {
+    top: 5%;
+    right: -24%;
+  }
+
+  .yellowIcon {
+    top: 35%;
+    left: 43%;
+    display: none;
+  }
+}
+
+@media (max-width: 621px) {
+  .purpleIcon {
+    top: 10%;
+    left: -33%;
+  }
+
+  .redIcons {
+    top: 10%;
+    right: -32%;
+  }
+}
+
+@media (max-width: 534px) {
+  .purpleIcon {
+    top: 32%;
+    left: -24%;
+    width: 90%;
+    aspect-ratio: 1/1;
+    scale: 1;
+    rotate: -20deg;
+  }
+
+  .redIcons {
+    top: 32%;
+    right: -22%;
+    width: 90%;
+    aspect-ratio: 1/1;
+    scale: 1;
+    rotate: 45deg;
+  }
+}
+
+@media (max-width: 393px) {
+  .purpleIcon {
+    top: 40%;
+    left: -22%;
+  }
+
+  .redIcons {
+    top: 47%;
+    right: -14%;
+  }
 }
