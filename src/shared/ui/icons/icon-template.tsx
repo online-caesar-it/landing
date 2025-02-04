@@ -9,7 +9,9 @@ type IconTemplateProps = {
 
 export const IconTemplate = ({ alt, src, className }: IconTemplateProps) => {
 	return (
-		<div className={twMerge('relative w-fit h-fit', className)}>
+		<div
+			className={twMerge('relative w-fit h-fit pointer-events-none', className)}
+		>
 			<Image
 				src={src}
 				alt={alt}

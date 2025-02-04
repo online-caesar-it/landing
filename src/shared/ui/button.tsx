@@ -5,12 +5,12 @@ type ButtonProps = {
 	children: React.ReactNode;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button = ({ children, ...rest }: ButtonProps) => {
+export const Button = ({ children, ...rest }: ButtonProps) => {
 	return (
 		<button
 			{...rest}
 			className={twMerge(
-				'bg-blue-10 rounded-full flex items-center border-2 border-blue-10 justify-center px-8 pb-[10px] pt-[15px] transition-all hover:bg-transparent hover:border-blue-10 hover:text-blue-10',
+				'bg-blue-10 rounded-full flex items-center border-2 border-blue-10 justify-center px-8 pb-[10px] pt-[15px] transition-all hover:bg-transparent hover:text-blue-10',
 				rest.className
 			)}
 		>
@@ -24,5 +24,3 @@ const Button = ({ children, ...rest }: ButtonProps) => {
 		</button>
 	);
 };
-
-export default Button;
