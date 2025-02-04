@@ -1,5 +1,4 @@
-import { About } from '@/widgets';
-import Banner from '@/widgets/banner/ui/banner';
+import { About, OurFeatures, Banner } from '@/widgets';
 // import CoursesBlock from '@/widgets/courses/ui/courses-block';
 // import FeedbackBlock from '@/widgets/feedback/ui/feedback-block';
 // import PromoBlock from '@/widgets/promo/ui/promo-block';
@@ -9,9 +8,7 @@ const Page = () => {
 		<div>
 			<Banner />
 			<About />
-			{/* <CoursesBlock />
-      <FeedbackBlock />
-      <PromoBlock /> */}
+			<OurFeatures />
 		</div>
 	);
 };

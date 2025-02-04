@@ -3,7 +3,7 @@ import SectionLayout from '@/widgets/layouts/ui/section-layout';
 import { twMerge } from 'tailwind-merge';
 import style from '../styles/style.module.css';
 
-const Banner = () => {
+export const Banner = () => {
 	return (
 		<SectionLayout className={'relative pt-[120px] mb-[380px] min-h-[90dvh]'}>
 			<h2
@@ -32,5 +32,3 @@ const Banner = () => {
 		</SectionLayout>
 	);
 };
-
-export default Banner;
