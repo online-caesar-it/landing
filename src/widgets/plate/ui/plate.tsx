@@ -7,15 +7,41 @@ type PlateProps = {
 	variant?: 'primary' | 'secondary';
 	platePattern?: string;
 	plateImage?: string;
+	mode?: 'standart' | 'full-plate';
 };
 
 export const Plate = (props: PlateProps) => {
-	const { title, variant = 'primary', plateImage, platePattern } = props;
+	const {
+		title,
+		variant = 'primary',
+		plateImage,
+		platePattern,
+		mode = 'standart',
+	} = props;
 
 	const cn = clsx({
 		'bg-linear-purple': variant !== 'secondary',
 		'bg-linear-pink': variant === 'secondary',
+		'bg-red-65': mode === 'full-plate',
 	});
+
+	if (mode === 'full-plate') {
+		return (
+			<div className='text-white uppercase rounded-[50px] px-[4.58%] pt-[4.8%] pb-[4.1%] relative overflow-hidden mb-[75px] md:p-[30px] md:rounded-[25px]'>
+				<div className='relative z-[3]'>
+					<h2 className='text-section-sm leading-[1.3] font-intro max-w-[95%] md:text-2xl'>
+						{title}
+					</h2>
+				</div>
+				<div
+					className={twMerge(
+						'absolute top-0 left-0 w-full h-full z-[2] pointer-events-none',
+						cn
+					)}
+				></div>
+			</div>
+		);
+	}
 
 	return (
 		<div className='text-white uppercase rounded-[50px] px-[3.25%] pt-[3.45%] pb-[3.95%] relative overflow-hidden mb-[75px]'>

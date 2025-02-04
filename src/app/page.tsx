@@ -1,7 +1,6 @@
-import { About, OurFeatures, Banner } from '@/widgets';
+import { About, OurFeatures, Banner, Guarantees } from '@/widgets';
 // import CoursesBlock from '@/widgets/courses/ui/courses-block';
 // import FeedbackBlock from '@/widgets/feedback/ui/feedback-block';
-// import PromoBlock from '@/widgets/promo/ui/promo-block';
 
 const Page = () => {
 	return (
@@ -9,6 +8,7 @@ const Page = () => {
 			<Banner />
 			<About />
 			<OurFeatures />
+			<Guarantees />
 		</div>
 	);
 };

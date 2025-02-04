@@ -13,12 +13,25 @@ export default {
 			},
 			fontSize: {
 				'section-sm': 'clamp(28px, 2.4vw, 36px)',
+				'section-lg': 'clamp(32px, 3.6vw, 50px)',
 			},
 			backgroundImage: {
 				'linear-purple':
 					'linear-gradient(270deg, rgba(69,20,106,0.7105217086834734) 0%, rgba(110,33,167,1) 40%)',
 				'linear-pink':
 					'linear-gradient(270deg, rgba(175,29,70,0.7553396358543417) 0%, rgba(224,108,141,1) 40%)',
+				'linear-pink-promo':
+					'linear-gradient(190deg, rgba(255,48,104,1) 0%, rgba(181,184,248,1) 100%)',
+				'linear-blue-promo':
+					'linear-gradient(190deg, rgba(0,122,204,1) 0%, rgba(244,163,190,1) 100%)',
+				'linear-orange-promo':
+					'linear-gradient(190deg, rgba(228,79,38,1) 0%, rgba(244,163,190,1) 100%)',
+				'linear-purple-promo':
+					'linear-gradient(190deg, rgba(108,52,139,1) 0%, rgba(242,205,205,1) 100%)',
+				'linear-blue-light-promo':
+					'linear-gradient(190deg, rgba(0,172,215,1) 0%, rgba(217,217,217,1) 100%)',
+				'linear-red-promo':
+					'linear-gradient(190deg, rgba(175,29,70,1) 0%, rgba(244,163,190,1) 100%)',
 			},
 			colors: {
 				blue: {
@@ -36,8 +49,10 @@ export default {
 					'40': '#F5C2E7',
 					'50': '#F4A3BE',
 					'60': '#F38BA8',
+					'65': '#E06C8D',
 					'80': '#FF3068',
 					'90': '#D72067',
+					'95': '#AF1D46',
 				},
 				green: {
 					'30': '#A6E3A1',
@@ -67,6 +82,7 @@ export default {
 					'60': '#0ACF83',
 				},
 				grey: {
+					'30': '#313244',
 					'40': '#7F849C',
 					'60': '#34333D',
 					'65': '#37333A',

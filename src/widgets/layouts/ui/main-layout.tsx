@@ -8,7 +8,7 @@ const MainLayout = ({ children }: { children: ReactNode }) => {
 		<div>
 			<PromoHeader />
 			<Header />
-			<main className='main'>{children}</main>
+			<main className='main overflow-x-hidden'>{children}</main>
 			<Footer />
 		</div>
 	);

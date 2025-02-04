@@ -1,15 +1,18 @@
 import { ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-const SectionLayout = ({
-	className,
-	children,
-}: {
+type SectionLayoutProps = {
 	className?: string;
-	children: ReactNode;
-}) => {
+	children?: ReactNode;
+	id?: string;
+};
+
+const SectionLayout = ({ className, children, id }: SectionLayoutProps) => {
 	return (
-		<section className={twMerge('max-w-[1400px] w-[95%] mx-auto', className)}>
+		<section
+			id={id}
+			className={twMerge('max-w-[1400px] w-[95%] mx-auto', className)}
+		>
 			{children}
 		</section>
 	);
