@@ -14,6 +14,7 @@ export default {
 			fontSize: {
 				'section-sm': 'clamp(28px, 2.4vw, 36px)',
 				'section-lg': 'clamp(26px, 5.6vw, 50px)',
+				'section-xl': 'clamp(60px, 4.6vw, 88px)',
 			},
 			backgroundImage: {
 				'linear-purple':

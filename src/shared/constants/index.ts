@@ -1,1 +1,1 @@
-export * from './promo';
+export * from './home-data';

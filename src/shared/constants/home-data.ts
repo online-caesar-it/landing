@@ -59,3 +59,31 @@ export const promoItems = [
 		linkLabel: 'все направления',
 	},
 ];
+
+export const childLearningItems = [
+	{
+		text: 'развивать логическое, системное и креативное мышление',
+		icon: '/images/brains.png',
+		pb: 35,
+	},
+	{
+		text: 'создавать собственные игры, сайты и приложения',
+		icon: '/images/statistics.png',
+		pb: 32,
+	},
+	{
+		text: 'понимать и принимать композиционные и цветовые решения',
+		icon: '/images/paints.png',
+		pb: 24,
+	},
+	{
+		text: 'развивать навыки быстрой генерации идей и концепций',
+		icon: '/images/idea.png',
+		pb: 21,
+	},
+	{
+		text: 'участвовать в командной работе, развивать навыки коммуникации',
+		icon: '/images/peoples.png',
+		pb: 9,
+	},
+];

@@ -4,3 +4,4 @@ export * from './our-features/ui';
 export * from './banner/ui';
 export * from './guarantees/ui';
 export * from './custom-swiper/ui';
+export * from './child-learning/ui';

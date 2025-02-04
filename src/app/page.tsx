@@ -1,4 +1,10 @@
-import { About, OurFeatures, Banner, Guarantees } from '@/widgets';
+import {
+	About,
+	Banner,
+	Guarantees,
+	OurFeatures,
+	ChildLearning,
+} from '@/widgets';
 // import CoursesBlock from '@/widgets/courses/ui/courses-block';
 // import FeedbackBlock from '@/widgets/feedback/ui/feedback-block';
 
@@ -9,6 +15,7 @@ const Page = () => {
 			<About />
 			<OurFeatures />
 			<Guarantees />
+			<ChildLearning />
 		</div>
 	);
 };
