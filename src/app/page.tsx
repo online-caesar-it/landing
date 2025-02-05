@@ -1,6 +1,19 @@
-import { About, Banner, Stack, Teachers, Recording } from '@/widgets';
-import { CoursesBlock, ChildLearning, ClientsReviews } from '@/widgets';
-import { Promotions, Guarantees, OurFeatures, NewVectors } from '@/widgets';
+import {
+	Faq,
+	About,
+	Stack,
+	Banner,
+	Teachers,
+	Recording,
+	Promotions,
+	Guarantees,
+	OurFeatures,
+	NewVectors,
+	Consulting,
+	CoursesBlock,
+	ChildLearning,
+	ClientsReviews,
+} from '@/widgets';
 
 const Page = () => {
 	return (
@@ -17,6 +30,8 @@ const Page = () => {
 			<Promotions />
 			<ClientsReviews />
 			<NewVectors />
+			<Faq />
+			<Consulting />
 		</div>
 	);
 };

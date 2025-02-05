@@ -18,6 +18,10 @@ export default {
 				'page-title': 'clamp(45px, 6.2vw, 88px)',
 			},
 			backgroundImage: {
+				'linear-section-red':
+					'linear-gradient(144deg, rgba(175,29,70,1) 0%, rgba(249,226,175,1) 100%)',
+				'linear-section-blue':
+					'linear-gradient(144deg, rgba(98,15,150,1) 0%, rgba(120,203,255,1) 100%)',
 				'linear-dark':
 					'linear-gradient(180deg, rgba(55,51,58,1) 0%, rgba(152,141,160,1) 100%)',
 				'linear-purple':
@@ -92,6 +96,7 @@ export default {
 				grey: {
 					'30': '#313244',
 					'40': '#7F849C',
+					'50': '#2B2B3B',
 					'60': '#34333D',
 					'65': '#37333A',
 					'70': '#35333B',

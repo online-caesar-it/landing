@@ -12,3 +12,5 @@ export * from './teachers/ui';
 export * from './promotions/ui';
 export * from './clients-reviews/ui';
 export * from './new-vectors/ui';
+export * from './faq/ui';
+export * from './consulting/ui';

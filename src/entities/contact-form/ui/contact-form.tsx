@@ -1,11 +1,15 @@
 'use client';
 
-import { CustomInput } from '@/entities/custom-input/ui';
-import { useContactForm } from '../model';
 import { Button } from '@/shared/ui';
+import { useContactForm } from '../model';
+import { CustomInput } from '@/entities/custom-input/ui';
 import { CustomCheckbox } from '@/entities/custom-checkbox/ui';
 
-export const ContactForm = () => {
+type ContactFormProps = {
+	variant?: 'white' | 'red';
+};
+
+export const ContactForm = ({ variant = 'red' }: ContactFormProps) => {
 	const {
 		register,
 		submitter,
@@ -21,6 +25,7 @@ export const ContactForm = () => {
 				placeholder='ФИО'
 				errors={errors}
 				register={register}
+				variant={variant}
 			/>
 			<CustomInput
 				type='text'
@@ -28,6 +33,7 @@ export const ContactForm = () => {
 				errors={errors}
 				placeholder='НОМЕР ТЕЛЕФОНА'
 				register={register}
+				variant={variant}
 			/>
 			<CustomInput
 				type='email'
@@ -35,12 +41,20 @@ export const ContactForm = () => {
 				errors={errors}
 				placeholder='ЭЛ. ПОЧТА'
 				register={register}
+				variant={variant}
 			/>
 			<CustomCheckbox
 				name='agreement'
 				label='ДАЮ СОГЛАСИЕ НА ОБРАБОТКУ ДАННЫХ*'
 			/>
-			<Button className='w-full' variant='secondary' size='lg' type='submit'>
+			<Button
+				className={`w-full ${
+					variant === 'white' && 'text-red-30 hover:text-grey-90'
+				}`}
+				variant='secondary'
+				size='lg'
+				type='submit'
+			>
 				Отправить
 			</Button>
 		</form>

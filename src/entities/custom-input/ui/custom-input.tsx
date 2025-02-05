@@ -1,4 +1,5 @@
 import { TContactFormFields } from '@/entities/contact-form/model';
+import clsx from 'clsx';
 import { InputHTMLAttributes } from 'react';
 import { FieldErrors, UseFormRegister } from 'react-hook-form';
 import { twMerge } from 'tailwind-merge';
@@ -9,12 +10,30 @@ type CustomLabelProps = {
 	inputName: keyof TContactFormFields;
 	errors?: FieldErrors<TContactFormFields>;
 	register: UseFormRegister<TContactFormFields>;
+	variant?: 'white' | 'red';
 };
 
 type UnionType = CustomInputProps & CustomLabelProps;
 
 export const CustomInput = (props: UnionType) => {
-	const { inputName, className, errors, register, ...otherProps } = props;
+	const {
+		errors,
+		register,
+		className,
+		inputName,
+		variant = 'red',
+		...otherProps
+	} = props;
+
+	const cn = clsx({
+		'bg-red-65 text-red-95 placeholder:text-red-95': variant === 'red',
+		'bg-red-30 text-grey-90 placeholder:text-[#B08585]': variant === 'white',
+	});
+
+	const errorCn = clsx({
+		'text-red-500': variant === 'red',
+		'text-red-600': variant === 'white',
+	});
 
 	return (
 		<>
@@ -22,14 +41,17 @@ export const CustomInput = (props: UnionType) => {
 				<input
 					{...register(inputName)}
 					className={twMerge(
-						'p-[35px] pb-[26px] w-full rounded-full bg-red-65 border-none !text-section-sm text-red-95 font-intro leading-[1.1] placeholder:font-intro placeholder:text-section-sm placeholder:text-red-95',
+						'p-[35px] pb-[26px] w-full rounded-full border-none !text-section-sm  font-intro leading-[1.1] placeholder:font-intro placeholder:text-section-sm',
+						cn,
 						className
 					)}
 					{...otherProps}
 				/>
 			</label>
 			{inputName && errors?.[inputName] && (
-				<p className='text-red-500 -mt-8 ml-8 text-2xl mb-4'>
+				<p
+					className={twMerge('text-red-500 -mt-8 ml-8 text-2xl mb-4', errorCn)}
+				>
 					{errors[inputName]?.message as string}
 				</p>
 			)}
