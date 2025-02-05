@@ -18,6 +18,8 @@ export default {
 				'page-title': 'clamp(45px, 6.2vw, 88px)',
 			},
 			backgroundImage: {
+				'linear-dark':
+					'linear-gradient(180deg, rgba(55,51,58,1) 0%, rgba(152,141,160,1) 100%)',
 				'linear-purple':
 					'linear-gradient(270deg, rgba(69,20,106,0.7105217086834734) 0%, rgba(110,33,167,1) 40%)',
 				'linear-pink':

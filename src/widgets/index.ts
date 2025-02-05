@@ -8,3 +8,4 @@ export * from './child-learning/ui';
 export * from './stack/ui';
 export * from './courses/ui';
 export * from './recording/ui';
+export * from './teachers/ui';

@@ -7,6 +7,7 @@ import {
 	CoursesBlock,
 	ChildLearning,
 	Recording,
+	Teachers,
 } from '@/widgets';
 // import FeedbackBlock from '@/widgets/feedback/ui/feedback-block';
 
@@ -21,6 +22,7 @@ const Page = () => {
 			<Stack />
 			<CoursesBlock />
 			<Recording />
+			<Teachers />
 		</div>
 	);
 };
