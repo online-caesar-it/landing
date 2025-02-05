@@ -19,9 +19,9 @@ export const Button = (props: ButtonProps) => {
 	});
 
 	const cnSizes = clsx({
-		'border-2 px-8 pb-[11px] pt-[15px]': size === 'md',
 		'border-2 px-6 pb-[5px] pt-[10px]': size === 'sm',
-		'border-4 px-12 pb-[16px] pt-[23px] text-5xl': size === 'lg',
+		'border-2 px-8 pb-[4px] pt-[10px] text-2xl': size === 'md',
+		'border-4 px-12 pb-[8px] pt-[14px] text-5xl': size === 'lg',
 	});
 
 	return (

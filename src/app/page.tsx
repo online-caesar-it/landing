@@ -1,6 +1,6 @@
-import { Promotions, Guarantees, OurFeatures } from '@/widgets';
 import { About, Banner, Stack, Teachers, Recording } from '@/widgets';
 import { CoursesBlock, ChildLearning, ClientsReviews } from '@/widgets';
+import { Promotions, Guarantees, OurFeatures, NewVectors } from '@/widgets';
 
 const Page = () => {
 	return (
@@ -16,6 +16,7 @@ const Page = () => {
 			<Teachers />
 			<Promotions />
 			<ClientsReviews />
+			<NewVectors />
 		</div>
 	);
 };

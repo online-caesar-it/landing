@@ -6,7 +6,7 @@ import FeedbackListCascade from '@/features/feedback/ui/feedback-list-cascade';
 
 export const ClientsReviews = async () => {
 	return (
-		<SectionLayout>
+		<SectionLayout className='mb-section-bottom'>
 			<div className='text-blue-0 text-center font-intro mb-[110px]'>
 				<h2 className='text-section-xl'>ОТЗЫВЫ КЛИЕНТОВ</h2>
 				<p className='text-5xl'>ПРО ОБРАЗОВАНИЕ И ПРЕПОДАВАТЕЛЕЙ</p>

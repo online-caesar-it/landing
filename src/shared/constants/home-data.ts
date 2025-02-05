@@ -150,3 +150,24 @@ export const promotionsItems = [
 		linkLabel: 'все направления',
 	},
 ];
+
+export const newVectors = [
+	{
+		id: 1,
+		title: 'scratch',
+		image: '/stack/scratch.png',
+		color: 'orange',
+	},
+	{
+		id: 2,
+		title: 'minecraft',
+		image: '/stack/minecraft.png',
+		color: 'green',
+	},
+	{
+		id: 3,
+		title: 'unity',
+		image: '/stack/unity.png',
+		color: 'white',
+	},
+];

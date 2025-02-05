@@ -11,3 +11,4 @@ export * from './recording/ui';
 export * from './teachers/ui';
 export * from './promotions/ui';
 export * from './clients-reviews/ui';
+export * from './new-vectors/ui';
