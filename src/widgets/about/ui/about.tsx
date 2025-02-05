@@ -4,7 +4,7 @@ import SectionLayout from '@/widgets/layouts/ui/section-layout';
 
 export const About = () => {
 	return (
-		<SectionLayout className='mb-section-bottom'>
+		<SectionLayout className='mb-section-bottom md:mb-24'>
 			<Plate
 				variant='primary'
 				plateImage='/images/characterNotebook3d.png'
@@ -29,7 +29,7 @@ export const About = () => {
 					</>
 				}
 			/>
-			<div className='pt-[20px] w-[632px] mx-auto'>
+			<div className='pt-[20px] max-w-[632px] mx-auto'>
 				<ButtonLink href='#formn' variant='primary' size='md'>
 					Оставить заявку
 				</ButtonLink>

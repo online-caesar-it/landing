@@ -31,7 +31,7 @@ const features = [
 
 export const OurFeatures = () => {
 	return (
-		<SectionLayout className='mb-section-bottom'>
+		<SectionLayout className='mb-section-bottom md:mb-24'>
 			<div className='flex flex-wrap justify-between gap-4 lg:gap-2 md:mb-[60px]'>
 				{features.map((feature, index) => (
 					<Fragment key={index}>

@@ -27,7 +27,7 @@ export const ButtonLink = (props: ButtonLinkProps) => {
 
 	const cn = clsx({
 		'bg-red-60 hover:scale-105': variant === 'primary',
-		'pr-[160px] hover:scale-100': icon,
+		'pr-[160px] hover:scale-100 lg:pr-[50px]': icon,
 		'text-5xl': size === 'md',
 	});
 
@@ -39,7 +39,7 @@ export const ButtonLink = (props: ButtonLinkProps) => {
 			)}
 			{...restProps}
 		>
-			<span className='text-button-primary text-link-md font-normal uppercase font-intro leading-[1]'>
+			<span className='text-button-primary text-link-md font-normal uppercase font-intro leading-[1] md:text-2xl sm:text-base'>
 				{children}
 			</span>
 			{icon && (
@@ -47,7 +47,7 @@ export const ButtonLink = (props: ButtonLinkProps) => {
 					alt=''
 					width={88}
 					height={2}
-					className='absolute right-16 top-1/2 -translate-y-1/2 transition-all group-hover:right-14'
+					className='absolute right-16 top-1/2 -translate-y-1/2 transition-all group-hover:right-14 lg:hidden'
 					src='/icons/link-arrow.svg'
 				/>
 			)}

@@ -3,30 +3,21 @@ import { childLearningItems } from '@/shared/constants';
 import SectionLayout from '@/widgets/layouts/ui/section-layout';
 import { Fragment } from 'react';
 import { ButtonLink } from '@/shared/ui';
+import { ChildLearningCard } from '@/entities';
 
 export const ChildLearning = () => {
 	return (
-		<SectionLayout className='mb-section-bottom'>
-			<h2 className='font-intro text-blue-20 text-section-xl leading-[1] text-center mb-[70px]'>
+		<SectionLayout className='mb-section-bottom md:mb-24'>
+			<h2 className='font-intro text-blue-20 text-section-xl leading-[1] text-center mb-[70px] md:text-[40px]'>
 				ЧЕМУ МОЖЕТ НАУЧИТЬСЯ РЕБЕНОК
 			</h2>
-			<div className='relative flex items-end justify-between mb-[70px]'>
-				{childLearningItems.map(({ icon, pb, text }, index) => (
+			<div className='relative flex items-end justify-between mb-[70px] 2xl:gap-4 2xl:flex-wrap lg:justify-evenly lg:items-start'>
+				{childLearningItems.map((item, index) => (
 					<Fragment key={index}>
-						<div
-							className='text-white w-fit h-fit max-w-[16%] flex flex-col items-center gap-4'
-							style={{
-								marginBottom: `${pb}%`,
-							}}
-						>
-							<Image src={icon} alt='' width={175} height={175} />
-							<span className='block text-center font-intro text-3xl'>
-								{text}
-							</span>
-						</div>
+						<ChildLearningCard {...item} />
 					</Fragment>
 				))}
-				<div className='absolute aspect-[2.2/1] w-full z-[-1] scale-125 top-1/2 -translate-y-1/2'>
+				<div className='absolute aspect-[2.2/1] w-full z-[-1] scale-125 top-1/2 -translate-y-1/2 lg:rotate-45 lg:scale-[2] md:scale-[4]'>
 					<Image src='/patterns/child-learning-mark.png' alt='' fill />
 				</div>
 			</div>

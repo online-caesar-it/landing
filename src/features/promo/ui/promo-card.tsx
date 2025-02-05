@@ -32,7 +32,7 @@ export const PromoCard = (props: PromoCardProps) => {
 			</div>
 			<div className='absolute -bottom-1 left-0 w-full bg-grey-30 md:rounded-full md:bottom-[24px] md:left-[24px] md:right-[24px] md:w-auto'>
 				<Link
-					className='block w-full h-full py-[32px] text-center text-white font-intro text-3xl md:text-sm md:py-[16px] md:px-[24px]'
+					className='block w-full h-full py-[32px] text-center text-white font-intro text-3xl md:text-sm md:py-[16px] md:px-[24px] sm:text-[12px]'
 					href={link}
 				>
 					{linkLabel}
