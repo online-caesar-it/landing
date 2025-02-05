@@ -6,7 +6,7 @@ import { ButtonLink } from '@/shared/ui';
 
 export const ChildLearning = () => {
 	return (
-		<SectionLayout>
+		<SectionLayout className='mb-section-bottom'>
 			<h2 className='font-intro text-blue-20 text-section-xl leading-[1] text-center mb-[70px]'>
 				ЧЕМУ МОЖЕТ НАУЧИТЬСЯ РЕБЕНОК
 			</h2>

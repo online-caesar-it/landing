@@ -1,11 +1,13 @@
 import {
 	About,
 	Banner,
+	Stack,
 	Guarantees,
 	OurFeatures,
+	CoursesBlock,
 	ChildLearning,
+	Recording,
 } from '@/widgets';
-// import CoursesBlock from '@/widgets/courses/ui/courses-block';
 // import FeedbackBlock from '@/widgets/feedback/ui/feedback-block';
 
 const Page = () => {
@@ -16,6 +18,9 @@ const Page = () => {
 			<OurFeatures />
 			<Guarantees />
 			<ChildLearning />
+			<Stack />
+			<CoursesBlock />
+			<Recording />
 		</div>
 	);
 };

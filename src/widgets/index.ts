@@ -5,3 +5,6 @@ export * from './banner/ui';
 export * from './guarantees/ui';
 export * from './custom-swiper/ui';
 export * from './child-learning/ui';
+export * from './stack/ui';
+export * from './courses/ui';
+export * from './recording/ui';
