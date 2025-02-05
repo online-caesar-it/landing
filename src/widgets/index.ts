@@ -10,3 +10,4 @@ export * from './courses/ui';
 export * from './recording/ui';
 export * from './teachers/ui';
 export * from './promotions/ui';
+export * from './clients-reviews/ui';

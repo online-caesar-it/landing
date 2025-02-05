@@ -1,16 +1,6 @@
-import {
-	About,
-	Banner,
-	Stack,
-	Guarantees,
-	OurFeatures,
-	CoursesBlock,
-	ChildLearning,
-	Recording,
-	Teachers,
-	Promotions,
-} from '@/widgets';
-// import FeedbackBlock from '@/widgets/feedback/ui/feedback-block';
+import { Promotions, Guarantees, OurFeatures } from '@/widgets';
+import { About, Banner, Stack, Teachers, Recording } from '@/widgets';
+import { CoursesBlock, ChildLearning, ClientsReviews } from '@/widgets';
 
 const Page = () => {
 	return (
@@ -25,6 +15,7 @@ const Page = () => {
 			<Recording />
 			<Teachers />
 			<Promotions />
+			<ClientsReviews />
 		</div>
 	);
 };
