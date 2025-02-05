@@ -18,11 +18,12 @@ export const CustomCheckbox = ({ name, label }: CustomCheckboxProps) => {
 		>
 			<label className='relative flex items-center'>
 				<input
-					type='checkbox'
-					name={name}
 					required
+					name={name}
+					type='checkbox'
 					checked={checked}
 					className='absolute opacity-0 w-0 h-0'
+					onChange={() => {}}
 				/>
 				<div className='w-6 h-6 flex items-center justify-center bg-[#313244] rounded-md transition-all'>
 					{checked && (

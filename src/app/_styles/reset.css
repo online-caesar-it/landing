@@ -128,6 +128,7 @@ table {
   border-spacing: 0;
 }
 
-#guarantee .swiper {
+#guarantee .swiper,
+#promotions .swiper {
   overflow: visible;
 }

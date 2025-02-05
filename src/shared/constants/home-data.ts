@@ -87,3 +87,66 @@ export const childLearningItems = [
 		pb: 9,
 	},
 ];
+
+export const promotionsItems = [
+	{
+		id: 1,
+		title: 'бесплатный урок',
+		description:
+			'при записи на консультацию вы получите доступ на бесплатный пробный урок',
+		icon: '/promo/freeLesson.svg',
+		link: '/portfolio',
+		color: 'bg-linear-pink-promo',
+		linkLabel: '#',
+	},
+	{
+		id: 2,
+		title: 'пакет курсов',
+		description:
+			'при регистрации на два или более курса можно получить скидку 20%',
+		icon: '/promo/coursesStack.png',
+		link: '#',
+		color: 'bg-linear-blue-promo',
+		linkLabel: 'мои курсы',
+	},
+	{
+		id: 3,
+		title: 'Подписка на рассылку',
+		description:
+			'Скидки или специальные предложения для тех, кто подписался на рассылку новостей школы.',
+		icon: '/promo/subscription.png',
+		link: '#',
+		color: 'bg-linear-orange-promo',
+		linkLabel: 'информация',
+	},
+	{
+		id: 4,
+		title: 'Сезонные распродажи',
+		description:
+			'(например, «черная пятница», «новогодние распродажи» и т.д.), когда предлагаются значительные скидки на обучение.',
+		icon: '/promo/seasonsSales.png',
+		link: '#',
+		color: 'bg-linear-purple-promo',
+		linkLabel: 'контакты',
+	},
+	{
+		id: 5,
+		title: 'Групповые скидки',
+		description:
+			'Скидки, если несколько человек поступают на курс одновременно (например, от одной компании или учебного заведения).',
+		icon: '/promo/groupedSales.png',
+		link: '#',
+		color: 'bg-linear-blue-light-promo',
+		linkLabel: 'блог',
+	},
+	{
+		id: 6,
+		title: 'Промокоды',
+		description:
+			'Временные промокоды, которые можно использовать при регистрации или покупке курса, могут предоставлять скидки на обучение.',
+		icon: '/promo/promocodes.png',
+		link: '#',
+		color: 'bg-linear-red-promo',
+		linkLabel: 'все направления',
+	},
+];

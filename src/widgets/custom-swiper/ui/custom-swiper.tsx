@@ -16,24 +16,7 @@ export const CustomSwiper = <E extends { id: number }>({
 	...restProps
 }: CustomSwiperProps<E>) => {
 	return (
-		<Swiper
-			spaceBetween={20}
-			slidesPerView={2.1}
-			breakpoints={{
-				0: {
-					slidesPerView: 1,
-				},
-				768: {
-					slidesPerView: 1.24,
-					centeredSlides: true,
-				},
-				1025: {
-					slidesPerView: 2.25,
-					centeredSlides: false,
-				},
-			}}
-			{...restProps}
-		>
+		<Swiper {...restProps}>
 			{items.map(item => (
 				<SwiperSlide key={item.id}>
 					<CardComponent {...item} />
