@@ -6,3 +6,4 @@ export * from './teachers/ui';
 export * from './promotion-card/ui';
 export * from './new-vectors/ui';
 export * from './child-learning/ui';
+export * from './accordion/ui';
