@@ -15,6 +15,8 @@ import {
 	ClientsReviews,
 } from '@/widgets';
 
+// TODO: Секция с блогом, секция с учителями, мобильное меню, статусы для бэка
+
 const Page = () => {
 	return (
 		<div>
