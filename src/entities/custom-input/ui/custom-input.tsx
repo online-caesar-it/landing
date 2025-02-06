@@ -37,11 +37,14 @@ export const CustomInput = (props: UnionType) => {
 
 	return (
 		<>
-			<label htmlFor={inputName} className='block w-full mb-[40px]'>
+			<label
+				htmlFor={inputName}
+				className='block w-full mb-[40px] lg:mb-[20px]'
+			>
 				<input
 					{...register(inputName)}
 					className={twMerge(
-						'p-[35px] pb-[26px] w-full rounded-full border-none !text-section-sm  font-intro leading-[1.1] placeholder:font-intro placeholder:text-section-sm',
+						'p-[35px] pb-[26px] w-full rounded-full border-none !text-section-sm  font-intro leading-[1.1] placeholder:font-intro placeholder:text-section-sm lg:p-[20px] lg:pb-[14px] lg:!text-2xl',
 						cn,
 						className
 					)}
@@ -50,7 +53,10 @@ export const CustomInput = (props: UnionType) => {
 			</label>
 			{inputName && errors?.[inputName] && (
 				<p
-					className={twMerge('text-red-500 -mt-8 ml-8 text-2xl mb-4', errorCn)}
+					className={twMerge(
+						'text-red-500 -mt-8 ml-8 text-2xl mb-4 lg:-mt-9 lg:ml-5 lg:text-base lg:mb-2',
+						errorCn
+					)}
 				>
 					{errors[inputName]?.message as string}
 				</p>

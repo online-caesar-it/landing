@@ -1,6 +1,5 @@
+import { ReactNode, useEffect, useState } from 'react';
 import { motion } from 'motion/react';
-import { ReactNode, useState } from 'react';
-import { twMerge } from 'tailwind-merge';
 
 const FeedbackCard = ({
 	color,
@@ -10,9 +9,23 @@ const FeedbackCard = ({
 	color: string;
 	index: number;
 	children: ReactNode;
+	id?: number;
+	name?: string;
+	description?: string;
 }) => {
 	const [isHover, setIsHover] = useState(false);
 	const [isFull, setIsFull] = useState(false);
+	const [isMobile, setIsMobile] = useState(false);
+	const offset = isMobile ? 80 : 120;
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth <= 1024);
+		};
+		handleResize();
+		window.addEventListener('resize', handleResize);
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
 
 	const handleClick = () => {
 		setIsFull(prev => !prev);
@@ -20,13 +33,13 @@ const FeedbackCard = ({
 
 	const calculateLeft = () => {
 		if (isFull) {
-			return index * 120 - 120;
+			return index * offset - offset;
 		}
 
 		if (isHover) {
-			return index * 120 - 120;
+			return index * offset - offset;
 		} else {
-			return index * 120;
+			return index * offset;
 		}
 	};
 
@@ -34,9 +47,7 @@ const FeedbackCard = ({
 
 	return (
 		<motion.div
-			className={twMerge(
-				'p-2 rounded-[50px] aspect-[0.9/1] w-[57.5%] min-h-[600px] shadow-sm'
-			)}
+			className={`p-2 rounded-[50px] aspect-[0.9/1] w-[57.5%] min-h-[600px] shadow-sm 2xl:w-[73%] 2xl:rounded-[25px] lg:w-[90%] lg:min-h-[400px]`}
 			style={{
 				backgroundColor: color,
 				position: 'absolute',

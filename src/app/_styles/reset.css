@@ -129,6 +129,7 @@ table {
 }
 
 #guarantee .swiper,
-#promotions .swiper {
+#promotions .swiper,
+#reviewsSwiper .swiper {
   overflow: visible;
 }

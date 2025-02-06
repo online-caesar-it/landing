@@ -18,6 +18,8 @@ export default {
 				'page-title': 'clamp(45px, 6.2vw, 88px)',
 			},
 			backgroundImage: {
+				'linear-card-red':
+					'linear-gradient(158deg, rgba(175,29,70,1) 30%, rgba(195,177,138,1) 100%)',
 				'linear-section-red':
 					'linear-gradient(144deg, rgba(175,29,70,1) 0%, rgba(249,226,175,1) 100%)',
 				'linear-section-blue':

@@ -36,7 +36,9 @@ export const CustomCheckbox = ({ name, label }: CustomCheckboxProps) => {
 					)}
 				</div>
 			</label>
-			<span className='text-[#F6C7C5] text-lg font-intro'>{label}</span>
+			<span className='text-[#F6C7C5] text-lg font-intro leading-[1]'>
+				{label}
+			</span>
 		</div>
 	);
 };

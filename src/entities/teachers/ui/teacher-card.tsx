@@ -1,4 +1,11 @@
+'use client';
+
 import Image from 'next/image';
+import { TeacherCardRole } from './teacher-card-role';
+import { TeacherCardButton } from './teacher-card-button';
+import { TeacherCardFilter } from './teacher-card-filter';
+import { TeacherCardDescription } from './teacher-card-description';
+import { useState } from 'react';
 
 type TeacherCardProps = {
 	name: string;
@@ -9,21 +16,26 @@ type TeacherCardProps = {
 
 export const TeacherCard = (props: TeacherCardProps) => {
 	const { avatar, description, name, role } = props;
+	const [open, setOpen] = useState<boolean>(false);
 
 	return (
-		<div className='max-w-[12%] text-center'>
-			<div className='relative max-w-[173px] aspect-square rounded-full bg-white mb-[30px]'>
-				<Image src={avatar} alt={`Преподаватель - ${name}`} fill />
+		<div className={`relative flex ${open ? '' : 'mr-[30px]'}`}>
+			<div className='relative bg-black aspect-square min-w-[366px] rounded-[50px] overflow-hidden z-30 group'>
+				<TeacherCardRole isOpen={open} role={role} />
+				<TeacherCardFilter isOpen={open} />
+				<TeacherCardButton isOpen={open} setOpen={setOpen} />
+				<Image
+					fill
+					alt='Учитель'
+					src='/images/mock.png'
+					className='object-cover'
+				/>
 			</div>
-			<div className='mb-[25px]'>
-				<h3 className='font-intro text-blue-0 text-5xl leading-[1]'>{name}</h3>
-			</div>
-			<div className='bg-linear-dark py-[15px] text-white rounded-[30px] mb-[42px]'>
-				<p>{description}</p>
-			</div>
-			<div className='text-white leading-[1]'>
-				<span>{role}</span>
-			</div>
+			<TeacherCardDescription
+				name={name}
+				isOpen={open}
+				description={description}
+			/>
 		</div>
 	);
 };

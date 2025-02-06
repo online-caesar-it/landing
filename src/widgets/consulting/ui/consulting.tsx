@@ -4,22 +4,22 @@ import { FullscreenSectionLayout } from '@/widgets/layouts/ui/fullscreen-section
 
 export const Consulting = () => {
 	return (
-		<FullscreenSectionLayout className='bg-linear-section-red py-[155px]'>
-			<div className=''>
-				<h2 className='font-intro text-section-xl leading-[1] text-right mb-[150px]'>
-					ЗАПИСАТЬСЯ <br /> НА консультацию
+		<FullscreenSectionLayout className='bg-linear-section-red py-[155px] lg:py-[100px] md:py-[70px]'>
+			<div>
+				<h2 className='font-intro text-section-xl leading-[1] text-right mb-[150px] lg:mb-[90px] md:mb-[45px] md:text-[40px]'>
+					ЗАПИСАТЬСЯ <br className='md:hidden' /> НА консультацию
 				</h2>
-				<div className='flex justify-between'>
-					<div className='w-[40%] font-intro text-grey-50'>
-						<span className='block text-5xl underline mb-12'>
+				<div className='flex justify-between md:flex-col md:gap-6'>
+					<div className='w-[40%] font-intro text-grey-50 md:w-[85%] sm:w-full'>
+						<span className='block text-5xl underline mb-12 md:mb-6 lg:text-2xl'>
 							пробный урок в подарок
 						</span>
-						<p className='text-[32px] leading-[1] mb-[70px]'>
+						<p className='text-[32px] leading-[1] mb-[70px] lg:text-2xl lg:mb-5 sm:text-[22px]'>
 							ответим на все ваши вопросы поможем с выбором направления и
 							расскажем подробнее о интересующем направлении
 						</p>
-						<div className=''>
-							<span className='text-red-30 text-[32px]'>
+						<div className='md:hidden'>
+							<span className='text-red-30 text-[32px] leading-[1] lg:text-2xl sm:text-[22px] sm:leading-[1] md:mb-5'>
 								так же можно с нами связаться
 							</span>
 							<div className=''>
@@ -27,8 +27,16 @@ export const Consulting = () => {
 							</div>
 						</div>
 					</div>
-					<div className='w-[55%]'>
+					<div className='w-[55%] md:w-full'>
 						<ContactForm variant='white' />
+					</div>
+					<div className='hidden md:block font-intro'>
+						<span className='text-grey-50 block text-[32px] sm:text-[22px] sm:leading-[1] md:mb-2'>
+							так же можно с нами связаться
+						</span>
+						<div className=''>
+							<Socials />
+						</div>
 					</div>
 				</div>
 			</div>

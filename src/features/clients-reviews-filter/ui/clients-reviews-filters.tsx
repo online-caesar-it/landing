@@ -15,7 +15,7 @@ export const ClientsReviewsFilters = () => {
 	};
 
 	return (
-		<div className='flex items-center justify-between'>
+		<div className='flex items-center justify-between flex-wrap gap-4'>
 			{reviews.map(category => (
 				<Fragment key={category.id}>
 					<Button
@@ -23,6 +23,7 @@ export const ClientsReviewsFilters = () => {
 						onClick={() => handleClick(category.value)}
 						variant='outline'
 						size='lg'
+						className='2xl:text-2xl lg:flex-grow'
 					>
 						{category.title}
 					</Button>

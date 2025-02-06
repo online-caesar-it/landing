@@ -3,17 +3,19 @@ import { ClientsReviewsFilters } from '@/features/';
 import SectionLayout from '@/widgets/layouts/ui/section-layout';
 import { ClientReviewsProvider } from './client-reviews-context';
 import FeedbackListCascade from '@/features/feedback/ui/feedback-list-cascade';
+import { FeedbackSwiper } from '@/features/feedback/ui/feedback-swiper';
 
 export const ClientsReviews = async () => {
 	return (
-		<SectionLayout className='mb-section-bottom'>
-			<div className='text-blue-0 text-center font-intro mb-[110px]'>
+		<SectionLayout className='mb-section-bottom md:mb-24'>
+			<div className='text-blue-0 text-center font-intro mb-[110px] md:mb-[30px]'>
 				<h2 className='text-section-xl'>ОТЗЫВЫ КЛИЕНТОВ</h2>
 				<p className='text-5xl'>ПРО ОБРАЗОВАНИЕ И ПРЕПОДАВАТЕЛЕЙ</p>
 			</div>
 			<ClientReviewsProvider>
-				<div className='w-full h-[620px] mb-[80px]'>
+				<div className='w-full h-[620px] mb-[80px] lg:h-[400px] md:mb-0'>
 					<FeedbackListCascade />
+					<FeedbackSwiper />
 				</div>
 				<div className=''>
 					<ClientsReviewsFilters />

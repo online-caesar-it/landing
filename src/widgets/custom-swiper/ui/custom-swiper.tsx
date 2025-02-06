@@ -17,8 +17,8 @@ export const CustomSwiper = <E extends { id: number }>({
 }: CustomSwiperProps<E>) => {
 	return (
 		<Swiper {...restProps}>
-			{items.map(item => (
-				<SwiperSlide key={item.id}>
+			{items.map((item, index) => (
+				<SwiperSlide key={index}>
 					<CardComponent {...item} />
 				</SwiperSlide>
 			))}
