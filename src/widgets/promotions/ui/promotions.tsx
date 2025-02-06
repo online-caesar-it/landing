@@ -8,11 +8,11 @@ import { ButtonLink } from '@/shared/ui';
 
 export const Promotions = () => {
 	return (
-		<SectionLayout id='promotions' className='mb-section-bottom'>
-			<h2 className='font-intro text-blue-0 leading-[1] text-section-xl text-left mb-[75px]'>
-				АКТУАЛЬНЫЕ СКИДКИ <br /> И АКЦИИ
+		<SectionLayout id='promotions' className='mb-section-bottom md:mb-24'>
+			<h2 className='font-intro text-blue-0 leading-[1] text-section-xl text-left mb-[75px] md:text-[40px]'>
+				АКТУАЛЬНЫЕ СКИДКИ <br className='md:hidden' /> И АКЦИИ
 			</h2>
-			<div className='mb-[125px]'>
+			<div className='mb-[125px] lg:mb-[90px] md:mb-[45px]'>
 				<CustomSwiper
 					spaceBetween={30}
 					slidesPerView={3.2}
@@ -21,10 +21,14 @@ export const Promotions = () => {
 							slidesPerView: 1,
 						},
 						768: {
-							slidesPerView: 2.2,
+							slidesPerView: 1.1,
 							centeredSlides: true,
 						},
 						1025: {
+							slidesPerView: 2.1,
+							centeredSlides: false,
+						},
+						1325: {
 							slidesPerView: 3.2,
 							centeredSlides: false,
 						},

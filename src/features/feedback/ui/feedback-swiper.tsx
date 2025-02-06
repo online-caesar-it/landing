@@ -12,7 +12,7 @@ export const FeedbackSwiper = () => {
 	}
 
 	return (
-		<div id='reviewsSwiper' className='hidden md:block'>
+		<div id='reviewsSwiper' className='hidden md:block mb-[60px]'>
 			<CustomSwiper
 				spaceBetween={20}
 				slidesPerView={1.1}

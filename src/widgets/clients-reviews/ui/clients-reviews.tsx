@@ -9,11 +9,13 @@ export const ClientsReviews = async () => {
 	return (
 		<SectionLayout className='mb-section-bottom md:mb-24'>
 			<div className='text-blue-0 text-center font-intro mb-[110px] md:mb-[30px]'>
-				<h2 className='text-section-xl'>ОТЗЫВЫ КЛИЕНТОВ</h2>
-				<p className='text-5xl'>ПРО ОБРАЗОВАНИЕ И ПРЕПОДАВАТЕЛЕЙ</p>
+				<h2 className='text-section-xl leading-[1] md:text-[40px]'>
+					ОТЗЫВЫ КЛИЕНТОВ
+				</h2>
+				<p className='text-5xl md:text-lg'>ПРО ОБРАЗОВАНИЕ И ПРЕПОДАВАТЕЛЕЙ</p>
 			</div>
 			<ClientReviewsProvider>
-				<div className='w-full h-[620px] mb-[80px] lg:h-[400px] md:mb-0'>
+				<div className='w-full h-[620px] mb-[80px] lg:h-[400px] md:mb-0 md:h-auto'>
 					<FeedbackListCascade />
 					<FeedbackSwiper />
 				</div>

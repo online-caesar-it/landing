@@ -6,7 +6,7 @@ export const FeedbackCardSwiper = (props: FeedbackCardSwiperProps) => {
 	const { color, description, name } = props;
 	return (
 		<div
-			className='rounded-[25px] p-5 aspect-video'
+			className='rounded-[25px] p-5 min-h-[360px]'
 			style={{
 				backgroundColor: color,
 			}}
