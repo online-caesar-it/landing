@@ -8,11 +8,11 @@
   letter-spacing: 5%;
 }
 
-.purpleIcon {}
-
-.yellowIcon {}
-
-.redIcons {}
+.section {
+  @media (max-height: 966px) {
+    min-height: 48dvh;
+  }
+}
 
 @media (max-width: 1142px) {
 

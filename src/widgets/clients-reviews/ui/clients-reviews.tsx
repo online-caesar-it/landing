@@ -15,7 +15,7 @@ export const ClientsReviews = async () => {
 				<p className='text-5xl md:text-lg'>ПРО ОБРАЗОВАНИЕ И ПРЕПОДАВАТЕЛЕЙ</p>
 			</div>
 			<ClientReviewsProvider>
-				<div className='w-full h-[620px] mb-[80px] lg:h-[400px] md:mb-0 md:h-auto'>
+				<div className='w-full h-[620px] mb-[80px] lg:h-[480px] md:mb-0 md:h-auto'>
 					<FeedbackListCascade />
 					<FeedbackSwiper />
 				</div>

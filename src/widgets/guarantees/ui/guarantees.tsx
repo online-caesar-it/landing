@@ -8,7 +8,7 @@ import { PromoCard } from '@/features';
 
 export const Guarantees = () => {
 	return (
-		<SectionLayout id='guarantee' className='mb-section-bottom md:mb-24'>
+		<SectionLayout id='guarantee' className='mb-section-bottom lg:mb-24'>
 			<Plate
 				mode='full-plate'
 				variant='secondary'

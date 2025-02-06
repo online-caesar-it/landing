@@ -6,9 +6,10 @@ import style from '../styles/style.module.css';
 export const Banner = () => {
 	return (
 		<SectionLayout
-			className={
-				'relative pt-[120px] mb-[380px] min-h-[90dvh] 3xl:mb-[80px] 3xl:pt-[40px] md:min-h-[65dvh]'
-			}
+			className={twMerge(
+				'relative pt-[120px] mb-[380px] min-h-[90dvh] 3xl:mb-[80px] 3xl:pt-[40px] md:min-h-[65dvh]',
+				style.section
+			)}
 		>
 			<h2
 				className={twMerge(

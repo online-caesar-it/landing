@@ -4,3 +4,4 @@ export * from './teachers';
 export * from './mock-reviews';
 export * from './socials';
 export * from './accordion';
+export * from './links';

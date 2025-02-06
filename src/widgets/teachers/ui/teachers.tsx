@@ -5,7 +5,7 @@ import { Fragment } from 'react';
 
 export const Teachers = () => {
 	return (
-		<SectionLayout className='mb-section-bottom'>
+		<SectionLayout className='mb-section-bottom lg:mb-24'>
 			<div className='font-intro text-blue-0 mb-[70px]'>
 				<h2 className='text-section-xl'>Наша команда</h2>
 				<span className='text-3xl'>Мы очень классные</span>

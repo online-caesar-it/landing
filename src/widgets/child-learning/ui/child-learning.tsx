@@ -7,7 +7,7 @@ import { ChildLearningCard } from '@/entities';
 
 export const ChildLearning = () => {
 	return (
-		<SectionLayout className='mb-section-bottom md:mb-24'>
+		<SectionLayout className='mb-section-bottom lg:mb-24'>
 			<h2 className='font-intro text-blue-20 text-section-xl leading-[1] text-center mb-[70px] md:text-[40px]'>
 				ЧЕМУ МОЖЕТ НАУЧИТЬСЯ РЕБЕНОК
 			</h2>

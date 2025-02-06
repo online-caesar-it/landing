@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export const Recording = () => {
 	return (
-		<SectionLayout className='relative mb-section-bottom p-[30px] md:p-0'>
+		<SectionLayout className='relative mb-section-bottom lg:mb-24 p-[30px] md:p-0'>
 			<div className='mb-[88px]'>
 				<h2 className='font-intro text-section-xl text-right leading-[1] text-blue-10 md:text-[40px]'>
 					оставить заявку <br /> на запись

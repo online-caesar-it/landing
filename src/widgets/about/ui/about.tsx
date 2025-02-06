@@ -4,7 +4,7 @@ import SectionLayout from '@/widgets/layouts/ui/section-layout';
 
 export const About = () => {
 	return (
-		<SectionLayout className='mb-section-bottom md:mb-24'>
+		<SectionLayout className='mb-section-bottom lg:mb-24'>
 			<Plate
 				variant='primary'
 				plateImage='/images/characterNotebook3d.png'
