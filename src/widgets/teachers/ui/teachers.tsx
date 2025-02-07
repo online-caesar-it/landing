@@ -1,5 +1,5 @@
-import { TeacherCard } from '@/entities/teachers/ui/teacher-card';
 import SectionLayout from '@/widgets/layouts/ui/section-layout';
+import { TeacherCard } from '@/entities/teachers/ui/teacher-card';
 
 export const Teachers = () => {
 	return (
@@ -9,9 +9,6 @@ export const Teachers = () => {
 				<span className='text-3xl'>Мы очень классные</span>
 			</div>
 			<div className='flex items-center justify-between gap-[30px] overflow-x-auto'>
-				<TeacherCard />
-				<TeacherCard />
-				<TeacherCard />
 				<TeacherCard />
 			</div>
 		</SectionLayout>

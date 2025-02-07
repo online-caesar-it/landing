@@ -5,7 +5,7 @@ import SectionLayout from '@/widgets/layouts/ui/section-layout';
 export const Stack = () => {
 	return (
 		<SectionLayout className='mb-section-bottom lg:mb-24'>
-			<h2 className='font-intro text-blue-20 text-section-xl leading-[1] mb-[160px] 2xl:mb-[80px] md:text-[40px] md:mb-[30px]'>
+			<h2 className='font-intro text-blue-20 text-section-xl leading-[1] mb-[60px] 2xl:mb-[80px] md:text-[40px] md:mb-[30px]'>
 				КАКИЕ ИНСТРУМЕНТЫ ИСПОЛЬЗУЮТСЯ <br /> В ОБУЧЕНИИ
 			</h2>
 			<div>
