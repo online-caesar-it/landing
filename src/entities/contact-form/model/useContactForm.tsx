@@ -6,14 +6,16 @@ import { useMutation } from '@tanstack/react-query';
 import { zodResolver } from '@hookform/resolvers/zod/dist/zod.js';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
+import { useState } from 'react';
 
 export const useContactForm = () => {
+	const [isLoaded, setLoaded] = useState<boolean>(false);
 	const form = useForm<z.infer<typeof formSchema>>({
 		mode: 'onBlur',
 		resolver: zodResolver(formSchema),
 	});
 
-	const {} = useMutation({
+	const { isSuccess } = useMutation({
 		mutationKey: ['contact-form'],
 		mutationFn: sendFormData,
 		onSuccess: () => {
@@ -26,7 +28,13 @@ export const useContactForm = () => {
 
 	const submitter = async (dataForm: z.infer<typeof formSchema>) => {
 		console.log(dataForm);
+		form.reset();
+		setLoaded(true);
+
+		setTimeout(() => {
+			setLoaded(false);
+		}, 4000);
 	};
 
-	return { submitter, ...form };
+	return { submitter, isSuccess, isLoaded, ...form };
 };

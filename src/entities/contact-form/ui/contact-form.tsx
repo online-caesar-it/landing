@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@/shared/ui';
+import { Button, FormStatus } from '@/shared/ui';
 import { useContactForm } from '../model';
 import { CustomInput } from '@/entities/custom-input/ui';
 import { CustomCheckbox } from '@/entities/custom-checkbox/ui';
@@ -12,13 +12,16 @@ type ContactFormProps = {
 export const ContactForm = ({ variant = 'red' }: ContactFormProps) => {
 	const {
 		register,
+		isLoaded,
 		submitter,
+		isSuccess,
 		handleSubmit,
 		formState: { errors },
 	} = useContactForm();
 
 	return (
-		<form onSubmit={handleSubmit(submitter)} className='w-full'>
+		<form onSubmit={handleSubmit(submitter)} className='relative w-full'>
+			<FormStatus isSuccess={isSuccess} isLoaded={isLoaded} />
 			<CustomInput
 				type='text'
 				inputName='name'
