@@ -1,12 +1,16 @@
-import { useQuery } from "@tanstack/react-query";
-import { userApi } from "../api/user.api";
+import { useQuery } from '@tanstack/react-query';
+import { userApi } from '../api/user.api';
+import { localStorageToken } from '../local-storage/token';
 
 export const useSession = () => {
-  const { data, isLoading } = useQuery({
-    queryKey: ["get-self"],
-    queryFn: userApi.getSelf,
-    queryHash: "15m",
-  });
+	const token = localStorageToken.getAccessToken();
 
-  return { session: data, isLoading };
+	const { data, isLoading } = useQuery({
+		queryKey: ['get-self'],
+		queryFn: userApi.getSelf,
+		queryHash: '15m',
+		enabled: !!token,
+	});
+
+	return { session: data, isLoading };
 };
