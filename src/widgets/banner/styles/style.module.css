@@ -9,9 +9,31 @@
 }
 
 .section {
-  @media (max-height: 966px) {
-    min-height: 48dvh;
+  /* @media (min-height: 320px) {
+    min-height: 80dvh;
   }
+
+  @media (min-height: 966px) {
+    min-height: 60dvh;
+  } */
+
+
+  @media (max-width: 1024px) {
+    min-height: 700px;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 500px;
+  }
+
+  @media (max-width: 490px) {
+    min-height: 60dvh;
+  }
+
+  @media (max-width: 375px) {
+    min-height: 80dvh;
+  }
+
 }
 
 @media (max-width: 1142px) {
@@ -118,7 +140,7 @@
     width: 90%;
     aspect-ratio: 1/1;
     scale: 1;
-    rotate: -20deg;
+    rotate: 0;
   }
 
   .redIcons {
@@ -127,7 +149,7 @@
     width: 90%;
     aspect-ratio: 1/1;
     scale: 1;
-    rotate: 45deg;
+    rotate: 0;
   }
 }
 

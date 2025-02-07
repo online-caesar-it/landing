@@ -6,7 +6,7 @@ import { Fragment } from 'react';
 export const OurFeatures = () => {
 	return (
 		<SectionLayout className='mb-section-bottom lg:mb-24'>
-			<div className='flex flex-wrap justify-between gap-4 lg:gap-2 md:mb-[60px]'>
+			<div className='flex flex-wrap justify-between gap-4 lg:gap-2 md:mb-[30px]'>
 				{features.map((feature, index) => (
 					<Fragment key={index}>
 						<OurFeaturesCard {...feature} number={index} />
