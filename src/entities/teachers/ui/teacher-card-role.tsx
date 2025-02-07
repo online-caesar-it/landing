@@ -1,16 +1,18 @@
-type TeacherCardRoleProps = {
-	isOpen: boolean;
-	role: string;
+import { twMerge } from 'tailwind-merge';
+
+type TTeacherCardRole = {
+	isExpanded: boolean;
 };
 
-export const TeacherCardRole = ({ isOpen, role }: TeacherCardRoleProps) => {
+export const TeacherCardRole = ({ isExpanded }: TTeacherCardRole) => {
 	return (
-		<div
-			className={`absolute -bottom-full left-1/2 -translate-x-1/2 z-20 text-white font-intro text-[30px] leading-[1] transition-all text-center duration-500 group-hover:bottom-5 ${
-				isOpen && 'bottom-5'
-			}`}
+		<span
+			className={twMerge(
+				'absolute -bottom-full left-1/2 -translate-x-1/2 text-white font-intro text-[30px] transition-all duration-300 z-[2] group-hover:bottom-5',
+				isExpanded && 'bottom-5'
+			)}
 		>
-			{role}
-		</div>
+			Фронтенд
+		</span>
 	);
 };
