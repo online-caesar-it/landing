@@ -7,7 +7,7 @@ export const Banner = () => {
 	return (
 		<SectionLayout
 			className={twMerge(
-				'relative pt-[120px] mb-[380px] min-h-[90dvh] 3xl:mb-[80px] 3xl:pt-[40px] md:min-h-[65dvh]',
+				'relative pt-[120px] mb-[280px] min-h-[960px] 3xl:mb-[80px] 3xl:pt-[40px] 3xl:min-h-[765px]',
 				style.section
 			)}
 		>
