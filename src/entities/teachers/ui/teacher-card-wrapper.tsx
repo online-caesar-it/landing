@@ -18,15 +18,23 @@ export const TeacherCardWrapper = (props: TeacherCardWrapper) => {
 				isExpanded && 'rounded-r-none pointer-events-none'
 			)}
 			onClick={handleExpand}
-			animate={{ width: isExpanded ? 'auto' : '400px' }}
+			animate={{ width: isExpanded ? '1050' : '400px' }}
 			transition={{ duration: 0.5 }}
 		>
 			<Image
 				fill
+				priority
+				sizes=''
 				alt='Учитель'
 				src='/images/mock.png'
 				className='object-cover pointer-events-none'
 			/>
+			<div
+				className={twMerge(
+					'bg-black opacity-0 absolute top-0 left-0 w-full h-full z-[1] group-hover:opacity-30 transition-all duration-300',
+					isExpanded && 'opacity-30'
+				)}
+			></div>
 			{children}
 		</motion.div>
 	);

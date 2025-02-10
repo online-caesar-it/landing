@@ -133,3 +133,8 @@ table {
 #reviewsSwiper .swiper {
   overflow: visible;
 }
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+  /* Для Chrome, Safari */
+}

@@ -13,7 +13,7 @@ export const TeacherDescription = (props: TTeacherDescription) => {
 			className={twMerge(
 				'bg-[#303236] p-10 text-white rounded-r-[50px] min-w-[650px] cursor-pointer',
 				isExpanded
-					? 'opacity-100 pointer-events-auto'
+					? 'opacity-100 pointer-events-auto z-[2]'
 					: 'opacity-0 pointer-events-none'
 			)}
 			animate={{
