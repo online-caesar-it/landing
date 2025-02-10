@@ -5,6 +5,9 @@ import { useMutation } from '@tanstack/react-query';
 import { useForm, useWatch } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { CustomInput } from '@/entities/custom-input/ui';
+import { Button, Separator } from '@/shared/ui';
+import { CustomCheckbox } from '@/entities';
 
 const signUpSchema = z.object({
 	email: z.string().min(5).email('Введите корректный email'),
@@ -42,73 +45,85 @@ const SignUpForm = () => {
 	return (
 		<div className='flex flex-col items-center bg-[#33334D] px-[6.7%] pb-[3.4%] pt-[4%] w-fit rounded-[50px] mx-auto mt-[6%] font-intro'>
 			<div>
-				<h2 className='text-5xl text-blue-20mb-[60px]'>Регистрация</h2>
+				<h2 className='block w-fit text-5xl text-blue-20 mb-[60px] mx-auto'>
+					Регистрация
+				</h2>
 
 				<form
 					onSubmit={handleSubmit(onSubmit)}
-					className='flex flex-col gap-2 w-[600px]'
+					className='flex flex-col w-[600px]'
 				>
-					<label className='flex flex-col mb-[30px]'>
-						<span className='text-blue-10 mb-4'>Фамилия*</span>
-						<input
-							className='text-gray-800 p-2 rounded-full px-6 py-7 pb-[22px] leading-[1] text-3xl'
-							placeholder='email'
-							type='email'
-							{...register('email')}
-						/>
-						{errors.email && (
-							<p className='text-red-500'>{errors.email.message}</p>
-						)}
-					</label>
+					<CustomInput
+						required
+						formSize='md'
+						variant='blue'
+						label='Фамилия'
+						errors={errors}
+						inputName='surname'
+						placeholder='Фамилия'
+						register={register}
+					/>
+					<Separator offset={30} />
+					<CustomInput
+						required
+						formSize='md'
+						variant='blue'
+						label='Имя'
+						errors={errors}
+						inputName='firstName'
+						placeholder='Имя'
+						register={register}
+					/>
+					<Separator offset={30} />
+					<CustomInput
+						required
+						type='email'
+						formSize='md'
+						variant='blue'
+						label='Отчество'
+						errors={errors}
+						inputName='patronymic'
+						placeholder='Отчество'
+						register={register}
+					/>
+					<Separator offset={30} />
+					<CustomInput
+						required
+						type='email'
+						formSize='md'
+						variant='blue'
+						label='Электронная почта'
+						errors={errors}
+						inputName='email'
+						placeholder='email'
+						register={register}
+					/>
+					<Separator offset={30} />
+					<CustomInput
+						required
+						type='phone'
+						formSize='md'
+						variant='blue'
+						label='Электронная почта'
+						errors={errors}
+						inputName='phone'
+						placeholder='Телефон'
+						register={register}
+					/>
 
-					<div>
-						<input
-							className='text-gray-800 p-2'
-							placeholder='Имя'
-							type='text'
-							{...register('firstName')}
+					<Separator className='mb-[34px]' />
+
+					<div className='mx-auto'>
+						<CustomCheckbox
+							variant='blue'
+							name='agreement'
+							label='ДАЮ СОГЛАСИЕ НА ОБРАБОТКУ ДАННЫХ*'
 						/>
-						{errors.firstName && (
-							<p className='text-red-500'>{errors.firstName.message}</p>
-						)}
 					</div>
 
-					<div>
-						<input
-							className='text-gray-800 p-2'
-							placeholder='Фамилия'
-							type='text'
-							{...register('surname')}
-						/>
-						{errors.surname && (
-							<p className='text-red-500'>{errors.surname.message}</p>
-						)}
-					</div>
-
-					<div>
-						<input
-							className='text-gray-800 p-2'
-							placeholder='Отчество'
-							type='text'
-							{...register('patronymic')}
-						/>
-					</div>
-
-					<div>
-						<input
-							className='text-gray-800 p-2'
-							placeholder='Телефон'
-							type='tel'
-							{...register('phone')}
-						/>
-						{errors.phone && (
-							<p className='text-red-500'>{errors.phone.message}</p>
-						)}
-					</div>
-
-					<button type='submit' className='bg-yellow-900'>
-						Отправить
-					</button>
+					<Button type='submit' className='bg-yellow-900' size='md'>
+						Зарегистрироваться
+					</Button>
 				</form>
 
 				<div className='flex flex-col gap-2'>
