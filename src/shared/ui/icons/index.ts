@@ -2,3 +2,6 @@ export * from './character-red-icon';
 export * from './chararcter-purple-icon';
 export * from './character-yellow-icon';
 export * from './icon-template';
+export * from './close';
+export * from './burger-menu';
+export * from './chevron-down-icon-big';

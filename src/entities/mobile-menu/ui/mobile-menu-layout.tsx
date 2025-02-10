@@ -1,9 +1,10 @@
 'use client';
 
-import Logo from '@/widgets/header/ui/logo';
-import { MobileMenuTrigger } from './mobile-menu-trigger';
-import { twMerge } from 'tailwind-merge';
 import { useMobileMenu } from '../model';
+import { MenuHeader } from './menu-header';
+import { MenuAddress } from './menu-address';
+import { MenuLinksList } from './menu-links-list';
+import { twMerge } from 'tailwind-merge';
 
 type TMobileMenuLayout = {
 	children?: React.ReactNode;
@@ -11,22 +12,23 @@ type TMobileMenuLayout = {
 };
 
 export const MobileMenuLayout = (props: TMobileMenuLayout) => {
-	const { children, className } = props;
+	const { className } = props;
 	const { isOpen } = useMobileMenu();
+
 	return (
 		<div
 			className={twMerge(
-				'fixed bg-black w-full h-full top-0 -right-full text-white transition-all duration-700',
+				'fixed bg-grey-85 w-full h-full top-0 -right-full text-white transition-all duration-700',
 				isOpen && 'right-0',
 				className
 			)}
 		>
-			<div className='max-w-[1400px] w-[94%] mx-auto'>
-				<div className='flex justify-between items-center gap-4 py-5'>
-					<Logo />
-					<MobileMenuTrigger />
+			<div className='max-w-[1400px] w-[94%] mx-auto h-full flex flex-col justify-between overflow-auto scrollbar-hidden'>
+				<MenuHeader />
+				<div className='flex justify-between items-end gap-5 relative pb-[40px] pt-[60px] lg:flex-col lg:items-start md:pb-[16px]'>
+					<MenuLinksList />
+					<MenuAddress />
 				</div>
-				<div className=''>{children}</div>
 			</div>
 		</div>
 	);

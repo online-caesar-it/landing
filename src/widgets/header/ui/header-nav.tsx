@@ -2,7 +2,7 @@ import Nav from './nav';
 import Logo from './logo';
 import HeaderAuth from './header-auth';
 import SectionLayout from '@/widgets/layouts/ui/section-layout';
-import { MobileMenu, MobileMenuLayout, MobileMenuTrigger } from '@/entities';
+import { MobileMenu } from '@/entities';
 import React from 'react';
 
 const HeaderNav = () => {
@@ -15,12 +15,7 @@ const HeaderNav = () => {
 			<div className='2xl:hidden'>
 				<HeaderAuth />
 			</div>
-			<MobileMenu>
-				<MobileMenuTrigger />
-				<MobileMenuLayout>
-					<div className=''></div>
-				</MobileMenuLayout>
-			</MobileMenu>
+			<MobileMenu />
 		</SectionLayout>
 	);
 };

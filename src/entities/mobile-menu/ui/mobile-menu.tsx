@@ -1,6 +1,8 @@
 'use client';
 
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
+import { MobileMenuTrigger } from './mobile-menu-trigger';
+import { MobileMenuLayout } from './mobile-menu-layout';
 
 type TMobileMenuContext = {
 	isOpen: boolean;
@@ -13,11 +15,21 @@ type TMobileMenuProps = {
 	children?: React.ReactNode;
 };
 
-export const MobileMenu = ({ children }: TMobileMenuProps) => {
+export const MobileMenu = ({}: TMobileMenuProps) => {
 	const [isOpen, setOpen] = useState<boolean>(false);
+
+	useEffect(() => {
+		if (isOpen) document.body.classList.add('menu-open');
+
+		return () => {
+			document.body.classList.remove('menu-open');
+		};
+	}, [isOpen]);
+
 	return (
 		<MobileMenuContext.Provider value={{ isOpen, setOpen }}>
-			{children}
+			<MobileMenuTrigger />
+			<MobileMenuLayout />
 		</MobileMenuContext.Provider>
 	);
 };

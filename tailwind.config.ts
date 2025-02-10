@@ -125,6 +125,7 @@ export default {
 			'7xl': '60px',
 			'8xl': '72px',
 			'9xl': '88px',
+			'mobile-menu-link': 'clamp(36px, 5.4vw, 78px)',
 		},
 		screens: {
 			'5xl': { max: '1729px' },
