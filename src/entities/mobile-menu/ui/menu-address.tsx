@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export const MenuAddress = () => {
 	return (
-		<div className='sticky bottom-0 block lg:flex justify-between items-end lg:w-full md:flex-col md:items-start md:gap-10 bg-grey-85 pb-10 md:pb-0'>
+		<div className='sticky bottom-0 block lg:flex justify-between items-end lg:w-full md:flex-col md:items-start md:gap-10 bg-grey-85 lg:pb-10 md:pb-0'>
 			<div className='flex flex-col mb-7 lg:mb-0'>
 				<span className='block text-2xl text-[#555975] mb-5 md:text-base md:mb-[15px]'>
 					Контакты
