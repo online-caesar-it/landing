@@ -42,7 +42,9 @@ const SignUpForm = () => {
 	return (
 		<div className='flex flex-col items-center bg-[#33334D] px-[6.7%] pb-[3.4%] pt-[4%] w-fit rounded-[50px] mx-auto mt-[6%] font-intro'>
 			<div>
-				<h2 className='text-5xl text-blue-20mb-[60px]'>Регистрация</h2>
+				<h2 className='block w-fit text-5xl text-blue-20 mb-[60px] mx-auto'>
+					Регистрация
+				</h2>
 
 				<form
 					onSubmit={handleSubmit(onSubmit)}
