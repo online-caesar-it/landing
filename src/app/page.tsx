@@ -15,9 +15,6 @@ import {
 	ClientsReviews,
 } from '@/widgets';
 
-// TODO:
-// мобильное меню
-
 const Page = () => {
 	return (
 		<div>
