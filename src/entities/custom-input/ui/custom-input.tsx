@@ -33,11 +33,13 @@ export const CustomInput = <T extends FieldValues>(props: UnionType<T>) => {
 	} = props;
 
 	const cn = twMerge(
-		variant === 'red' && 'bg-red-65 text-red-95 placeholder:text-red-95',
+		variant === 'red' &&
+			'bg-red-65 text-grey-30 placeholder:text-red-95 focus:outline-purple-80 active:outline-purple-80',
 		variant === 'white' && 'bg-red-30 text-grey-90 placeholder:text-[#B08585]',
 		variant === 'blue' && 'bg-blue-45 text-grey-85 placeholder:text-grey-20',
 		formSize === 'md' &&
-			'p-2 rounded-full px-6 py-7 pb-[22px] !leading-[1] text-3xl'
+			'p-2 rounded-full px-6 py-7 pb-[22px] !leading-[1] text-3xl',
+		formSize === 'lg' && 'text-5xl leading-[1]'
 	);
 
 	const errorCn = twMerge(
@@ -62,7 +64,7 @@ export const CustomInput = <T extends FieldValues>(props: UnionType<T>) => {
 					{...register(inputName)}
 					className={twMerge(
 						className,
-						'p-[35px] pb-[26px] w-full rounded-full border-none text-section-sm  font-intro leading-[1.1] placeholder:font-intro placeholder:text-section-sm lg:p-[20px] lg:pb-[14px] lg:text-2xl',
+						'p-[35px] pb-[26px] w-full rounded-full border-none text-section-sm  font-intro leading-[1.1] placeholder:font-intro placeholder:text-section-sm lg:p-[20px] lg:pb-[14px] lg:text-2xl outline-none',
 						cn
 					)}
 					{...otherProps}
@@ -71,7 +73,7 @@ export const CustomInput = <T extends FieldValues>(props: UnionType<T>) => {
 			{inputName && errors?.[inputName] && (
 				<p
 					className={twMerge(
-						'text-red-500 -mt-8 ml-8 text-2xl mb-4 lg:-mt-9 lg:ml-5 lg:text-base lg:mb-2',
+						'text-red-500 ml-8 text-2xl -mb-5 lg:ml-5 lg:text-base lg:mb-2',
 						errorCn
 					)}
 				>
