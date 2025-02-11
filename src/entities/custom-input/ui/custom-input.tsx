@@ -45,7 +45,8 @@ export const CustomInput = <T extends FieldValues>(props: UnionType<T>) => {
 
 	const errorCn = twMerge(
 		variant === 'red' && 'text-red-500',
-		variant === 'white' && 'text-red-600'
+		variant === 'white' && 'text-red-700',
+		formSize === 'md' && ''
 	);
 
 	const fieldError = errors?.[inputName as keyof FieldErrors<T>];
@@ -54,7 +55,7 @@ export const CustomInput = <T extends FieldValues>(props: UnionType<T>) => {
 		<>
 			<label htmlFor={inputName} className='block w-full'>
 				{otherProps.required ? (
-					<div className='text-blue-10 block mb-4'>
+					<div className='text-blue-10 block mb-4 font-intro lg:mb-2'>
 						<span>{label} </span>
 						<span className='text-red-80'>*</span>
 					</div>
@@ -74,7 +75,7 @@ export const CustomInput = <T extends FieldValues>(props: UnionType<T>) => {
 			{inputName && errors?.[inputName] && (
 				<p
 					className={twMerge(
-						'text-red-500 ml-8 text-2xl -mb-5 lg:ml-5 lg:text-base lg:mb-2',
+						'text-red-500 ml-8 text-2xl -mb-5 font-semibold lg:ml-5 lg:text-base lg:mb-2',
 						errorCn
 					)}
 				>

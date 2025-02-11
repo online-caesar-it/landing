@@ -28,8 +28,8 @@ export const Button = (props: ButtonProps) => {
 		<button
 			{...rest}
 			className={twMerge(
-				'rounded-full font-normal text-button-primary  uppercase font-intro leading-[1] flex items-center justify-center transition-all border-2 border-grey-30 bg-grey-30 text-red-65 hover:bg-transparent',
 				rest.className,
+				'rounded-full font-normal text-button-primary  uppercase font-intro leading-[1] flex items-center justify-center transition-all border-2 border-grey-30 bg-grey-30 text-red-65 hover:bg-transparent',
 				cnVariants,
 				cnSizes
 			)}

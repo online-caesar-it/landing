@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import { CheckboxIcon } from '@/shared/ui/icons';
 import { useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
@@ -21,17 +21,15 @@ export const CustomCheckbox = (props: CustomCheckboxProps) => {
 	);
 
 	const checkboxCn = twMerge(
-		'w-6 h-6 flex items-center justify-center rounded-md transition-all',
+		'w-[30px] h-[30px] flex items-center justify-center rounded-md transition-all',
 		variant === 'red' && 'bg-[#313244]',
 		variant === 'blue' && 'bg-blue-10'
 	);
 
-	const variantsIcons = {
-		blue: '/icons/checkbox-arrow.svg',
-		red: '/icons/checkbox-arrow.svg',
-		white: '',
-		dark: '',
-	};
+	const iconCn = twMerge(
+		variant === 'blue' && 'fill-[#33334D]',
+		variant === 'red' && 'fill-[#E06C8C]'
+	);
 
 	return (
 		<div
@@ -49,14 +47,7 @@ export const CustomCheckbox = (props: CustomCheckboxProps) => {
 				/>
 			</label>
 			<div className={checkboxCn}>
-				{checked && (
-					<Image
-						alt='Checked'
-						width={20}
-						height={20}
-						src={variantsIcons[variant]}
-					/>
-				)}
+				{checked && <CheckboxIcon className={iconCn} />}
 			</div>
 			<span className={textCn}>{label}</span>
 		</div>
