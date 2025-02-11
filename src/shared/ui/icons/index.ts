@@ -5,3 +5,4 @@ export * from './icon-template';
 export * from './close';
 export * from './burger-menu';
 export * from './chevron-down-icon-big';
+export * from './notebook-character';
