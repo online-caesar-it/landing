@@ -5,6 +5,7 @@ import { CustomSwiper } from '@/widgets/';
 import SectionLayout from '@/widgets/layouts/ui/section-layout';
 import { promoItems } from '@/shared/constants';
 import { PromoCard } from '@/features';
+import { Separator } from '@/shared/ui';
 
 export const Guarantees = () => {
 	return (
@@ -22,6 +23,7 @@ export const Guarantees = () => {
 					</>
 				}
 			/>
+			<Separator offset={40} />
 			<CustomSwiper
 				spaceBetween={20}
 				slidesPerView={2.1}
