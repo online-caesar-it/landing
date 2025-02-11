@@ -11,7 +11,7 @@ export const Recording = () => {
 				</h2>
 			</div>
 			<div className='flex justify-between gap-4 pb-[30px lg:flex-col-reverse lg:items-center'>
-				<div className='w-1/2 lg:w-full'>
+				<div className='w-1/2 min-w-[500px] lg:w-full lg:min-w-0'>
 					<ContactForm />
 				</div>
 				<div className='relative w-[39%] aspect-square scale-95 2xl:min-w-[530px] sm:min-w-[320px]'>

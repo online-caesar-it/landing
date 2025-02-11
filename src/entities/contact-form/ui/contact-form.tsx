@@ -30,7 +30,7 @@ export const ContactForm = ({ variant = 'red' }: ContactFormProps) => {
 				register={register}
 				variant={variant}
 			/>
-			<Separator offset={40} />
+			<Separator offset={40} className='lg:!pb-5' />
 			<CustomInput
 				type='text'
 				inputName='phone'
@@ -39,7 +39,7 @@ export const ContactForm = ({ variant = 'red' }: ContactFormProps) => {
 				register={register}
 				variant={variant}
 			/>
-			<Separator offset={40} />
+			<Separator offset={40} className='lg:!pb-5' />
 			<CustomInput
 				type='email'
 				inputName='email'
@@ -48,17 +48,17 @@ export const ContactForm = ({ variant = 'red' }: ContactFormProps) => {
 				register={register}
 				variant={variant}
 			/>
-			<Separator offset={55} />
+			<Separator offset={55} className='lg:!pb-6' />
 			<CustomCheckbox
 				name='agreement'
 				label='ДАЮ СОГЛАСИЕ НА ОБРАБОТКУ ДАННЫХ*'
 			/>
-			<Separator offset={45} />
+			<Separator offset={45} className='lg:!pb-5' />
 			<Button
 				size='xl'
 				type='submit'
 				variant='secondary'
-				className={`w-full ${
+				className={`w-full lg:!pt-[12px] lg:!pb-[8px] ${
 					variant === 'white' && 'text-red-30 hover:text-grey-90'
 				}`}
 			>

@@ -15,13 +15,13 @@ export const CustomCheckbox = (props: CustomCheckboxProps) => {
 	const [checked, setChecked] = useState<boolean>(true);
 
 	const textCn = twMerge(
-		'text-3xl font-intro leading-[1]',
+		'text-3xl font-intro leading-[1] lg:text-xl md:text-lg',
 		variant === 'red' && 'text-[#F6C7C5]',
 		variant === 'blue' && 'text-blue-10'
 	);
 
 	const checkboxCn = twMerge(
-		'w-6 h-6 flex items-center justify-center  rounded-md transition-all',
+		'w-6 h-6 flex items-center justify-center rounded-md transition-all',
 		variant === 'red' && 'bg-[#313244]',
 		variant === 'blue' && 'bg-blue-10'
 	);
