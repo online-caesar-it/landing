@@ -25,24 +25,29 @@ export const ButtonLink = (props: ButtonLinkProps) => {
 	} = props;
 
 	const cn = twMerge(
-		'flex items-center justify-center gap-[10px] relative w-full pt-[25px] pb-[20px] px-[50px] rounded-full transition-all group',
-		variant === 'primary' && 'bg-red-60 hover:scale-105',
+		variant === 'primary' &&
+			'bg-red-60 hover:scale-105 focus:scale-105 active:scale-105',
 		variant === 'blue' &&
-			'bg-blue-20 border-2 border-solid border-blue-20 hover:bg-transparent',
-		icon && 'pr-[160px] hover:scale-100 lg:pr-[50px]',
-		size === 'md' && 'text-5xl md:text-2xl sm:text-base',
-		size === 'sm' && 'pt-[12px] pb-[7px] px-[32px]'
+			'border-blue-20 bg-blue-20 text-grey-80 hover:bg-transparent hover:text-blue-20 active:bg-transparent active:text-blue-20 focus:bg-transparent focus:text-blue-20',
+		variant === 'outline' &&
+			'border-blue-20 text-blue-20 hover:bg-blue-20 hover:text-grey-80 active:bg-blue-20 active:text-grey-80 focus:bg-blue-20 focus:text-grey-80',
+		variant === 'underline' &&
+			'text-blue-20 underline hover:text-blue-70 active:text-blue-70 focus:text-blue-70',
+		size === 'md' &&
+			'text-[36px] px-[30px] py-[25px] lg:text-[28px] lg:px-[15px] lg:py-[20px] md:text-[22px] md:py-[15px]',
+		size === 'sm' && 'px-[30px] py-[10px] text-2xl'
 	);
 
-	const textCn = twMerge(
-		'font-normal uppercase font-intro leading-[1] transition-all',
-		size === 'sm' && 'text-2xl',
-		size === 'md' && 'text-button-primary text-link-md',
-		variant === 'blue' && 'group-hover:text-blue-20'
-	);
+	const textCn = twMerge(icon && 'mr-[50px] lg:mr-0');
 
 	return (
-		<Link className={cn} {...restProps}>
+		<Link
+			className={twMerge(
+				'font-intro border-2 border-solid leading-[1] rounded-full transition-all flex items-center justify-center gap-[10px] relative w-full group',
+				cn
+			)}
+			{...restProps}
+		>
 			<span className={textCn}>{children}</span>
 			{icon && (
 				<Image

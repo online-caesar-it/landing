@@ -18,10 +18,10 @@ export const Button = (props: ButtonProps) => {
 	);
 
 	const cnSizes = twMerge(
-		size === 'sm' && 'border-2 px-6 pb-[5px] pt-[10px]',
-		size === 'md' && 'border-2 px-8 pb-[4px] pt-[10px] text-2xl',
-		size === 'lg' && 'border-4 px-12 pb-[8px] pt-[14px] text-5xl',
-		size === 'xl' && 'border-4 px-14 pb-[15px] pt-[21px] text-5xl'
+		size === 'sm' && 'border-2 px-6 py-[10px]',
+		size === 'md' && 'border-2 px-8 py-[10px] text-2xl',
+		size === 'lg' && 'border-4 px-12 py-[14px] text-5xl',
+		size === 'xl' && 'border-4 px-14 py-[21px] text-5xl'
 	);
 
 	return (
