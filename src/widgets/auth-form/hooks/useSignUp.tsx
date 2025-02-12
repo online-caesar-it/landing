@@ -55,6 +55,13 @@ export const useSignUp = () => {
 				title: 'Ошибка при регистрации',
 				subTitle: 'Кажется пошло что-то не так! Попробуйте повторить позже.',
 			});
+
+			setTimeout(() => {
+				setMessage({
+					title: '',
+					subTitle: '',
+				});
+			}, 5000);
 		},
 	});
 

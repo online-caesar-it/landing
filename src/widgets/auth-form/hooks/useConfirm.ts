@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { authApi } from '@/shared/api/auth.api';
 import { localStorageToken } from '@/shared/local-storage/token';
+import { useQueryClient } from '@tanstack/react-query';
 
 export const useConfirm = () => {
 	const searchParams = useSearchParams();
@@ -13,6 +14,7 @@ export const useConfirm = () => {
 	const type = searchParams.get('type');
 	const [loading, setLoading] = useState(true);
 	const [message, setMessage] = useState('');
+	const client = useQueryClient();
 
 	useEffect(() => {
 		if (token && method === 'by-email' && type === 'sign-up') {
@@ -32,6 +34,7 @@ export const useConfirm = () => {
 				localStorageToken.setRefreshToken(
 					response.data.user.config.refresh_token
 				);
+				client.invalidateQueries({ queryKey: 'get-self' });
 			}
 			router.push('/');
 			console.log(response.data);
@@ -44,7 +47,6 @@ export const useConfirm = () => {
 	};
 	const verifyTokenSignUp = async () => {
 		try {
-			console.log(token);
 			const response = await authApi.verifySignUp(token);
 
 			if (response.data) {
@@ -53,6 +55,7 @@ export const useConfirm = () => {
 				localStorageToken.setRefreshToken(
 					response.data.user.config.refresh_token
 				);
+				client.invalidateQueries({ queryKey: 'get-self' });
 			}
 			router.push('/');
 			console.log(response.data);
