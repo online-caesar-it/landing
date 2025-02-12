@@ -37,7 +37,8 @@ export const CustomInput = <T extends FieldValues>(props: UnionType<T>) => {
 			'bg-red-65 text-grey-30 placeholder:text-red-95 focus:outline-purple-80 active:outline-purple-80',
 		variant === 'white' &&
 			'bg-red-30 text-grey-90 placeholder:text-[#B08585] focus:outline-purple-80 active:outline-purple-80',
-		variant === 'blue' && 'bg-blue-45 text-grey-85 placeholder:text-grey-20',
+		variant === 'blue' &&
+			'bg-blue-45 text-grey-85 placeholder:text-grey-20 focus:outline-purple-80 active:outline-purple-80',
 		formSize === 'md' &&
 			'p-2 rounded-full px-6 py-7 pb-[22px] !leading-[1] text-3xl',
 		formSize === 'lg' && 'text-5xl leading-[1]'
