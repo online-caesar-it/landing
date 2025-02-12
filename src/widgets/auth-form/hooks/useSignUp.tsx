@@ -3,6 +3,7 @@ import { useMutation } from '@tanstack/react-query';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, useWatch } from 'react-hook-form';
 import { z } from 'zod';
+import { useState } from 'react';
 
 const signUpSchema = z.object({
 	email: z.string().min(5).email('Введите корректный email'),
@@ -16,7 +17,17 @@ const signUpSchema = z.object({
 
 type SignUpFormInputs = z.infer<typeof signUpSchema>;
 
+type TMessage = {
+	title: string;
+	subTitle: string;
+};
+
 export const useSignUp = () => {
+	const [message, setMessage] = useState<TMessage>({
+		title: '',
+		subTitle: '',
+	});
+
 	const { handleSubmit, register, formState, ...form } =
 		useForm<SignUpFormInputs>({
 			resolver: zodResolver(signUpSchema),
@@ -32,11 +43,24 @@ export const useSignUp = () => {
 				...formValues,
 				role: 'student',
 			}),
+		onSuccess: () => {
+			setMessage({
+				title: 'Пожалуйста, проверьте почту',
+				subTitle:
+					'На указанную электронную почту было отправлено с ссылкой на подтверждение регистрации.',
+			});
+		},
+		onError: () => {
+			setMessage({
+				title: 'Ошибка при регистрации',
+				subTitle: 'Кажется пошло что-то не так! Попробуйте повторить позже.',
+			});
+		},
 	});
 
 	const onSubmit = () => {
 		mutate();
 	};
 
-	return { onSubmit, errors, handleSubmit, register };
+	return { onSubmit, errors, handleSubmit, register, message };
 };

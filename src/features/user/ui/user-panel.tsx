@@ -13,7 +13,7 @@ const UserPanel = () => {
 				when={isLoading || !!session}
 				elseComponent={
 					<Link href={'/profile'}>
-						<p>
+						<p className='leading-[1]'>
 							{session?.firstName} {session?.surname}
 						</p>
 					</Link>

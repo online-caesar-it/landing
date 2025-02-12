@@ -12,10 +12,10 @@ const HeaderNav = () => {
 				<Logo />
 				<Nav />
 			</div>
-			<div className='2xl:hidden'>
+			<div className='flex items-center gap-5'>
 				<HeaderAuth />
+				<MobileMenu />
 			</div>
-			<MobileMenu />
 		</SectionLayout>
 	);
 };

@@ -9,3 +9,4 @@ export * from './notebook-character';
 export * from './checkbox-icon';
 export * from './vk-icon';
 export * from './yandex-icon';
+export * from './speaker-icon';
