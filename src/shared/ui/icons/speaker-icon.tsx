@@ -1,11 +1,15 @@
-export const SpeakerIcon = () => {
+type TSpeakerIconProps = {
+	classNames?: string;
+};
+
+export const SpeakerIcon = ({ classNames }: TSpeakerIconProps) => {
 	return (
 		<svg
 			width='56'
 			height='42'
 			viewBox='0 0 56 42'
 			fill='none'
-			className='min-w-[56px] min-h-[42px]'
+			className={classNames}
 		>
 			<g clipPath='url(#clip0_235_165)'>
 				<path

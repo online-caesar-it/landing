@@ -15,7 +15,9 @@ const SignUpForm = () => {
 			{message.title && (
 				<FormSnackbar
 					title={message.title}
-					icon={<SpeakerIcon />}
+					icon={
+						<SpeakerIcon classNames='min-w-[56px] min-h-[42px] md:min-w-[28px] md:min-h-[21px]' />
+					}
 					subTitle={message.subTitle}
 				/>
 			)}
