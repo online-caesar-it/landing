@@ -42,7 +42,7 @@ const registerByVk = async () => {
 const verifySignUp = async (
 	token: string | null
 ): Promise<{ data: UserPromiseType }> => {
-	return await api.post('/auth/sign-in/verify', {
+	return await api.post('/auth/sign-up/verify', {
 		token,
 	});
 };
