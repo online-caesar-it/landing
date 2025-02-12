@@ -56,7 +56,7 @@ export const CustomInput = <T extends FieldValues>(props: UnionType<T>) => {
 		<>
 			<label htmlFor={inputName} className='block w-full'>
 				{otherProps.required ? (
-					<div className='text-blue-10 block mb-4 font-intro lg:mb-2'>
+					<div className='text-blue-10 block mb-[10px] font-intro lg:mb-2'>
 						<span>{label} </span>
 						<span className='text-red-80'>*</span>
 					</div>

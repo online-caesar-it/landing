@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import { useSignUp } from '../hooks';
 import { CustomCheckbox } from '@/entities';
-import { Button, FormSnackbar, Separator } from '@/shared/ui';
-import { SpeakerIcon, VkIcon, YandexIcon } from '@/shared/ui/icons';
+import { SpeakerIcon } from '@/shared/ui/icons';
 import { CustomInput } from '@/entities/custom-input/ui';
+import { AuthSocials, Button, FormSnackbar, Separator } from '@/shared/ui';
 
 const SignUpForm = () => {
 	const { errors, handleSubmit, onSubmit, register, message } = useSignUp();
@@ -26,7 +26,6 @@ const SignUpForm = () => {
 					<h2 className='block w-fit text-5xl text-blue-20 mb-[60px] mx-auto font-intro'>
 						Регистрация
 					</h2>
-
 					<form
 						onSubmit={handleSubmit(onSubmit)}
 						className='flex flex-col w-[600px] md:w-full'
@@ -96,9 +95,7 @@ const SignUpForm = () => {
 								label='ДАЮ СОГЛАСИЕ НА ОБРАБОТКУ ДАННЫХ*'
 							/>
 						</div>
-
 						<Separator className='mb-[34px]' />
-
 						<Button
 							type='submit'
 							className='bg-yellow-900 !text-4xl !py-[14px] lg:!text-xl'
@@ -107,21 +104,10 @@ const SignUpForm = () => {
 							Зарегистрироваться
 						</Button>
 					</form>
-
 					<Separator className='mb-[40px]' />
-
-					<div className='flex gap-[35px]'>
-						<button className=''>
-							<YandexIcon />
-						</button>
-						<button className=''>
-							<VkIcon />
-						</button>
-					</div>
-
+					<AuthSocials />
 					<Separator className='mb-[60px]' />
-
-					<div className='text-[#8F97C7] text-xl'>
+					<div className='text-[#8F97C7] text-xl font-intro'>
 						Уже есть аккаунт?{' '}
 						<Link className='text-[#B5B8F8] underline' href='/auth/sign-in'>
 							Войти
