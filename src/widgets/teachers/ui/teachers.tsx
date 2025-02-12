@@ -19,7 +19,7 @@ export const Teachers = () => {
 					</Fragment>
 				))}
 			</div>
-			<div className='hidden md:flex flex-col gap-5'>
+			<div className='hidden md:grid grid-cols-2 gap-5 xsm:flex xsm:overflow-auto scrollbar-hidden'>
 				{[...Array(5)].map((_, index) => (
 					<Fragment key={index}>
 						<TeacherCardMobile />
