@@ -37,7 +37,8 @@ export const CustomInput = <T extends FieldValues>(props: UnionType<T>) => {
 			'bg-red-65 text-grey-30 placeholder:text-red-95 focus:outline-purple-80 active:outline-purple-80',
 		variant === 'white' &&
 			'bg-red-30 text-grey-90 placeholder:text-[#B08585] focus:outline-purple-80 active:outline-purple-80',
-		variant === 'blue' && 'bg-blue-45 text-grey-85 placeholder:text-grey-20',
+		variant === 'blue' &&
+			'bg-blue-45 text-grey-85 placeholder:text-grey-20 focus:outline-purple-80 active:outline-purple-80',
 		formSize === 'md' &&
 			'p-2 rounded-full px-6 py-7 pb-[22px] !leading-[1] text-3xl',
 		formSize === 'lg' && 'text-5xl leading-[1]'
@@ -55,7 +56,7 @@ export const CustomInput = <T extends FieldValues>(props: UnionType<T>) => {
 		<>
 			<label htmlFor={inputName} className='block w-full'>
 				{otherProps.required ? (
-					<div className='text-blue-10 block mb-4 font-intro lg:mb-2'>
+					<div className='text-blue-10 block mb-[10px] font-intro lg:mb-2'>
 						<span>{label} </span>
 						<span className='text-red-80'>*</span>
 					</div>

@@ -1,84 +1,84 @@
-import { TRoleUserType } from "../types/user-type";
-import { api } from "./api";
+import { TRoleUserType } from '../types/user-type';
+import { api } from './api';
 
 export type SignUpByEmail = {
-  email?: string;
-  firstName?: string;
-  surname?: string;
-  patronymic?: string;
-  phone?: string;
-  role: TRoleUserType;
+	email?: string;
+	firstName?: string;
+	surname?: string;
+	patronymic?: string;
+	phone?: string;
+	role: TRoleUserType;
 };
 export type UserPromiseType = {
-  accessToken: string;
-  message: string;
-  user: UserType;
+	accessToken: string;
+	message: string;
+	user: UserType;
 };
 export type UserType = {
-  avatar: string;
-  role: TRoleUserType;
-  firstName: string;
-  id: string;
-  surname: string;
-  patronymic: string;
-  config: UserConfigType;
+	avatar: string;
+	role: TRoleUserType;
+	firstName: string;
+	id: string;
+	surname: string;
+	patronymic: string;
+	config: UserConfigType;
 };
 export type UserConfigType = {
-  email: string;
-  id: string;
-  phone_number: string;
-  refresh_token: string;
-  userId: string;
+	email: string;
+	id: string;
+	phone_number: string;
+	refresh_token: string;
+	userId: string;
 };
 const registerByEmail = async (data: SignUpByEmail) => {
-  return await api.post("/auth/sign-up/by-email", data);
+	return await api.post('/auth/sign-up/by-email', data);
 };
 const registerByYandex = async () => {
-  return await api.post("/auth/sign-up/by-yandex");
+	return await api.post('/auth/sign-up/by-yandex');
 };
 const registerByVk = async () => {
-  return await api.post("/auth/sign-up/by-vk");
+	return await api.post('/auth/sign-up/by-vk');
 };
 const verifySignUp = async (
-  token: string | null
+	token: string | null
 ): Promise<{ data: UserPromiseType }> => {
-  return await api.post("/auth/sign-up/verify", {
-    token,
-  });
+	return await api.post('/auth/sign-up/verify', {
+		token,
+	});
 };
 const loginByEmail = async ({ email }: { email?: string }) => {
-  return await api.post("/auth/sign-in/by-email", {
-    email,
-  });
+	return await api.post('/auth/sign-in/by-email', {
+		email,
+	});
 };
 const verifySignIn = async (
-  token: string | null
+	token: string | null
 ): Promise<{ data: UserPromiseType }> => {
-  return await api.post("/auth/sign-in/verify", {
-    token,
-  });
+	return await api.post('/auth/sign-in/verify', {
+		token,
+	});
 };
 const refreshToken = async (
-  refreshToken: string
+	refreshToken: string
 ): Promise<{
-  data: {
-    message: string;
-    tokens: {
-      accessToken: string;
-      refreshToken: string;
-    };
-  };
+	data: {
+		message: string;
+		tokens: {
+			accessToken: string;
+			refreshToken: string;
+		};
+	};
 }> => {
-  return await api.post("/auth/refresh", {
-    refreshToken,
-  });
+	return await api.post('/auth/refresh', {
+		refreshToken,
+	});
 };
 export const authApi = {
-  registerByEmail,
-  registerByYandex,
-  registerByVk,
-  verifySignUp,
-  loginByEmail,
-  verifySignIn,
-  refreshToken,
+	registerByEmail,
+	registerByYandex,
+	registerByVk,
+	verifySignUp,
+	loginByEmail,
+	verifySignIn,
+	refreshToken,
 };
