@@ -4,6 +4,7 @@ import { ChevronDownIconBig } from '@/shared/ui/icons';
 import Link from 'next/link';
 import { Fragment, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
+import { useMobileMenu } from '../model';
 
 const filteredLinks = ['/all'];
 
@@ -17,7 +18,13 @@ type TMenuLinkProps = {
 };
 
 export const MenuLink = ({ link, title, childItems }: TMenuLinkProps) => {
+	const { setOpen: open } = useMobileMenu();
 	const [isOpen, setOpen] = useState<boolean>(false);
+
+	const handleChildClick = () => {
+		setOpen(false);
+		open!(false);
+	};
 
 	if (filteredLinks.includes(link)) {
 		return (
@@ -45,6 +52,7 @@ export const MenuLink = ({ link, title, childItems }: TMenuLinkProps) => {
 						{childItems.map((item, index) => (
 							<Fragment key={index}>
 								<Link
+									onClick={handleChildClick}
 									href={item.link}
 									className='text-[#555975] transition-all hover:text-[#B4BEFE] font-intro text-6xl leading-[1] md:text-3xl xsm:text-lg'
 								>
@@ -59,7 +67,7 @@ export const MenuLink = ({ link, title, childItems }: TMenuLinkProps) => {
 	}
 
 	return (
-		<div className='flex items-start'>
+		<div className='flex items-start' onClick={() => open!(false)}>
 			<Link
 				className='font-intro leading-[1.1] text-mobile-menu-link text-[#555975] transition-all hover:text-[#B4BEFE] lg:text-[70px] md:text-[40px] sm:text-[36px] xsm:text-[30px]'
 				href={link}
