@@ -5,3 +5,7 @@ export * from './icon-template';
 export * from './close';
 export * from './burger-menu';
 export * from './chevron-down-icon-big';
+export * from './notebook-character';
+export * from './checkbox-icon';
+export * from './vk-icon';
+export * from './yandex-icon';

@@ -27,6 +27,7 @@ export const OurFeaturesCard = (props: OurFeaturesCardProps) => {
 					alt={`Картинка к ${label}`}
 					width={190}
 					height={175}
+					quality={100}
 				/>
 			</div>
 			<div className='absolute -bottom-1 -right-3 rounded-l-full bg-grey-85 w-fit text-white px-10 py-4 leading-[1] text-section-sm z-[1] font-intro transition-all xsm:px-7'>

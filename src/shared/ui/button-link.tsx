@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import Image from 'next/image';
 import Link, { LinkProps } from 'next/link';
 import { AnchorHTMLAttributes } from 'react';
@@ -13,7 +12,7 @@ type ButtonOwnLinkProps = Partial<{
 	className: string;
 	size?: 'sm' | 'md';
 	children: React.ReactNode;
-	variant?: 'outline' | 'underline' | 'primary';
+	variant?: 'outline' | 'underline' | 'primary' | 'blue';
 }>;
 
 export const ButtonLink = (props: ButtonLinkProps) => {
@@ -25,23 +24,31 @@ export const ButtonLink = (props: ButtonLinkProps) => {
 		...restProps
 	} = props;
 
-	const cn = clsx({
-		'bg-red-60 hover:scale-105': variant === 'primary',
-		'pr-[160px] hover:scale-100 lg:pr-[50px]': icon,
-		'text-5xl': size === 'md',
-	});
+	const cn = twMerge(
+		variant === 'primary' &&
+			'bg-red-60 hover:scale-105 focus:scale-105 active:scale-105',
+		variant === 'blue' &&
+			'border-blue-20 bg-blue-20 text-grey-80 hover:bg-transparent hover:text-blue-20 active:bg-transparent active:text-blue-20 focus:bg-transparent focus:text-blue-20',
+		variant === 'outline' &&
+			'border-blue-20 text-blue-20 hover:bg-blue-20 hover:text-grey-80 active:bg-blue-20 active:text-grey-80 focus:bg-blue-20 focus:text-grey-80',
+		variant === 'underline' &&
+			'text-blue-20 underline hover:text-blue-70 active:text-blue-70 focus:text-blue-70',
+		size === 'md' &&
+			'text-[36px] px-[30px] py-[25px] lg:text-[28px] lg:px-[15px] lg:py-[20px] md:text-[22px] md:py-[15px]',
+		size === 'sm' && 'px-[30px] py-[10px] text-2xl'
+	);
+
+	const textCn = twMerge(icon && 'mr-[50px] lg:mr-0');
 
 	return (
 		<Link
 			className={twMerge(
-				'flex items-center justify-center gap-[10px] relative w-full pt-[25px] pb-[20px] px-[50px] rounded-full transition-all group',
+				'font-intro border-2 border-solid leading-[1] rounded-full transition-all flex items-center justify-center gap-[10px] relative w-full group',
 				cn
 			)}
 			{...restProps}
 		>
-			<span className='text-button-primary text-link-md font-normal uppercase font-intro leading-[1] md:text-2xl sm:text-base'>
-				{children}
-			</span>
+			<span className={textCn}>{children}</span>
 			{icon && (
 				<Image
 					alt=''

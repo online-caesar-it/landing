@@ -103,6 +103,9 @@ section {
 
 body {
   line-height: 1;
+  -webkit-font-smoothing: none !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  font-smooth: none !important;
 }
 
 ol,
@@ -136,5 +139,8 @@ table {
 
 .scrollbar-hidden::-webkit-scrollbar {
   display: none;
-  /* Для Chrome, Safari */
+}
+
+span {
+  line-height: 1.2;
 }

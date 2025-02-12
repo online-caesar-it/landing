@@ -18,7 +18,7 @@ const FeedbackCard = ({ color, children, index }: TFeedbackCard) => {
 
 	return (
 		<motion.div
-			className={`p-2 rounded-[50px] aspect-[0.9/1] w-[57.5%] min-h-[600px] shadow-sm 2xl:w-[73%] 2xl:rounded-[25px] lg:w-[90%] lg:min-h-[400px]`}
+			className={`p-2 rounded-[50px] aspect-[0.9/1] w-[57.5%] min-h-[600px] shadow-sm 2xl:w-[73%] 2xl:rounded-[25px] lg:w-[90%] lg:min-h-[400px] cursor-pointer`}
 			style={{
 				backgroundColor: color,
 				position: 'absolute',

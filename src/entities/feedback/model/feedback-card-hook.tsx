@@ -11,6 +11,7 @@ export const useFeedbackCard = ({ index }: TFeedbackCard) => {
 	const [isFull, setIsFull] = useState(false);
 	const [isMobile, setIsMobile] = useState(false);
 	const offset = isMobile ? 80 : 120;
+	const slideOffset = isMobile ? 40 : 80;
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -27,11 +28,11 @@ export const useFeedbackCard = ({ index }: TFeedbackCard) => {
 
 	const calculateLeft = () => {
 		if (isFull) {
-			return index * offset - offset;
+			return index * offset - slideOffset;
 		}
 
 		if (isHover) {
-			return index * offset - offset;
+			return index * offset - slideOffset;
 		} else {
 			return index * offset;
 		}

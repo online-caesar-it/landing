@@ -20,7 +20,7 @@ export const Teachers = () => {
 				))}
 			</div>
 			<div className='hidden md:flex flex-col gap-5'>
-				{[...Array(7)].map((_, index) => (
+				{[...Array(5)].map((_, index) => (
 					<Fragment key={index}>
 						<TeacherCardMobile />
 					</Fragment>
