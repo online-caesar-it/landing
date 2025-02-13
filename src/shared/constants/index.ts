@@ -5,3 +5,4 @@ export * from './mock-reviews';
 export * from './socials';
 export * from './accordion';
 export * from './links';
+export * from './contacts';
