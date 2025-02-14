@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 type ButtonProps = {
-	children: React.ReactNode;
+	children?: React.ReactNode;
 	variant?: 'primary' | 'secondary' | 'outline';
 	size?: 'md' | 'sm' | 'lg' | 'xl';
 } & ButtonHTMLAttributes<HTMLButtonElement>;

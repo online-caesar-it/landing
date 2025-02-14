@@ -1,6 +1,5 @@
 'use client';
 
-import UserAvatar from '@/entities/user/ui/user-avatar';
 import If from '@/features/abstract/If';
 import { useSession } from '@/shared/hooks/use-session';
 import Link from 'next/link';
@@ -13,13 +12,17 @@ const UserPanel = () => {
 				when={isLoading || !!session}
 				elseComponent={
 					<Link href={'/profile'}>
-						<p className='leading-[1]'>
+						<span className='leading-[1]'>
 							{session?.firstName} {session?.surname}
-						</p>
+						</span>
 					</Link>
 				}
 			>
-				<UserAvatar isLoading={isLoading} user={session} />
+				<Link href={'/profile'}>
+					<span className='leading-[1]'>
+						{session?.firstName} {session?.surname}
+					</span>
+				</Link>
 			</If>
 		</div>
 	);

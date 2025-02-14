@@ -10,3 +10,5 @@ export * from './checkbox-icon';
 export * from './vk-icon';
 export * from './yandex-icon';
 export * from './speaker-icon';
+export * from './phone-icon';
+export * from './vk-small-icon';

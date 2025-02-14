@@ -101,6 +101,7 @@ export default {
 					'30': '#313244',
 					'40': '#7F849C',
 					'50': '#2B2B3B',
+					'55': '#33334D',
 					'60': '#34333D',
 					'65': '#37333A',
 					'70': '#35333B',
@@ -127,6 +128,7 @@ export default {
 			'7xl': '60px',
 			'8xl': '72px',
 			'9xl': '88px',
+			'avatar-labels': 'clamp(30px, 15.9vw, 90px)',
 			'mobile-menu-link': 'clamp(36px, 5.4vw, 78px)',
 		},
 		screens: {

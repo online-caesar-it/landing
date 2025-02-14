@@ -15,3 +15,4 @@ export * from './new-vectors/ui';
 export * from './faq/ui';
 export * from './consulting/ui';
 export * from './contacts/ui';
+export * from './profile/ui';
