@@ -18,7 +18,7 @@ export const FeedbackSwiper = () => {
 				slidesPerView={1.1}
 				centeredSlides
 				items={filteredData}
-				CardComponent={FeedbackCardSwiper}
+				renderItem={item => <FeedbackCardSwiper {...item} />}
 			/>
 		</div>
 	);

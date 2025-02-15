@@ -1,10 +1,6 @@
-'use client';
-
-import { CustomSwiper } from '@/widgets';
-import { promotionsItems } from '@/shared/constants';
-import SectionLayout from '@/widgets/layouts/ui/section-layout';
-import { PromotionCard } from '@/entities';
 import { ButtonLink } from '@/shared/ui';
+import { PromotionsSwiper } from './promotions-swiper';
+import SectionLayout from '@/widgets/layouts/ui/section-layout';
 
 type TPromotionsProps = {
 	children?: React.ReactNode;
@@ -18,30 +14,7 @@ export const Promotions = ({ children }: TPromotionsProps) => {
 			</h2>
 			<div className='mb-[125px] lg:mb-[90px] md:mb-[45px]'>
 				{children}
-				<CustomSwiper
-					spaceBetween={30}
-					slidesPerView={3.2}
-					breakpoints={{
-						0: {
-							slidesPerView: 1,
-						},
-						768: {
-							slidesPerView: 1.1,
-							centeredSlides: true,
-						},
-						1025: {
-							slidesPerView: 2.1,
-							centeredSlides: false,
-						},
-						1325: {
-							slidesPerView: 3.2,
-							centeredSlides: false,
-						},
-					}}
-					items={promotionsItems}
-					CardComponent={PromotionCard}
-					className='md:-mt-14'
-				/>
+				<PromotionsSwiper />
 			</div>
 			<div className='mx-auto max-w-[630px]'>
 				<ButtonLink variant='primary' href='#'>

@@ -1,9 +1,9 @@
-"use client";
+import { Profile } from '@/widgets';
 
-import React from "react";
-
-const Page = () => {
-  return <div style={{ textAlign: "center", marginTop: "50px" }}></div>;
-};
-
-export default Page;
+export default function ProfilePage() {
+	return (
+		<div>
+			<Profile />
+		</div>
+	);
+}

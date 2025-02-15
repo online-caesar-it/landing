@@ -1,11 +1,7 @@
-'use client';
-
-import { Plate } from '@/widgets/plate/ui';
-import { CustomSwiper } from '@/widgets/';
-import SectionLayout from '@/widgets/layouts/ui/section-layout';
-import { promoItems } from '@/shared/constants';
-import { PromoCard } from '@/features';
 import { Separator } from '@/shared/ui';
+import { Plate } from '@/widgets/plate/ui';
+import { GuaranteeSwiper } from './guarantee-swiper';
+import SectionLayout from '@/widgets/layouts/ui/section-layout';
 
 export const Guarantees = () => {
 	return (
@@ -24,26 +20,7 @@ export const Guarantees = () => {
 				}
 			/>
 			<Separator offset={40} />
-			<CustomSwiper
-				spaceBetween={20}
-				slidesPerView={2.1}
-				breakpoints={{
-					0: {
-						slidesPerView: 1,
-					},
-					768: {
-						slidesPerView: 1.24,
-						centeredSlides: true,
-					},
-					1025: {
-						slidesPerView: 2.25,
-						centeredSlides: false,
-					},
-				}}
-				items={promoItems}
-				CardComponent={PromoCard}
-				className='md:-mt-14'
-			/>
+			<GuaranteeSwiper />
 		</SectionLayout>
 	);
 };
