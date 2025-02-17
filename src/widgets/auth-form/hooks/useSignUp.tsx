@@ -23,6 +23,7 @@ type TMessage = {
 };
 
 export const useSignUp = () => {
+	const [isLoading, setLoading] = useState<boolean>(false);
 	const [message, setMessage] = useState<TMessage>({
 		title: '',
 		subTitle: '',
@@ -44,6 +45,7 @@ export const useSignUp = () => {
 				role: 'student',
 			}),
 		onSuccess: () => {
+			setLoading(false);
 			setMessage({
 				title: 'Пожалуйста, проверьте почту',
 				subTitle:
@@ -51,6 +53,7 @@ export const useSignUp = () => {
 			});
 		},
 		onError: () => {
+			setLoading(false);
 			setMessage({
 				title: 'Ошибка при регистрации',
 				subTitle: 'Кажется пошло что-то не так! Попробуйте повторить позже.',
@@ -63,11 +66,14 @@ export const useSignUp = () => {
 				});
 			}, 5000);
 		},
+		onMutate: () => {
+			setLoading(true);
+		},
 	});
 
 	const onSubmit = () => {
 		mutate();
 	};
 
-	return { onSubmit, errors, handleSubmit, register, message };
+	return { onSubmit, errors, handleSubmit, register, message, isLoading };
 };

@@ -1,6 +1,6 @@
 import { userApi } from '../api/user.api';
-import { useQuery } from '@tanstack/react-query';
 import { localStorageToken } from '../local-storage/token';
+import { useQuery } from '@tanstack/react-query';
 
 export const useSession = () => {
 	const token = localStorageToken.getAccessToken();

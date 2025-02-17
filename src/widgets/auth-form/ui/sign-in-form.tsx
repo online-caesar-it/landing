@@ -5,7 +5,8 @@ import { CustomInput } from '@/entities/custom-input/ui';
 import { SpeakerIcon } from '@/shared/ui/icons';
 
 const SignInForm = () => {
-	const { errors, handleSubmit, onSubmit, form, message } = useSignIn();
+	const { errors, handleSubmit, onSubmit, form, message, isLoading } =
+		useSignIn();
 
 	return (
 		<div className='mt-[6%]'>
@@ -35,14 +36,16 @@ const SignInForm = () => {
 						inputName='email'
 						placeholder='Эл. Почта'
 						register={form.register}
+						disabled={isLoading}
 					/>
 					<Separator className='mb-[70px]' />
 					<Button
 						type='submit'
-						className='!text-4xl !py-[14px] w-full lg:!text-xl !text-[#50167B] hover:!text-blue-20'
+						className='!text-4xl !py-[14px] w-full lg:!text-xl !text-[#50167B] hover:!text-blue-20 disabled:opacity-50'
 						size='md'
+						disabled={isLoading}
 					>
-						Войти
+						{isLoading ? 'Загрузка...' : 'Войти'}
 					</Button>
 					<Separator className='mb-[55px]' />
 					<div>

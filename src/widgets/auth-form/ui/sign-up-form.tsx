@@ -8,7 +8,8 @@ import { CustomInput } from '@/entities/custom-input/ui';
 import { AuthSocials, Button, FormSnackbar, Separator } from '@/shared/ui';
 
 const SignUpForm = () => {
-	const { errors, handleSubmit, onSubmit, register, message } = useSignUp();
+	const { errors, handleSubmit, onSubmit, register, message, isLoading } =
+		useSignUp();
 
 	return (
 		<div className='mt-[6%]'>
@@ -98,10 +99,11 @@ const SignUpForm = () => {
 						<Separator className='mb-[34px]' />
 						<Button
 							type='submit'
-							className='bg-yellow-900 !text-4xl !py-[14px] lg:!text-xl !text-[#50167B] hover:!text-blue-20'
+							className='bg-yellow-900 !text-4xl !py-[14px] lg:!text-xl !text-[#50167B] hover:!text-blue-20 disabled:opacity-50'
 							size='md'
+							disabled={isLoading}
 						>
-							Зарегистрироваться
+							{isLoading ? 'Загрузка...' : 'Зарегистрироваться'}
 						</Button>
 					</form>
 					<Separator className='mb-[40px]' />
