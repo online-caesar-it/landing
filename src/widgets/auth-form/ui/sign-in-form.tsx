@@ -39,7 +39,7 @@ const SignInForm = () => {
 					<Separator className='mb-[70px]' />
 					<Button
 						type='submit'
-						className='bg-yellow-900 !text-4xl !py-[14px] w-full lg:!text-xl'
+						className='!text-4xl !py-[14px] w-full lg:!text-xl !text-[#50167B] hover:!text-blue-20'
 						size='md'
 					>
 						Войти

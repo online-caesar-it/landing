@@ -98,7 +98,7 @@ const SignUpForm = () => {
 						<Separator className='mb-[34px]' />
 						<Button
 							type='submit'
-							className='bg-yellow-900 !text-4xl !py-[14px] lg:!text-xl'
+							className='bg-yellow-900 !text-4xl !py-[14px] lg:!text-xl !text-[#50167B] hover:!text-blue-20'
 							size='md'
 						>
 							Зарегистрироваться
