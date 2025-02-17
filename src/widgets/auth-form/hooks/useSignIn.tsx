@@ -29,7 +29,13 @@ export const useSignIn = () => {
 	const { mutate } = useMutation({
 		mutationKey: ['sign-in-by-email'],
 		mutationFn: () => authApi.loginByEmail(formValues),
-		onSuccess: () => {},
+		onSuccess: () => {
+			setMessage({
+				title: 'Проверьте вашу почту!',
+				subTitle:
+					'Чтобы войти, перейдите по ссылке, которую мы направили вам на почту',
+			});
+		},
 		onError: () => {
 			setMessage({
 				title: 'Ошибка при входе',
