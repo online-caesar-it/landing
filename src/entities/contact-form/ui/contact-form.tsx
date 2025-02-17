@@ -58,7 +58,7 @@ export const ContactForm = ({ variant = 'red' }: ContactFormProps) => {
 				size='xl'
 				type='submit'
 				variant='secondary'
-				className={`w-full lg:!pt-[12px] lg:!pb-[8px] ${
+				className={`w-full lg:!pt-[12px] lg:!pb-[8px] md:!py-2 ${
 					variant === 'white' && 'text-red-30 hover:text-grey-90'
 				}`}
 			>

@@ -40,8 +40,9 @@ export const CustomInput = <T extends FieldValues>(props: UnionType<T>) => {
 		variant === 'blue' &&
 			'bg-blue-45 text-grey-85 placeholder:text-grey-20 focus:outline-purple-80 active:outline-purple-80',
 		formSize === 'md' &&
-			'p-2 rounded-full px-6 py-7 pb-[22px] !leading-[1] text-3xl',
-		formSize === 'lg' && 'text-5xl leading-[1]'
+			'p-2 rounded-full px-6 py-7 pb-[22px] !leading-[1] text-3xl md:px-5',
+		formSize === 'lg' &&
+			'text-5xl leading-[1] lg:text-3xl lg:py-6 md:px-5 md:py-4 md:text-xl'
 	);
 
 	const errorCn = twMerge(
@@ -57,7 +58,7 @@ export const CustomInput = <T extends FieldValues>(props: UnionType<T>) => {
 			<label htmlFor={inputName} className='block w-full'>
 				{otherProps.required ? (
 					<div className='text-blue-10 block mb-[10px] font-intro lg:mb-2'>
-						<span>{label} </span>
+						<span>{label}</span>
 						<span className='text-red-80'>*</span>
 					</div>
 				) : (
@@ -67,7 +68,7 @@ export const CustomInput = <T extends FieldValues>(props: UnionType<T>) => {
 					{...register(inputName)}
 					className={twMerge(
 						className,
-						'p-[35px] pb-[26px] w-full rounded-full border-none text-section-sm  font-intro leading-[1.1] placeholder:font-intro placeholder:text-section-sm lg:p-[30px] lg:pb-[24px] lg:text-2xl outline-none',
+						'p-[35px] pb-[26px] w-full rounded-full border-none text-section-sm  font-intro leading-[1.1] placeholder:font-intro placeholder:text-section-sm outline-none',
 						cn
 					)}
 					{...otherProps}

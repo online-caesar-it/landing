@@ -21,7 +21,8 @@ export const Button = (props: ButtonProps) => {
 		size === 'sm' && 'border-2 px-6 py-[10px]',
 		size === 'md' && 'border-2 px-8 py-[10px] text-2xl',
 		size === 'lg' && 'border-4 px-12 py-[14px] text-5xl',
-		size === 'xl' && 'border-4 px-14 py-[21px] text-5xl'
+		size === 'xl' &&
+			'border-4 px-14 py-[21px] text-5xl md:px-10 md:py-4 md:text-xl'
 	);
 
 	return (
