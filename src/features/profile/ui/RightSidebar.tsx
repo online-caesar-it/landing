@@ -1,6 +1,10 @@
+'use client';
+
+import { useLogout } from '@/shared/hooks';
 import Link from 'next/link';
 
 export const RightSidebar = () => {
+	const handleLogout = useLogout();
 	return (
 		<aside className='flex flex-col items-end xl:items-start'>
 			<ul className='w-full flex flex-col gap-8 font-intro xl:hidden'>
@@ -13,7 +17,10 @@ export const RightSidebar = () => {
 					</Link>
 				</li>
 				<li>
-					<button className='bg-red-60 border-red-60 border-solid border lowercase text-grey-30 w-full rounded-full text-sm px-[10px] py-[8px] transition-all hover:bg-transparent hover:text-red-60'>
+					<button
+						className='bg-red-60 border-red-60 border-solid border lowercase text-grey-30 w-full rounded-full text-sm px-[10px] py-[8px] transition-all hover:bg-transparent hover:text-red-60'
+						onClick={handleLogout}
+					>
 						Выйти
 					</button>
 				</li>

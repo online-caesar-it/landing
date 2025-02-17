@@ -1,4 +1,4 @@
-import AuthButtons from '@/widgets/header/ui/auth-buttons';
+import { LogoutBtn } from '@/shared/ui';
 import Link from 'next/link';
 
 export const MenuAddress = () => {
@@ -21,7 +21,7 @@ export const MenuAddress = () => {
 					cesar_it@gmail.com
 				</Link>
 			</div>
-			<AuthButtons />
+			<LogoutBtn />
 		</div>
 	);
 };

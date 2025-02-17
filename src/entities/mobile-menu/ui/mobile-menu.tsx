@@ -11,11 +11,7 @@ type TMobileMenuContext = {
 
 export const MobileMenuContext = createContext<TMobileMenuContext | null>(null);
 
-type TMobileMenuProps = {
-	children?: React.ReactNode;
-};
-
-export const MobileMenu = ({}: TMobileMenuProps) => {
+export const MobileMenu = () => {
 	const [isOpen, setOpen] = useState<boolean>(false);
 
 	useEffect(() => {

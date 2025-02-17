@@ -1,6 +1,9 @@
+'use client';
+import { useLogout } from '@/shared/hooks';
 import Link from 'next/link';
 
 export const LeftSidebar = () => {
+	const handleLogout = useLogout();
 	return (
 		<aside className=''>
 			<ul className='flex flex-col gap-[45px] font-intro text-xl xl:text-lg text-red-60 xl:hidden'>
@@ -35,7 +38,10 @@ export const LeftSidebar = () => {
 				<Link href='/' className='underline transition-all hover:text-blue-40'>
 					На главную
 				</Link>
-				<button className='bg-red-60 text-grey-90 leading-[1] py-[8px] px-[10px] rounded-full'>
+				<button
+					className='bg-red-60 text-grey-90 leading-[1] py-[8px] px-[10px] rounded-full'
+					onClick={handleLogout}
+				>
 					Выйти
 				</button>
 			</div>
