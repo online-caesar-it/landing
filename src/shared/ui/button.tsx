@@ -12,9 +12,9 @@ export const Button = (props: ButtonProps) => {
 
 	const cnVariants = twMerge(
 		variant === 'primary' &&
-			'bg-blue-10 border-blue-10 hover:bg-transparent hover:text-blue-10 text-grey-85',
+			'bg-blue-10 border-blue-10 text-grey-85 hover:bg-transparent hover:text-blue-10 active:bg-transparent active:text-blue-10 focus:bg-transparent focus:text-blue-10',
 		variant === 'outline' &&
-			'bg-transparent border-[#D9D9D9] text-[#D9D9D9] hover:bg-[#D9D9D9] hover:text-grey-85'
+			'bg-transparent border-[#D9D9D9] text-[#D9D9D9] hover:bg-[#D9D9D9] hover:text-grey-85 focus:text-grey-85'
 	);
 
 	const cnSizes = twMerge(

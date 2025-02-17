@@ -4,7 +4,6 @@ import { useSession } from '@/shared/hooks/use-session';
 
 export const ProfileUser = () => {
 	const { session } = useSession();
-	console.log(session);
 	return (
 		<div className='flex items-start gap-6 leading-[1] mb-10'>
 			{session ? (
