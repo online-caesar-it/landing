@@ -11,7 +11,7 @@ export default function ProfileLayout({ children }: TProfileLayoutProps) {
 	useAuth();
 
 	return (
-		<SectionLayout className='grid grid-cols-[1fr_3fr_1fr] text-blue-10 mt-14'>
+		<SectionLayout className='grid grid-cols-[1fr_3fr_1fr] gap-7 text-blue-10 mt-14 xl:flex xl:flex-col'>
 			{children}
 		</SectionLayout>
 	);

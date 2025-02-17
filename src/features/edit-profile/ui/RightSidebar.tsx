@@ -1,11 +1,20 @@
+'use client';
+
 import { Button } from '@/shared/ui';
+import { useEditProfile } from './edit-profile-provider';
 
 export const RightSidebar = () => {
+	const { editProfile } = useEditProfile();
 	return (
 		<aside className='flex flex-col items-end'>
 			<ul className='w-full flex flex-col gap-8 font-intro'>
 				<li>
-					<Button variant='secondary' className='w-full' size='sm'>
+					<Button
+						size='sm'
+						className='w-full'
+						variant='secondary'
+						onClick={() => editProfile!()}
+					>
 						сохранить изменения
 					</Button>
 				</li>

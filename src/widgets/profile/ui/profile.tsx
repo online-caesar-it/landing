@@ -5,7 +5,7 @@ import { ProfileFooter } from './profile-footer';
 export const Profile = () => {
 	return (
 		<div className='font-intro'>
-			<div className='underline text-xl mb-[45px] transition-all hover:text-blue-40 w-fit'>
+			<div className='underline text-xl mb-[45px] transition-all hover:text-blue-40 w-fit xl:hidden'>
 				<Link href='/'>На главную</Link>
 			</div>
 			<ProfileUser />
