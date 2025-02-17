@@ -17,7 +17,7 @@ export const ProfileUser = () => {
 			{session ? (
 				<div className=''>
 					<h2 className='text-6xl mb-10'>
-						{session.firstName} {session.surname}
+						{session.surname} {session.firstName}
 					</h2>
 					<span className='text-3xl text-blue-20'>{session.config.email}</span>
 				</div>
