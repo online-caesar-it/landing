@@ -17,20 +17,20 @@ export const EditProfile = () => {
 
 	return (
 		<div className=''>
-			<div className='underline text-xl mb-[45px] transition-all hover:text-blue-40 w-fit font-intro'>
+			<div className='underline text-xl mb-[45px] transition-all hover:text-blue-40 w-fit font-intro xl:hidden'>
 				<Link href='/'>На главную</Link>
 			</div>
 			<form onSubmit={form!.handleSubmit!(onSubmit!)}>
-				<div className='flex items-start gap-6 leading-[1] mb-10'>
+				<div className='flex items-start gap-6 leading-[1] mb-10 sm:flex-col'>
 					<ProfileInitials />
-					<div className=''>
+					<div className='w-full'>
 						<div className='flex items-center'>
-							<label htmlFor='name' className='flex items-end mb-10'>
+							<label htmlFor='name' className='flex items-end mb-10 md:mb-5'>
 								<input
 									id='name'
 									type='text'
 									defaultValue={session ? name : 'Загрузка...'}
-									className='text-6xl w-full max-w-[440px] font-intro bg-transparent leading-[1]'
+									className='text-6xl w-full max-w-[440px] font-intro bg-transparent leading-[1] 2xl:text-5xl 2xl:max-w-[300px] md:text-3xl'
 									{...register('firstName')}
 								/>
 								<div className='mb-[12px]'>
@@ -43,7 +43,7 @@ export const EditProfile = () => {
 								id='email'
 								type='email'
 								defaultValue={session ? session.config.email : 'Загрузка...'}
-								className='text-3xl text-blue-20 w-full max-w-[350px] font-intro bg-transparent leading-[1]'
+								className='text-3xl text-blue-20 w-full max-w-[350px] font-intro bg-transparent leading-[1] 2xl:text-2xl 2xl:max-w-[320px] md:text-base'
 							/>
 							<div className='mb-[5px]'>
 								<EditIcon />
@@ -51,7 +51,7 @@ export const EditProfile = () => {
 						</label>
 					</div>
 				</div>
-				<div className='border-t-[5px] border-solid border-grey-55 pt-[35px] flex items-center justify-between gap-4'>
+				<div className='border-t-[5px] border-solid border-grey-55 pt-[35px] flex items-center justify-between gap-4 md:flex-col md:gap-8 md:items-start'>
 					<EditProfileInput
 						inputName='phone'
 						inputIcon={<PhoneIcon />}

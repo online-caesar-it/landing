@@ -1,8 +1,8 @@
-import { LeftSidebar } from '@/features/profile/ui';
 import {
+	LeftSidebar,
 	EditProfile,
-	EditProfileProvider,
 	RightSidebar,
+	EditProfileProvider,
 } from '@/features/edit-profile/ui';
 
 export default function ProfileEditPage() {
