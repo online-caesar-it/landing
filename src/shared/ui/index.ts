@@ -5,3 +5,5 @@ export * from './stack-list/ui';
 export * from './form-status/ui';
 export * from './separator/ui';
 export * from './auth-socials/ui';
+export * from './profile/ui';
+export * from './logout-btn/ui';

@@ -15,7 +15,7 @@ export const CustomCheckbox = (props: CustomCheckboxProps) => {
 	const [checked, setChecked] = useState<boolean>(true);
 
 	const textCn = twMerge(
-		'text-3xl font-intro leading-[1] lg:text-xl md:text-lg',
+		'text-3xl font-intro leading-[1] lg:text-xl lg:text-lg md:text-[12px]',
 		variant === 'red' && 'text-[#F6C7C5]',
 		variant === 'blue' && 'text-blue-10'
 	);

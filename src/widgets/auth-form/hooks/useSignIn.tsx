@@ -17,6 +17,7 @@ type TMessage = {
 };
 
 export const useSignIn = () => {
+	const [isLoading, setLoading] = useState<boolean>(false);
 	const [message, setMessage] = useState<TMessage>({
 		title: '',
 		subTitle: '',
@@ -29,8 +30,16 @@ export const useSignIn = () => {
 	const { mutate } = useMutation({
 		mutationKey: ['sign-in-by-email'],
 		mutationFn: () => authApi.loginByEmail(formValues),
-		onSuccess: () => {},
+		onSuccess: () => {
+			setLoading(false);
+			setMessage({
+				title: 'Проверьте вашу почту!',
+				subTitle:
+					'Чтобы войти, перейдите по ссылке, которую мы направили вам на почту',
+			});
+		},
 		onError: () => {
+			setLoading(false);
 			setMessage({
 				title: 'Ошибка при входе',
 				subTitle: 'Проверьте правильность почты или попробуйте позже',
@@ -43,11 +52,14 @@ export const useSignIn = () => {
 				});
 			}, 5000);
 		},
+		onMutate: () => {
+			setLoading(true);
+		},
 	});
 
 	const onSubmit = () => {
 		mutate();
 	};
 
-	return { onSubmit, errors, handleSubmit, form, message };
+	return { onSubmit, errors, handleSubmit, form, message, isLoading };
 };
