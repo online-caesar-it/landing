@@ -22,7 +22,7 @@ export const ChildLearning = () => {
 				</div>
 			</div>
 			<div className='max-w-[632px] mx-auto'>
-				<ButtonLink variant='primary' href='#'>
+				<ButtonLink variant='primary' href='#contact-form'>
 					Оставить заявку
 				</ButtonLink>
 			</div>
