@@ -28,7 +28,6 @@ const SignInForm = () => {
 					onSubmit={handleSubmit(onSubmit)}
 				>
 					<CustomInput
-						required
 						formSize='md'
 						variant='blue'
 						label='Электронная почта'
