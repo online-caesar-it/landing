@@ -54,7 +54,6 @@ const SignUpForm = () => {
 						/>
 						<Separator offset={30} className='lg:!pb-5' />
 						<CustomInput
-							required
 							type='text'
 							formSize='md'
 							variant='blue'
@@ -82,7 +81,7 @@ const SignUpForm = () => {
 							type='phone'
 							formSize='md'
 							variant='blue'
-							label='Электронная почта'
+							label='Номер телефона'
 							errors={errors}
 							inputName='phone'
 							placeholder='Телефон'
