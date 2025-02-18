@@ -1,16 +1,19 @@
+import { TEditProfileFields } from '@/shared/types/user-type';
 import { EditIcon } from '@/shared/ui/icons';
 import { InputHTMLAttributes } from 'react';
+import { UseFormRegister } from 'react-hook-form';
 import { twMerge } from 'tailwind-merge';
 
 type TEditProfileInputProps = {
 	inputIcon: React.ReactNode;
 	inputName: string;
+	register: UseFormRegister<TEditProfileFields>;
 } & TStandartInputProps;
 
 type TStandartInputProps = InputHTMLAttributes<HTMLInputElement>;
 
 export const EditProfileInput = (props: TEditProfileInputProps) => {
-	const { inputIcon, inputName, defaultValue, ...restProps } = props;
+	const { inputIcon, inputName, defaultValue, register, ...restProps } = props;
 
 	return (
 		<label htmlFor={inputName} className='relative flex gap-3 md:w-full'>
@@ -22,6 +25,9 @@ export const EditProfileInput = (props: TEditProfileInputProps) => {
 					)}
 					defaultValue={defaultValue}
 					id={inputName}
+					{...register(inputName as keyof TEditProfileFields, {
+						required: 'Это поле должно быть заполнено',
+					})}
 					{...restProps}
 				/>
 				<div className='flex items-center justify-center gap-1'>

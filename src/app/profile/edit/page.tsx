@@ -3,6 +3,7 @@ import {
 	EditProfile,
 	RightSidebar,
 	EditProfileProvider,
+	EditFormStatus,
 } from '@/features/edit-profile/ui';
 
 export default function ProfileEditPage() {
@@ -12,6 +13,7 @@ export default function ProfileEditPage() {
 			<EditProfileProvider>
 				<EditProfile />
 				<RightSidebar />
+				<EditFormStatus />
 			</EditProfileProvider>
 		</>
 	);

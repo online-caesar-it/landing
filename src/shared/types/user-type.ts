@@ -12,5 +12,18 @@ export type TUser = {
 		email: string;
 		phone_number: string;
 		refresh_token: string;
+		telegram?: string;
+		vkontakte?: string;
 	};
+};
+
+export type TEditProfileFields = {
+	userId: string;
+	firstName: string;
+	surname: string;
+	email: string;
+	phone_number: string;
+	userConfigId: string;
+	telegram: string;
+	vkontakte: string;
 };

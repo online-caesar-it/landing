@@ -4,7 +4,8 @@ import { Button } from '@/shared/ui';
 import { useEditProfile } from './edit-profile-provider';
 
 export const RightSidebar = () => {
-	const { editProfile } = useEditProfile();
+	const { onSubmit, form } = useEditProfile();
+
 	return (
 		<aside className='flex flex-col items-end'>
 			<ul className='w-full flex flex-col gap-8 font-intro 2xl:items-end xl:items-start xl:flex-row xl:mt-10 md:flex-col md:gap-5'>
@@ -13,7 +14,8 @@ export const RightSidebar = () => {
 						size='sm'
 						className='w-full 2xl:text-sm md:w-full'
 						variant='secondary'
-						onClick={() => editProfile!()}
+						onClick={() => onSubmit(form.getValues())}
+						type='submit'
 					>
 						сохранить изменения
 					</Button>

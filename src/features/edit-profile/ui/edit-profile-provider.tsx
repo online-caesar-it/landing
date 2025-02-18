@@ -1,19 +1,10 @@
 'use client';
+import { userApi } from '@/shared/api/user.api';
 import { useSession } from '@/shared/hooks/use-session';
-import { TUser } from '@/shared/types/user-type';
-import { UseMutateFunction, useMutation } from '@tanstack/react-query';
-import { createContext, useContext } from 'react';
+import { TEditProfileFields, TUser } from '@/shared/types/user-type';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { createContext, useContext, useState } from 'react';
 import { useForm, UseFormReturn } from 'react-hook-form';
-
-type TEditProfileFields = {
-	firstName: string;
-	surname: string;
-	email: string;
-	phone_number: string;
-	userId: string;
-	telegram: string;
-	vkontakte: string;
-};
 
 type TEditProfileProviderProps = {
 	children?: React.ReactNode;
@@ -24,7 +15,10 @@ type TEditProfileContext = {
 	onSubmit: (data: TEditProfileFields) => void;
 	name: string;
 	session?: TUser;
-	editProfile: UseMutateFunction<unknown, Error, void, unknown>;
+	message: {
+		title: string;
+		subTitle: string;
+	};
 };
 
 const EditProfileContext = createContext<TEditProfileContext | null>(null);
@@ -33,26 +27,43 @@ export const EditProfileProvider = ({
 	children,
 }: TEditProfileProviderProps) => {
 	const { session } = useSession();
-	const name = `${session?.surname} ${session?.firstName}`;
+	const [message, setMessage] = useState({
+		title: '',
+		subTitle: '',
+	});
 
-	const handleEditProfile = async (): Promise<void> => {};
+	const name = `${session?.surname} ${session?.firstName}`;
+	const client = useQueryClient();
 
 	const { mutate: editProfile } = useMutation({
 		mutationKey: ['edit-profile'],
-		mutationFn: handleEditProfile,
+		mutationFn: userApi.updateUser,
+		onSuccess: () => {
+			client.invalidateQueries({ queryKey: ['get-self'] });
+			setMessage({
+				title: 'Данные успешно обновлены',
+				subTitle: '',
+			});
+		},
 	});
 
 	const form = useForm<TEditProfileFields>({
 		mode: 'onBlur',
 	});
 
+	if (!session) {
+		return null;
+	}
+
 	const onSubmit = (data: TEditProfileFields) => {
+		const dataToServer = { ...data, userId: session.config.userId };
+		editProfile(dataToServer);
 		console.log(data);
 	};
 
 	return (
 		<EditProfileContext.Provider
-			value={{ form, onSubmit, name, session, editProfile }}
+			value={{ form, onSubmit, name, session, message }}
 		>
 			{children}
 		</EditProfileContext.Provider>
@@ -61,5 +72,10 @@ export const EditProfileProvider = ({
 
 export const useEditProfile = () => {
 	const context = useContext(EditProfileContext);
-	return { ...context };
+	if (!context) {
+		throw new Error(
+			'useEditProfile must be used within an EditProfileProvider'
+		);
+	}
+	return context;
 };
