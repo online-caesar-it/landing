@@ -28,7 +28,7 @@ export const Consulting = () => {
 						</div>
 					</div>
 					<div className='w-[55%] md:w-full'>
-						<ContactForm variant='white' />
+						<ContactForm variant='white' id='contact-form-2' />
 					</div>
 					<div className='hidden md:block font-intro'>
 						<span className='text-grey-50 block text-[32px] sm:text-[22px] sm:leading-[1] md:mb-2'>
