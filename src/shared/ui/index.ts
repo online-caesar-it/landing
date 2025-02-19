@@ -8,3 +8,4 @@ export * from './auth-socials/ui';
 export * from './profile/ui';
 export * from './logout-btn/ui';
 export * from './back-button/ui';
+export * from './motion-div/ui';

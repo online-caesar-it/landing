@@ -1,4 +1,4 @@
-import { ButtonLink } from '@/shared/ui';
+import { ButtonLink, MotionDiv } from '@/shared/ui';
 import { NewVectorsCard } from '@/entities';
 import { newVectors } from '@/shared/constants';
 import SectionLayout from '@/widgets/layouts/ui/section-layout';
@@ -14,15 +14,15 @@ export const NewVectors = () => {
 				<p className='text-section-lg md:text-xl'>в разработке</p>
 			</div>
 			<div className='flex items-center justify-between gap-4 mb-[140px] 2xl:flex-wrap lg:flex-col 2xl:mb-[80px]'>
-				{newVectors.map(item => (
+				{newVectors.map((item, index) => (
 					<Fragment key={item.id}>
-						<NewVectorsCard {...item} />
+						<NewVectorsCard {...item} index={index} />
 					</Fragment>
 				))}
 			</div>
-			<div className='max-w-[623px] mx-auto'>
+			<MotionDiv delay={0.4} className='max-w-[623px] mx-auto'>
 				<ButtonLink href='#'>посмотреть еще</ButtonLink>
-			</div>
+			</MotionDiv>
 		</SectionLayout>
 	);
 };

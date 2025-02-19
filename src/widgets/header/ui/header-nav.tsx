@@ -4,18 +4,19 @@ import HeaderAuth from './header-auth';
 import SectionLayout from '@/widgets/layouts/ui/section-layout';
 import { MobileMenu } from '@/entities';
 import React from 'react';
+import { MotionDiv } from '@/shared/ui';
 
 const HeaderNav = () => {
 	return (
 		<SectionLayout className='flex justify-between items-center'>
-			<div className={'flex items-center gap-20'}>
+			<MotionDiv delay={0.2} className={'flex items-center gap-20'}>
 				<Logo />
 				<Nav />
-			</div>
+			</MotionDiv>
 			<div className='flex items-center gap-5'>
-				<div className='md:hidden'>
+				<MotionDiv delay={0.4} className='md:hidden'>
 					<HeaderAuth />
-				</div>
+				</MotionDiv>
 				<MobileMenu />
 			</div>
 		</SectionLayout>

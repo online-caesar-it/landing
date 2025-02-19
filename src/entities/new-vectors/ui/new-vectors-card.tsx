@@ -1,3 +1,4 @@
+import { MotionDiv } from '@/shared/ui';
 import clsx from 'clsx';
 import Image from 'next/image';
 import { twMerge } from 'tailwind-merge';
@@ -6,10 +7,11 @@ type NewVectorsCardProps = {
 	title: string;
 	image: string;
 	color: string;
+	index?: number;
 };
 
 export const NewVectorsCard = (props: NewVectorsCardProps) => {
-	const { image, title, color } = props;
+	const { image, title, color, index } = props;
 	const cn = clsx({
 		'border-green-60': color === 'green',
 		'border-red-100': color === 'red',
@@ -21,7 +23,8 @@ export const NewVectorsCard = (props: NewVectorsCardProps) => {
 		'text-white': color === 'white',
 	});
 	return (
-		<div
+		<MotionDiv
+			delay={index ? +`0.${index}` : 0}
 			className={twMerge(
 				'flex flex-col items-center border-[15px] border-solid rounded-[50px] px-[4.15%] py-[6%] 2xl:w-[48.7%] 2xl:flex 2xl:flex-row 2xl:p-[24px] 2xl:items-start 2xl:gap-5 2xl:border-[8px] xl:w-full md:rounded-[20px] md:p-[12px]',
 				cn
@@ -48,6 +51,6 @@ export const NewVectorsCard = (props: NewVectorsCardProps) => {
 					<span>скоро...</span>
 				</div>
 			</div>
-		</div>
+		</MotionDiv>
 	);
 };

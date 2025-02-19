@@ -1,5 +1,5 @@
 import { designerStack, programmingStack } from '@/shared/constants';
-import { ButtonLink, StackList } from '@/shared/ui';
+import { ButtonLink, MotionDiv, StackList } from '@/shared/ui';
 import SectionLayout from '@/widgets/layouts/ui/section-layout';
 import Image from 'next/image';
 
@@ -7,19 +7,28 @@ export const Stack = () => {
 	return (
 		<div className='relative'>
 			<SectionLayout className='mb-section-bottom lg:mb-24'>
-				<h2 className='font-intro text-blue-20 text-section-xl leading-[1] mb-[150px] 2xl:mb-[80px] md:text-[40px] md:mb-[30px]'>
-					КАКИЕ ИНСТРУМЕНТЫ ИСПОЛЬЗУЮТСЯ <br /> В ОБУЧЕНИИ
-				</h2>
+				<MotionDiv>
+					<h2 className='font-intro text-blue-20 text-section-xl leading-[1] mb-[150px] 2xl:mb-[80px] md:text-[40px] md:mb-[30px]'>
+						КАКИЕ ИНСТРУМЕНТЫ ИСПОЛЬЗУЮТСЯ <br /> В ОБУЧЕНИИ
+					</h2>
+				</MotionDiv>
 				<div>
 					<div className='mb-[164px] md:mb-[80px]'>
-						<StackList array={designerStack} title='для дизайна' />
-						<StackList array={programmingStack} title='для программирования' />
+						<MotionDiv delay={0.2}>
+							<StackList array={designerStack} title='для дизайна' />
+						</MotionDiv>
+						<MotionDiv delay={0.3}>
+							<StackList
+								array={programmingStack}
+								title='для программирования'
+							/>
+						</MotionDiv>
 					</div>
-					<div className='max-w-[632px] mx-auto'>
+					<MotionDiv delay={0.4} className='max-w-[632px] mx-auto'>
 						<ButtonLink icon href='#' variant='primary'>
 							больше ресурсов
 						</ButtonLink>
-					</div>
+					</MotionDiv>
 				</div>
 			</SectionLayout>
 			<div className='absolute w-[340px] h-[400px] top-[26%] -z-[1] 4xl:w-[300px] 4xl:h-[360px] 2xl:top-[16%] pointer-events-none'>
