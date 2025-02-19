@@ -24,7 +24,9 @@ export const ClientsReviews = async () => {
 				</div>
 			</ClientReviewsProvider>
 			<div className='max-w-[632px] mx-auto mt-[70px]'>
-				<ButtonLink href='#'>Оставить заявку</ButtonLink>
+				<ButtonLink variant='blue' href='#contact-form-2'>
+					Оставить заявку
+				</ButtonLink>
 			</div>
 		</SectionLayout>
 	);
