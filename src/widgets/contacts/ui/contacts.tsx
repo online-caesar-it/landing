@@ -36,15 +36,20 @@ export const Contacts = () => {
 								<span className='text-[#7F849C] font-intro leading-[1]'>
 									Telegram:
 								</span>
-								<span className='text-[#B5B8F8] font-'>
-									{CONTACS_DATA.TELEGRAM}
-								</span>
+								<a
+									href={CONTACS_DATA.TELEGRAM.link}
+									className='text-[#B5B8F8] font-'
+								>
+									{CONTACS_DATA.TELEGRAM.label}
+								</a>
 							</li>
 							<li className='flex gap-2 items-center'>
 								<span className='text-[#7F849C] font-intro leading-[1]'>
 									VK:
 								</span>
-								<span className='text-[#B5B8F8] font-'>{CONTACS_DATA.VK}</span>
+								<a href={CONTACS_DATA.VK.link} className='text-[#B5B8F8] font-'>
+									{CONTACS_DATA.VK.label}
+								</a>
 							</li>
 						</ul>
 					</div>
@@ -70,7 +75,7 @@ export const Contacts = () => {
 								только позвонить нам на рабочий номер или написать на почту
 							</p>
 						</div>
-						<div className='absolute bottom-full -left-[200px] 2xl:left-0 2xl:bottom-[70%] lg:hidden'>
+						<div className='absolute bottom-full -left-[200px] 2xl:left-0 2xl:bottom-[70%] lg:hidden pointer-events-none'>
 							<Image
 								alt='Иконка'
 								width={385}
