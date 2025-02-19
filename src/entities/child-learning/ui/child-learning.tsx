@@ -14,8 +14,17 @@ export const ChildLearningCard = ({ icon, pb, text }: ChildLearningProps) => {
 				marginBottom: `${pb}%`,
 			}}
 		>
-			<Image src={icon} alt='' width={175} height={175} quality={99} />
-			<span className='block text-center font-intro text-3xl'>{text}</span>
+			<Image
+				src={icon}
+				alt=''
+				width={175}
+				height={175}
+				quality={99}
+				className='lg:w-[140px] lg:h-[140px] md:w-[100px] md:h-[100px]'
+			/>
+			<span className='block text-center font-intro text-3xl lg:text-xl md:text-lg md:max-w-[75%]'>
+				{text}
+			</span>
 		</div>
 	);
 };

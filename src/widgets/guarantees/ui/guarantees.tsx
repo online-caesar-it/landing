@@ -11,11 +11,13 @@ export const Guarantees = () => {
 				variant='secondary'
 				title={
 					<>
-						345 выпускников, сдавших егэ по англискому на{' '}
-						<span className='text-red-95'>90+ баллов</span> 47 выпускноков стали{' '}
-						<span className='text-red-95'>специалистами по it и дизайну</span>{' '}
-						некоторые <span className='text-red-95'>наставники</span> - бывшие
-						ученики caesar it
+						47 выпускников сдали егэ по школьным предметам на
+						<span className='text-red-95'>
+							{' '}
+							90+ баллов <br className='lg:hidden' />
+						</span>{' '}
+						368 выпускноков стали{' '}
+						<span className='text-red-95'>специалистами в сфере it</span>
 					</>
 				}
 			/>

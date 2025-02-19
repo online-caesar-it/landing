@@ -51,7 +51,7 @@ export const reviews = [
 	{
 		id: 2,
 		value: 'category2',
-		title: 'Бэкенд',
+		title: 'python',
 		reviews: [
 			{
 				id: 1,
@@ -79,7 +79,7 @@ export const reviews = [
 	{
 		id: 3,
 		value: 'category3',
-		title: 'Дизайн',
+		title: 'js/ts',
 		reviews: [
 			{
 				id: 1,
@@ -128,7 +128,7 @@ export const reviews = [
 	{
 		id: 4,
 		value: 'category4',
-		title: 'Русский язык',
+		title: 'Верстка сайтов',
 		reviews: [
 			{
 				id: 1,

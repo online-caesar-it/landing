@@ -3,7 +3,7 @@ export const promoItems = [
 		id: 1,
 		title: 'портфолио',
 		description:
-			'в конце каждого модуля ученики создадут самостоятельный проект, который станет прекрасным началом для профессионального портфолио',
+			'В конце каждого модуля ученики самостоятельно создают проект, который пополняет их портфолио',
 		icon: '/promo/portfolio.png',
 		link: '/portfolio',
 		color: 'bg-linear-pink-promo',
@@ -21,8 +21,9 @@ export const promoItems = [
 	},
 	{
 		id: 3,
-		title: 'трудоустройство',
-		description: 'гарантируем после окончания курса помощь с трудоустройством',
+		title: 'Сертификация',
+		description:
+			'при успешном завершении обучения каждый ученик получит сертификат о прохождении учебной программы',
 		icon: '/promo/job.png',
 		link: '#',
 		color: 'bg-linear-orange-promo',
@@ -34,7 +35,7 @@ export const promoItems = [
 		description:
 			'Гарантия качественной обратной связи от преподавателей по выполненным заданиям и доступ к менторам по мере необходимости.',
 		icon: '/promo/feedback.png',
-		link: '#',
+		link: '/contacts',
 		color: 'bg-linear-purple-promo',
 		linkLabel: 'контакты',
 	},
@@ -42,9 +43,9 @@ export const promoItems = [
 		id: 5,
 		title: 'доступ к сообществу',
 		description:
-			'Гарантия участия в закрытых группах, где студенты могут обмениваться опытом и получать поддержку от одногруппников и преподавателей.',
+			'мы гарантируем участие в закрытых группах, где студенты смогут обмениваться опытом и получать поддержку от одногруппников и преподавателей.',
 		icon: '/promo/comunity.png',
-		link: '#',
+		link: '/blog',
 		color: 'bg-linear-blue-light-promo',
 		linkLabel: 'блог',
 	},
@@ -91,12 +92,12 @@ export const childLearningItems = [
 export const promotionsItems = [
 	{
 		id: 1,
-		title: 'бесплатный урок',
+		title: 'бесплатная консультация',
 		description:
-			'при записи на консультацию вы получите доступ на бесплатный пробный урок',
-		icon: '/promo/freeLesson.svg',
+			'Мы предоставляем бесплатную консультацию, на которой помогаем определиться с выбором направления',
+		icon: '/promo/freeLesson.png',
 		link: '/portfolio',
-		color: 'bg-linear-pink-promo',
+		color: 'blue',
 		linkLabel: '#',
 	},
 	{
@@ -106,47 +107,47 @@ export const promotionsItems = [
 			'при регистрации на два или более курса можно получить скидку 20%',
 		icon: '/promo/coursesStack.png',
 		link: '#',
-		color: 'bg-linear-blue-promo',
+		color: 'green',
 		linkLabel: 'мои курсы',
 	},
 	{
 		id: 3,
 		title: 'Подписка на рассылку',
 		description:
-			'Скидки или специальные предложения для тех, кто подписался на рассылку новостей школы.',
+			'Скидки или специальные предложения для тех, кто подписался на рассылку новостей школы',
 		icon: '/promo/subscription.png',
 		link: '#',
-		color: 'bg-linear-orange-promo',
+		color: 'light-blue',
 		linkLabel: 'информация',
 	},
 	{
 		id: 4,
-		title: 'Сезонные распродажи',
+		title: 'программа лояльности и распродаж',
 		description:
-			'(например, «черная пятница», «новогодние распродажи» и т.д.), когда предлагаются значительные скидки на обучение.',
+			'Не упустите возможность воспользоваться подарками в честь дня рождения или сезонных распродаж',
 		icon: '/promo/seasonsSales.png',
 		link: '#',
-		color: 'bg-linear-purple-promo',
+		color: 'pink',
 		linkLabel: 'контакты',
 	},
 	{
 		id: 5,
-		title: 'Групповые скидки',
+		title: 'реферальная программа',
 		description:
-			'Скидки, если несколько человек поступают на курс одновременно (например, от одной компании или учебного заведения).',
+			'приглашайте друзей и получайте специальные предложения за рекомандации',
 		icon: '/promo/groupedSales.png',
 		link: '#',
-		color: 'bg-linear-blue-light-promo',
+		color: 'orange',
 		linkLabel: 'блог',
 	},
 	{
 		id: 6,
 		title: 'Промокоды',
 		description:
-			'Временные промокоды, которые можно использовать при регистрации или покупке курса, могут предоставлять скидки на обучение.',
+			'Временные промокоды, которые можно использовать при регистрации или покупке курса',
 		icon: '/promo/promocodes.png',
 		link: '#',
-		color: 'bg-linear-red-promo',
+		color: 'light-green',
 		linkLabel: 'все направления',
 	},
 ];
@@ -154,9 +155,9 @@ export const promotionsItems = [
 export const newVectors = [
 	{
 		id: 1,
-		title: 'scratch',
-		image: '/stack/scratch.png',
-		color: 'orange',
+		title: 'дизайн',
+		image: '/stack/figma-with-bg.png',
+		color: 'red',
 	},
 	{
 		id: 2,
@@ -166,8 +167,8 @@ export const newVectors = [
 	},
 	{
 		id: 3,
-		title: 'unity',
-		image: '/stack/unity.png',
+		title: 'математика',
+		image: '/stack/math.png',
 		color: 'white',
 	},
 ];

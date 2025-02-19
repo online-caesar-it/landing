@@ -12,18 +12,18 @@ export const NewVectorsCard = (props: NewVectorsCardProps) => {
 	const { image, title, color } = props;
 	const cn = clsx({
 		'border-green-60': color === 'green',
-		'border-orange-30': color === 'orange',
+		'border-red-100': color === 'red',
 		'border-white': color === 'white',
 	});
 	const titleCn = clsx({
 		'text-green-60': color === 'green',
-		'text-orange-30': color === 'orange',
+		'text-red-100': color === 'red',
 		'text-white': color === 'white',
 	});
 	return (
 		<div
 			className={twMerge(
-				'border-[15px] border-solid rounded-[50px] px-[4.15%] py-[6%] 2xl:w-[48.7%] 2xl:flex 2xl:flex-row 2xl:p-[24px] 2xl:items-start 2xl:gap-5 2xl:border-[8px] xl:w-full md:rounded-[20px] md:p-[12px]',
+				'flex flex-col items-center border-[15px] border-solid rounded-[50px] px-[4.15%] py-[6%] 2xl:w-[48.7%] 2xl:flex 2xl:flex-row 2xl:p-[24px] 2xl:items-start 2xl:gap-5 2xl:border-[8px] xl:w-full md:rounded-[20px] md:p-[12px]',
 				cn
 			)}
 		>
