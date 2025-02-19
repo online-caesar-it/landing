@@ -6,8 +6,10 @@ export const CoursesBlock = () => {
 	return (
 		<SectionLayout className='mb-section-bottom 2xl:mb-[400px] lg:mb-[460px]'>
 			<div className='font-intro text-center text-blue-0 mb-[100px] md:mb-[30px]'>
-				<h2 className='text-section-xl leading-[1] md:mb-10'>КАТАЛОГ КУРСОВ</h2>
-				<p className='block text-5xl w-8/12 mx-auto leading-[1.1] lg:text-xl md:w-full md:text-base'>
+				<h2 className='text-section-xl mb-5 leading-[1] md:mb-10'>
+					КАТАЛОГ КУРСОВ
+				</h2>
+				<p className='block text-4xl w-8/12 mx-auto leading-[1.1] lg:text-xl md:w-full md:text-base'>
 					ЗДЕСЬ ВЫ МОЖЕТЕ ОЗНАКОМИТЬСЯ С ОБУЩАЮЩИМИ КУРСАМИ И ВЫБРАТЬ
 					ИНТЕРЕСУЮЩИЙ ВАРИАНТ
 				</p>
