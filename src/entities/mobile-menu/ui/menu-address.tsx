@@ -21,7 +21,9 @@ export const MenuAddress = () => {
 					cesar_it@gmail.com
 				</Link>
 			</div>
-			<LogoutBtn />
+			<div className='flex items-center md:w-full gap-10 sm:flex-col md:gap-5'>
+				<LogoutBtn />
+			</div>
 		</div>
 	);
 };

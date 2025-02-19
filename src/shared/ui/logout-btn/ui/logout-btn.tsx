@@ -5,6 +5,7 @@ import { useSession } from '@/shared/hooks/use-session';
 import { Button } from '../../button';
 import AuthButtons from '@/widgets/header/ui/auth-buttons';
 import { useLogout } from '@/shared/hooks';
+import UserPanel from '@/features/user/ui/user-panel';
 
 export const LogoutBtn = () => {
 	const { session } = useSession();
@@ -19,6 +20,7 @@ export const LogoutBtn = () => {
 				</div>
 			}
 		>
+			<UserPanel />
 			<Button className='w-full' variant='primary' onClick={handleLogout}>
 				Выйти
 			</Button>

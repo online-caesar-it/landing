@@ -7,7 +7,7 @@ import Link from 'next/link';
 const UserPanel = () => {
 	const { session, isLoading } = useSession();
 	return (
-		<div className='text-white font-intro'>
+		<div className='text-white font-intro min-w-fit'>
 			<If
 				when={isLoading || !!session}
 				elseComponent={

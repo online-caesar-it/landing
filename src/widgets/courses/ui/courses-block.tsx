@@ -1,6 +1,7 @@
 import CoursesListCascade from '@/features/courses/ui/courses-list-cascade';
 import SectionLayout from '@/widgets/layouts/ui/section-layout';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export const CoursesBlock = () => {
 	return (
@@ -9,10 +10,13 @@ export const CoursesBlock = () => {
 				<h2 className='text-section-xl mb-5 leading-[1] md:mb-10'>
 					КАТАЛОГ КУРСОВ
 				</h2>
-				<p className='block text-4xl w-8/12 mx-auto leading-[1.1] lg:text-xl md:w-full md:text-base'>
+				<Link
+					href='/directions'
+					className='block underline text-3xl w-8/12 mx-auto leading-[1.1] lg:text-xl md:w-full md:text-base'
+				>
 					ЗДЕСЬ ВЫ МОЖЕТЕ ОЗНАКОМИТЬСЯ С ОБУЩАЮЩИМИ КУРСАМИ И ВЫБРАТЬ
 					ИНТЕРЕСУЮЩИЙ ВАРИАНТ
-				</p>
+				</Link>
 			</div>
 			<div className='flex items-start justify-between relative'>
 				<div className='relative w-[36%] aspect-[0.7/1] lg:hidden'>

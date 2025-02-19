@@ -14,3 +14,4 @@ export * from './phone-icon';
 export * from './vk-small-icon';
 export * from './edit-icon';
 export * from './tg-small-icon';
+export * from './back-arrow-btn';

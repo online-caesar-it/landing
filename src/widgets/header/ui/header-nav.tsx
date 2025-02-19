@@ -13,7 +13,9 @@ const HeaderNav = () => {
 				<Nav />
 			</div>
 			<div className='flex items-center gap-5'>
-				<HeaderAuth />
+				<div className='md:hidden'>
+					<HeaderAuth />
+				</div>
 				<MobileMenu />
 			</div>
 		</SectionLayout>
