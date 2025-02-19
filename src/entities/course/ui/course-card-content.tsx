@@ -9,7 +9,7 @@ type TCourseCardContent = {
 const CourseCardContent = ({ title, body, image }: TCourseCardContent) => {
 	return (
 		<div className='flex flex-col'>
-			<h3 className='font-intro text-5xl'>{title}</h3>
+			<h3 className='font-intro text-5xl leading-[1]'>{title}</h3>
 			<p className='font-semibold text-[#6A629B]'>{body}</p>
 			<Image
 				src={`/courses/${image}`}
