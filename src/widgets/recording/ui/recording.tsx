@@ -12,7 +12,7 @@ export const Recording = () => {
 			</div>
 			<div className='flex items-center justify-between gap-4 pb-[30px lg:flex-col-reverse lg:items-center'>
 				<div className='w-1/2 min-w-[500px] lg:w-full lg:min-w-0'>
-					<ContactForm />
+					<ContactForm id='contact-form' />
 				</div>
 				<div className='relative w-[450px] h-[450px] sm:w-[350px] sm:h-[350px]'>
 					<Image src='/images/formCharacter.png' alt='' fill />

@@ -17,7 +17,7 @@ export const Promotions = ({ children }: TPromotionsProps) => {
 				<PromotionsSwiper />
 			</div>
 			<div className='mx-auto max-w-[630px]'>
-				<ButtonLink variant='primary' href='#'>
+				<ButtonLink variant='primary' href='#contact-form-2'>
 					Оставить заявку
 				</ButtonLink>
 			</div>

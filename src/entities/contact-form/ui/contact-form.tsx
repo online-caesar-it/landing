@@ -7,9 +7,10 @@ import { CustomCheckbox } from '@/entities/custom-checkbox/ui';
 
 type ContactFormProps = {
 	variant?: 'white' | 'red';
+	id?: string;
 };
 
-export const ContactForm = ({ variant = 'red' }: ContactFormProps) => {
+export const ContactForm = ({ variant = 'red', id }: ContactFormProps) => {
 	const {
 		register,
 		isLoaded,
@@ -20,7 +21,11 @@ export const ContactForm = ({ variant = 'red' }: ContactFormProps) => {
 	} = useContactForm();
 
 	return (
-		<form onSubmit={handleSubmit(submitter)} className='relative w-full'>
+		<form
+			id={id}
+			onSubmit={handleSubmit(submitter)}
+			className='relative w-full'
+		>
 			<FormStatus isSuccess={isSuccess} isLoaded={isLoaded} />
 			<CustomInput
 				type='text'

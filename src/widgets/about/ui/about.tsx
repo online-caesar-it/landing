@@ -38,7 +38,7 @@ export const About = () => {
 				}
 			/>
 			<div className='pt-[20px] max-w-[632px] mx-auto'>
-				<ButtonLink href='#formn' variant='primary' size='md'>
+				<ButtonLink href='#contact-form' variant='primary' size='md'>
 					Оставить заявку
 				</ButtonLink>
 			</div>
