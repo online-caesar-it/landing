@@ -13,7 +13,7 @@ export const Recording = () => {
 					</h2>
 				</MotionDiv>
 			</div>
-			<div className='flex items-center justify-between gap-4 pb-[30px lg:flex-col-reverse lg:items-center'>
+			<div className='flex items-center justify-between gap-4 pb-[30px] lg:flex-col-reverse lg:items-center'>
 				<MotionDiv
 					delay={0.2}
 					className='w-1/2 min-w-[500px] lg:w-full lg:min-w-0'
