@@ -5,8 +5,9 @@ import Link from 'next/link';
 import { Fragment, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 import { useMobileMenu } from '../model';
+import { useDirections } from '@/shared/hooks';
 
-const filteredLinks = ['/all'];
+const filteredLinks = ['/directions'];
 
 type TMenuLinkProps = {
 	title: string;
@@ -18,6 +19,7 @@ type TMenuLinkProps = {
 };
 
 export const MenuLink = ({ link, title, childItems }: TMenuLinkProps) => {
+	const { directions } = useDirections();
 	const { setOpen: open } = useMobileMenu();
 	const [isOpen, setOpen] = useState<boolean>(false);
 
@@ -47,16 +49,16 @@ export const MenuLink = ({ link, title, childItems }: TMenuLinkProps) => {
 						</div>
 					)}
 				</div>
-				{childItems && isOpen && (
+				{childItems && isOpen && directions && (
 					<div className='flex flex-col gap-[15px] mt-10 md:mb-5'>
-						{childItems.map((item, index) => (
+						{directions.map((item, index) => (
 							<Fragment key={index}>
 								<Link
 									onClick={handleChildClick}
-									href={item.link}
+									href={item.id}
 									className='text-[#555975] transition-all hover:text-[#B4BEFE] font-intro text-6xl leading-[1] md:text-3xl xsm:text-lg'
 								>
-									{item.title}
+									{item.name}
 								</Link>
 							</Fragment>
 						))}
