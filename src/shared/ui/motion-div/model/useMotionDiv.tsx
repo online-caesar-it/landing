@@ -10,7 +10,7 @@ export const useMotionDiv = () => {
 
 	useEffect(() => {
 		if (isInView) mainControls.start('visible');
-	}, [isInView]);
+	}, [isInView, mainControls]);
 
 	const views = {
 		sideView: {

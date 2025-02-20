@@ -1,7 +1,7 @@
 'use client';
 
-import { useMotionDiv } from './model';
-import type { MotionDivProps } from './model';
+import { useMotionDiv } from '../model';
+import type { MotionDivProps } from '../model';
 import { twMerge } from 'tailwind-merge';
 import { motion } from 'motion/react';
 
