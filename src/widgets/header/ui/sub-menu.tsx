@@ -1,16 +1,17 @@
+'use client';
+
+import { useDirections } from '@/shared/hooks';
 import Link from 'next/link';
 import { Fragment } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 type SubMenuProps = {
 	isOpen: boolean;
-	items: {
-		title: string;
-		link: string;
-	}[];
 };
 
-export const SubMenu = ({ isOpen, items }: SubMenuProps) => {
+export const SubMenu = ({ isOpen }: SubMenuProps) => {
+	const { directions } = useDirections();
+
 	return (
 		<div
 			className={twMerge(
@@ -18,16 +19,17 @@ export const SubMenu = ({ isOpen, items }: SubMenuProps) => {
 				isOpen && 'flex'
 			)}
 		>
-			{items.map((item, index) => (
-				<Fragment key={index}>
-					<Link
-						className='text-blue-20 leading-[1.2] border-b border-b-blue-20 border-solid pb-[10px] capitalize last:border-b-0 last:pb-0 transition-all  hover:text-blue-70 active:text-blue-70 focus:text-blue-70'
-						href={item.link}
-					>
-						{item.title}
-					</Link>
-				</Fragment>
-			))}
+			{directions &&
+				directions.map(direction => (
+					<Fragment key={direction.id}>
+						<Link
+							className='text-blue-20 leading-[1.2] border-b border-b-blue-20 border-solid pb-[10px] capitalize last:border-b-0 last:pb-0 transition-all  hover:text-blue-70 active:text-blue-70 focus:text-blue-70'
+							href={`/direction/${direction.id}`}
+						>
+							{direction.name}
+						</Link>
+					</Fragment>
+				))}
 		</div>
 	);
 };

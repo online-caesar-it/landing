@@ -25,7 +25,7 @@ export const navList: TNavList[] = [
 	{
 		title: 'Все направления',
 		icon: <ChevronDownIcon />,
-		link: '/all',
+		link: '/directions',
 		childItems: [
 			{
 				link: '#',

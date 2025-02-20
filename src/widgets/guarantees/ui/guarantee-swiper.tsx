@@ -23,7 +23,7 @@ export const GuaranteeSwiper = () => {
 				},
 			}}
 			items={promoItems}
-			renderItem={item => <PromoCard {...item} />}
+			renderItem={(item, index) => <PromoCard {...item} index={index} />}
 			className='md:-mt-14'
 		/>
 	);

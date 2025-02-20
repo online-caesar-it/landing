@@ -17,18 +17,21 @@ export const CustomCheckbox = (props: CustomCheckboxProps) => {
 	const textCn = twMerge(
 		'text-3xl font-intro leading-[1] lg:text-xl lg:text-lg md:text-[12px]',
 		variant === 'red' && 'text-[#F6C7C5]',
-		variant === 'blue' && 'text-blue-10'
+		variant === 'blue' && 'text-blue-10',
+		variant === 'white' && 'text-grey-30'
 	);
 
 	const checkboxCn = twMerge(
 		'w-[30px] h-[30px] flex items-center justify-center rounded-md transition-all',
 		variant === 'red' && 'bg-[#313244]',
-		variant === 'blue' && 'bg-blue-10'
+		variant === 'blue' && 'bg-blue-10',
+		variant === 'white' && 'bg-grey-30'
 	);
 
 	const iconCn = twMerge(
 		variant === 'blue' && 'fill-[#33334D]',
-		variant === 'red' && 'fill-[#E06C8C]'
+		variant === 'red' && 'fill-[#E06C8C]',
+		variant === 'white' && 'fill-red-30'
 	);
 
 	return (

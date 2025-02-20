@@ -53,3 +53,11 @@ export const designerStack = [
 		name: 'thing',
 	},
 ];
+
+export const cosialsStack = [
+	{
+		icon: '/stack/ai.svg',
+		color: 'border-orange-40',
+		name: 'ai',
+	},
+];

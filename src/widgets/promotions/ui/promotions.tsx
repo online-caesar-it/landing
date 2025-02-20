@@ -1,4 +1,4 @@
-import { ButtonLink } from '@/shared/ui';
+import { ButtonLink, MotionDiv } from '@/shared/ui';
 import { PromotionsSwiper } from './promotions-swiper';
 import SectionLayout from '@/widgets/layouts/ui/section-layout';
 
@@ -16,11 +16,11 @@ export const Promotions = ({ children }: TPromotionsProps) => {
 				{children}
 				<PromotionsSwiper />
 			</div>
-			<div className='mx-auto max-w-[630px]'>
+			<MotionDiv delay={0.3} className='mx-auto max-w-[630px]'>
 				<ButtonLink variant='primary' href='#contact-form-2'>
 					Оставить заявку
 				</ButtonLink>
-			</div>
+			</MotionDiv>
 		</SectionLayout>
 	);
 };

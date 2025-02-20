@@ -12,7 +12,8 @@ export default {
 				greco: ['var(--font-greco-roman)', 'sans-serif'],
 			},
 			fontSize: {
-				'section-sm': 'clamp(28px, 2.4vw, 36px)',
+				'section-sm': 'clamp(28px, 2.4vw, 32px)',
+				'section-md': 'clamp(28px, 2.4vw, 38px)',
 				'section-lg': 'clamp(26px, 5.6vw, 50px)',
 				'section-xl': 'clamp(60px, 4.6vw, 88px)',
 				'page-title': 'clamp(45px, 6.2vw, 88px)',
@@ -55,6 +56,7 @@ export default {
 					'70': '#00ACD7',
 					'75': '#007ACC',
 					'80': '#35333B',
+					'90': '#3476E1',
 				},
 				red: {
 					'10': '#D9D9D9',
@@ -63,12 +65,15 @@ export default {
 					'50': '#F4A3BE',
 					'60': '#F38BA8',
 					'65': '#E06C8D',
+					'70': '#E06C8C',
 					'80': '#FF3068',
 					'90': '#D72067',
 					'95': '#AF1D46',
+					'100': '#A61B40',
 				},
 				green: {
 					'30': '#A6E3A1',
+					'40': '#66E57D',
 					'60': '#6B9C1F',
 				},
 				orange: {

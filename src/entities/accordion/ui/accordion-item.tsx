@@ -24,7 +24,7 @@ export function AccordionItem({ index, title, children }: AccordionItemProps) {
 	return (
 		<div className='overflow-hidden w-full rounded-[50px] lg:rounded-[25px]'>
 			<button
-				className={`w-full text-left font-bold bg-grey-90 py-[30px] px-[45px] pb-[25px]  text-blue-50 font-intro text-3xl leading-[1] transition-all duration-500 flex items-center justify-between gap-4 outline-none md:text-lg md:px-[20px]  ${
+				className={`w-full text-left font-bold bg-grey-90 py-[30px] px-[45px] pb-[25px]  text-blue-50 font-intro text-3xl leading-[1] transition-all duration-500 flex items-center justify-between gap-4 outline-none md:text-lg md:px-[20px] sm:text-base ${
 					isOpen && 'rounded-b-none'
 				}`}
 				onClick={() => toggle(index)}
@@ -42,7 +42,7 @@ export function AccordionItem({ index, title, children }: AccordionItemProps) {
 			</button>
 			<div
 				className={twMerge(
-					`max-h-0 overflow-hidden text-xl px-[40px] text-white bg-grey-75 transition-all duration-500 md:text-base md:px-[20px]`,
+					`max-h-0 overflow-hidden text-xl px-[40px] text-white bg-grey-75 transition-all duration-500 md:text-base md:px-[20px] sm:text-sm`,
 					cn
 				)}
 			>

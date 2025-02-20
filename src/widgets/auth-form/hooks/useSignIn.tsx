@@ -8,7 +8,10 @@ import { z } from 'zod';
 import { useState } from 'react';
 
 const signInSchema = z.object({
-	email: z.string().min(5).email('Введите корректный email'),
+	email: z
+		.string()
+		.min(5, 'Почта должна быть более пяти символов')
+		.email('Введите корректный email'),
 });
 type SignInFormInputs = z.infer<typeof signInSchema>;
 type TMessage = {

@@ -2,6 +2,7 @@ import { IconTemplate } from '@/shared/ui/icons';
 import SectionLayout from '@/widgets/layouts/ui/section-layout';
 import { twMerge } from 'tailwind-merge';
 import style from '../styles/style.module.css';
+import { MotionDiv } from '@/shared/ui';
 
 export const Banner = () => {
 	return (
@@ -11,14 +12,16 @@ export const Banner = () => {
 				style.section
 			)}
 		>
-			<h2
-				className={twMerge(
-					'uppercase text-page-title font-intro text-left',
-					style.title
-				)}
-			>
-				От идей — к реализации: <br /> твой путь в мир <br /> технологий!
-			</h2>
+			<MotionDiv>
+				<h2
+					className={twMerge(
+						'uppercase text-page-title font-intro text-left',
+						style.title
+					)}
+				>
+					От идей — к реализации: <br /> твой путь в мир <br /> технологий!
+				</h2>
+			</MotionDiv>
 			<IconTemplate
 				src='/images/characterPurple.png'
 				alt='Иконка персонажа'

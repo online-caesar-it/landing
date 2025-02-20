@@ -57,6 +57,7 @@ export const ContactForm = ({ variant = 'red', id }: ContactFormProps) => {
 			<CustomCheckbox
 				name='agreement'
 				label='ДАЮ СОГЛАСИЕ НА ОБРАБОТКУ ДАННЫХ*'
+				variant={variant}
 			/>
 			<Separator offset={45} className='lg:!pb-5' />
 			<Button
@@ -64,7 +65,7 @@ export const ContactForm = ({ variant = 'red', id }: ContactFormProps) => {
 				type='submit'
 				variant='secondary'
 				className={`w-full lg:!pt-[12px] lg:!pb-[8px] md:!py-2 ${
-					variant === 'white' && 'text-red-30 hover:text-grey-90'
+					variant === 'white' && '!text-red-30 hover:!text-grey-90'
 				}`}
 			>
 				Отправить

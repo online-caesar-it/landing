@@ -1,3 +1,4 @@
+import { MotionDiv } from '@/shared/ui';
 import Image from 'next/image';
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
@@ -10,14 +11,16 @@ type PromoCardProps = {
 	link: string;
 	color: string;
 	linkLabel: string;
+	index?: number;
 };
 
 export const PromoCard = (props: PromoCardProps) => {
-	const { color, description, icon, link, title, linkLabel } = props;
+	const { color, description, icon, link, title, linkLabel, index } = props;
 	return (
-		<div
+		<MotionDiv
+			delay={index && +`0.${index + 1}`}
 			className={twMerge(
-				'relative w-full rounded-[50px] pt-[8%] px-[8%] aspect-[0.71/1] max-h-[800px] overflow-hidden min-h-[745px] md:p-[24px] md:rounded-[25px] md:min-h-[460px] md:aspect-auto xsm:p-[20px]',
+				'relative w-full rounded-[50px] pt-[15%] px-[8%] aspect-[0.71/1] max-h-[800px] overflow-hidden min-h-[745px] md:p-[24px] md:rounded-[25px] md:min-h-[460px] md:aspect-auto xsm:p-[20px]',
 				color
 			)}
 		>
@@ -38,6 +41,6 @@ export const PromoCard = (props: PromoCardProps) => {
 					{linkLabel}
 				</Link>
 			</div>
-		</div>
+		</MotionDiv>
 	);
 };

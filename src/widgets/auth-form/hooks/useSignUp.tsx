@@ -6,7 +6,10 @@ import { z } from 'zod';
 import { useState } from 'react';
 
 const signUpSchema = z.object({
-	email: z.string().min(5).email('Введите корректный email'),
+	email: z
+		.string()
+		.min(5, 'Поле email должно быть более пяти символов')
+		.email('Введите корректный email'),
 	firstName: z.string().min(2, 'Имя должно быть длиннее 2 символов'),
 	surname: z.string().min(2, 'Фамилия должна быть длиннее 2 символов'),
 	patronymic: z.string().optional(),

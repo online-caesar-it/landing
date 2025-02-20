@@ -39,7 +39,7 @@ export const NavLink = ({ link, title, icon, childItems }: TNavLinkProps) => {
 					{icon}
 				</div>
 			)}
-			{childItems && <SubMenu isOpen={isOpen} items={childItems} />}
+			{childItems && <SubMenu isOpen={isOpen} />}
 		</div>
 	);
 };

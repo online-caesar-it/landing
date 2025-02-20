@@ -27,7 +27,7 @@ export const PromotionsSwiper = () => {
 				},
 			}}
 			items={promotionsItems}
-			renderItem={item => <PromotionCard {...item} />}
+			renderItem={(item, index) => <PromotionCard {...item} index={index} />}
 			className='md:-mt-14'
 		/>
 	);
