@@ -1,11 +1,10 @@
 'use client';
 
-import If from '@/features/abstract/If';
-import { useSession } from '@/shared/hooks/use-session';
 import { Button } from '../../button';
-import AuthButtons from '@/widgets/header/ui/auth-buttons';
+import If from '@/features/abstract/If';
 import { useLogout } from '@/shared/hooks';
-import UserPanel from '@/features/user/ui/user-panel';
+import { useSession } from '@/shared/hooks/use-session';
+import AuthButtons from '@/widgets/header/ui/auth-buttons';
 import { useMobileMenu } from '@/entities/mobile-menu/model';
 
 export const LogoutBtn = () => {
@@ -27,7 +26,6 @@ export const LogoutBtn = () => {
 				</div>
 			}
 		>
-			<UserPanel />
 			<Button className='w-full' variant='primary' onClick={handleChildClick}>
 				Выйти
 			</Button>

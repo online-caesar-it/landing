@@ -42,7 +42,7 @@ export const Banner = () => {
 				src='/images/characterRed.png'
 				alt='Иконка красного персонажа'
 				className={twMerge(
-					'absolute top-[27%] right-0 scale-[1.5] 3xl:scale-[1] 3xl:top-[30%] 3xl:-right-[10%]',
+					'absolute top-[27%] right-0 scale-[1.5] animate-levitate 3xl:scale-[1] 3xl:top-[30%] 3xl:-right-[10%] 3xl:animate-levitate3xl',
 					style.redIcons
 				)}
 			/>

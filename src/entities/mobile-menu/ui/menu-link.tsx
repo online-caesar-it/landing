@@ -1,11 +1,11 @@
 'use client';
 
+import { useMobileMenu } from '../model';
+import { directions } from '@/shared/constants';
 import { ChevronDownIconBig } from '@/shared/ui/icons';
-import Link from 'next/link';
 import { Fragment, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
-import { useMobileMenu } from '../model';
-import { useDirections } from '@/shared/hooks';
+import Link from 'next/link';
 
 const filteredLinks = ['/directions'];
 
@@ -19,7 +19,6 @@ type TMenuLinkProps = {
 };
 
 export const MenuLink = ({ link, title, childItems }: TMenuLinkProps) => {
-	const { directions } = useDirections();
 	const { setOpen: open } = useMobileMenu();
 	const [isOpen, setOpen] = useState<boolean>(false);
 
@@ -55,10 +54,10 @@ export const MenuLink = ({ link, title, childItems }: TMenuLinkProps) => {
 							<Fragment key={index}>
 								<Link
 									onClick={handleChildClick}
-									href={item.id}
+									href={`/direction/${item.slug}`}
 									className='text-[#555975] transition-all hover:text-[#B4BEFE] font-intro text-6xl leading-[1] md:text-3xl xsm:text-lg'
 								>
-									{item.name}
+									{item.title}
 								</Link>
 							</Fragment>
 						))}

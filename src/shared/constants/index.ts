@@ -7,3 +7,4 @@ export * from './accordion';
 export * from './links';
 export * from './contacts';
 export * from './directions-utils';
+export * from './client-directions';
