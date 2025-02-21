@@ -1,4 +1,5 @@
 import { directionsColors } from '@/shared/constants';
+import { BubbleTailIcon } from '@/shared/ui/icons';
 import SectionLayout from '@/widgets/layouts/ui/section-layout';
 import { twMerge } from 'tailwind-merge';
 
@@ -29,7 +30,7 @@ export const DirectionBubble = (props: TDirectionBubbleProps) => {
 			<div
 				className={twMerge(
 					currentColor.background.first,
-					'py-7 px-20 rounded-[50px] mb-[50px] max-w-[95%] mr-auto'
+					'relative py-7 px-20 rounded-[50px] mb-[50px] max-w-[96%] mr-auto'
 				)}
 			>
 				<h2
@@ -49,11 +50,14 @@ export const DirectionBubble = (props: TDirectionBubbleProps) => {
 						</li>
 					))}
 				</ol>
+				<div className='absolute bottom-0 -right-[54px]'>
+					<BubbleTailIcon fill={currentColor.tailColor} />
+				</div>
 			</div>
 			<div
 				className={twMerge(
 					currentColor.background.last,
-					'py-7 px-20 rounded-[50px] mb-[50px] max-w-[95%] ml-auto'
+					'relative py-7 px-20 rounded-[50px] mb-[50px] max-w-[96%] ml-auto'
 				)}
 			>
 				<h2
@@ -73,6 +77,9 @@ export const DirectionBubble = (props: TDirectionBubbleProps) => {
 						</li>
 					))}
 				</ol>
+				<div className='absolute bottom-0 -left-[54px] scale-x-[-1]'>
+					<BubbleTailIcon fill={currentColor.tailColor} />
+				</div>
 			</div>
 			<div className=''></div>
 		</SectionLayout>

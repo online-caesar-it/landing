@@ -50,7 +50,7 @@ export const directions = [
 			patronymic: 'Иванович',
 		},
 		person: {
-			image: '/',
+			image: '/direction/',
 			title: '',
 		},
 		colorTheme: 'purple',
@@ -113,7 +113,7 @@ export const directions = [
 			patronymic: 'Иванович',
 		},
 		person: {
-			image: '/',
+			image: '/direction/',
 			title: '',
 		},
 		colorTheme: 'blue',
@@ -176,7 +176,7 @@ export const directions = [
 			patronymic: 'Иванович',
 		},
 		person: {
-			image: '/',
+			image: '/direction/',
 			title: '',
 		},
 		colorTheme: 'orange',
@@ -240,7 +240,7 @@ export const directions = [
 			patronymic: 'Иванович',
 		},
 		person: {
-			image: '/',
+			image: '/direction/',
 			title: '',
 		},
 		colorTheme: 'emerald',
@@ -315,7 +315,7 @@ export const directions = [
 			patronymic: 'Иванович',
 		},
 		person: {
-			image: '/',
+			image: '/direction/',
 			title: '',
 		},
 		colorTheme: 'red-blue',
@@ -388,7 +388,7 @@ export const directions = [
 			patronymic: 'Иванович',
 		},
 		person: {
-			image: '/',
+			image: '/direction/',
 			title: '',
 		},
 		colorTheme: 'orange-blue',
@@ -455,6 +455,7 @@ export const staticDirections = [
 type TDirectionsColorsBody = {
 	title: string;
 	iconBg: string;
+	tailColor: string;
 	background: {
 		first: string;
 		last: string;
@@ -465,6 +466,7 @@ export const directionsColors: Record<string, TDirectionsColorsBody> = {
 	// frontend
 	purple: {
 		title: 'text-[#40D277]',
+		tailColor: '#6A629B',
 		iconBg: 'bg-gradient-to-b from-[#250B3F] to-[#B4BEFE]',
 		background: {
 			first: 'bg-gradient-to-r from-[#250B3F] to-[#6A629B]',
@@ -474,39 +476,47 @@ export const directionsColors: Record<string, TDirectionsColorsBody> = {
 	// GO
 	orange: {
 		title: 'text-[#653E29]',
+		tailColor: '#DBD6D5',
 		iconBg: 'bg-gradient-to-b from-[#DD5B33] to-[#D9D9D9]',
 		background: {
 			first: 'bg-gradient-to-r from-[#DD5B33] to-[#D9D9D9]',
 			last: 'bg-gradient-to-l from-[#DD5B33] to-[#D9D9D9]',
 		},
 	},
-	// pythone
+	// python
 	blue: {
 		title: 'text-[#C4A439]',
+		tailColor: '#6A629B',
 		iconBg: 'bg-gradient-to-b from-[#004472] to-[#74c7ec]',
 		background: {
 			first: 'bg-gradient-to-r from-[#004472] to-[#6A629B]',
 			last: 'bg-gradient-to-l from-[#004472] to-[#6A629B]',
 		},
 	},
+	// js-ts
 	emerald: {
 		title: 'text-[#EE99CB]',
+		tailColor: '#91DED1',
 		iconBg: 'bg-gradient-to-b from-[#313244] to-[#94E2D5]',
 		background: {
 			first: 'bg-gradient-to-r from-[#313244] to-[#94E2D5]',
 			last: 'bg-gradient-to-l from-[#313244] to-[#94E2D5]',
 		},
 	},
+	// Коммуникация
 	'red-blue': {
 		title: 'text-[#5447B0]',
+		tailColor: '#F0C1E7',
 		iconBg: 'bg-gradient-to-b from-[#74A7EB] to-[#F5C2E7]',
 		background: {
 			first: 'bg-gradient-to-r from-[#74A7EB] to-[#F5C2E7]',
 			last: 'bg-gradient-to-l from-[#74A7EB] to-[#F5C2E7]',
 		},
 	},
+	// Русский язык
 	'orange-blue': {
 		title: 'text-[#2E2AA9]',
+		tailColor: '#B6B4F1',
 		iconBg: 'bg-gradient-to-b from-[#E44F26] to-[#B5B8F8]',
 		background: {
 			first: 'bg-gradient-to-r from-[#E44F26] to-[#B5B8F8]',
