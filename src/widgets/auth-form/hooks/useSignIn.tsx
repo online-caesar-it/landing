@@ -46,11 +46,12 @@ export const useSignIn = () => {
 			setLoading(false);
 
 			const axiosError = error as AxiosError;
+			const errorData = axiosError.response?.data as { message: string };
 
-			if (axiosError.response?.status === 400) {
+			if (errorData?.message === 'This user not exist') {
 				setMessage({
 					title: 'Пользователь не найден.',
-					subTitle: ' Проверьте почту и попробуйте снова.',
+					subTitle: 'Проверьте почту и попробуйте снова.',
 				});
 			} else {
 				setMessage({
