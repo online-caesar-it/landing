@@ -12,9 +12,11 @@ export const FormSnackbar = ({ title, icon, subTitle }: TFormSnackbarProps) => {
 				<h3 className='text-blue-20 text-[32px] mb-2 leading-[1] lg:text-4xl md:text-xl'>
 					{title}
 				</h3>
-				<p className='text-xl text-blue-40 leading-[1] lg:text-base md:text-sm'>
-					{subTitle}
-				</p>
+				{subTitle && (
+					<p className='text-xl text-blue-40 leading-[1] lg:text-base md:text-sm'>
+						{subTitle}
+					</p>
+				)}
 			</div>
 		</div>
 	);

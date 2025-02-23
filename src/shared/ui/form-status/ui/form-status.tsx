@@ -10,7 +10,7 @@ export const FormStatus = ({ isSuccess, isLoaded }: TFormStatus) => {
 	return (
 		<div
 			className={twMerge(
-				'absolute w-full h-full bg-grey-30 z-[2] rounded-[40px] flex flex-col justify-between text-center opacity-0 pointer-events-none transition-all duration-300 lg:min-h-[400px] lg:rounded-[20px]',
+				'absolute w-full h-full bg-grey-30 z-[2] rounded-[40px] flex flex-col justify-between text-center opacity-100 pointer-events-none transition-all duration-300 lg:min-h-[400px] lg:rounded-[20px] md:min-h-fit',
 				isLoaded && 'opacity-100 pointer-events-auto'
 			)}
 		>
@@ -20,7 +20,7 @@ export const FormStatus = ({ isSuccess, isLoaded }: TFormStatus) => {
 					width={220}
 					height={220}
 					src={isSuccess ? '/icons/success.png' : '/icons/error.png'}
-					className='scale-150 mb-10 -mt-14 lg:scale-100 lg:mb-0'
+					className='scale-150 mb-10 -mt-14 lg:scale-100 lg:mb-0 md:w-[160px] md:h-[160px]'
 				/>
 				<h3 className='text-white text-5xl mb-4'>
 					{isSuccess ? 'заявка принята' : 'заявка ОТКЛОНЕНА'}

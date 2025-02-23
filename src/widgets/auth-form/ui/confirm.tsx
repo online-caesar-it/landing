@@ -1,14 +1,15 @@
 'use client';
 
+import SectionLayout from '@/widgets/layouts/ui/section-layout';
 import { useConfirm } from '../hooks/useConfirm';
 
 const Confirm = () => {
 	const { loading, message } = useConfirm();
 	return (
-		<div className='text-white font-intro text-5xl'>
+		<SectionLayout className='text-white font-intro text-5xl text-center'>
 			<h1>Подтверждение входа</h1>
 			{loading ? <p>Подтверждаем...</p> : <p>{message}</p>}
-		</div>
+		</SectionLayout>
 	);
 };
 

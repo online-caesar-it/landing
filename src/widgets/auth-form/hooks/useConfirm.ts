@@ -34,7 +34,7 @@ export const useConfirm = () => {
 				localStorageToken.setRefreshToken(
 					response.data.user.config.refresh_token
 				);
-				client.invalidateQueries({ queryKey: 'get-self' });
+				await client.invalidateQueries({ queryKey: ['get-self'] });
 			}
 			router.push('/');
 			console.log(response.data);

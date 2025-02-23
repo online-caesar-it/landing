@@ -79,7 +79,7 @@ export const CustomInput = <T extends FieldValues>(props: UnionType<T>) => {
 			{inputName && errors?.[inputName] && (
 				<p
 					className={twMerge(
-						'text-red-500 ml-6 text-lg -mb-5 font-semibold lg:ml-5 lg:text-base lg:mb-2',
+						'text-red-500 ml-6 text-lg -mb-5 font-semibold lg:ml-5 lg:text-base lg:mb-2 md:mb-1',
 						errorCn
 					)}
 				>
