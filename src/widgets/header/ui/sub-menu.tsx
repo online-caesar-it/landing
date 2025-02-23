@@ -1,6 +1,4 @@
-'use client';
-
-import { useDirections } from '@/shared/hooks';
+import { directions } from '@/shared/constants';
 import Link from 'next/link';
 import { Fragment } from 'react';
 import { twMerge } from 'tailwind-merge';
@@ -10,8 +8,6 @@ type SubMenuProps = {
 };
 
 export const SubMenu = ({ isOpen }: SubMenuProps) => {
-	const { directions } = useDirections();
-
 	return (
 		<div
 			className={twMerge(
@@ -24,9 +20,9 @@ export const SubMenu = ({ isOpen }: SubMenuProps) => {
 					<Fragment key={direction.id}>
 						<Link
 							className='text-blue-20 leading-[1.2] border-b border-b-blue-20 border-solid pb-[10px] capitalize last:border-b-0 last:pb-0 transition-all  hover:text-blue-70 active:text-blue-70 focus:text-blue-70'
-							href={`/direction/${direction.id}`}
+							href={`/direction/${direction.slug}`}
 						>
-							{direction.name}
+							{direction.title}
 						</Link>
 					</Fragment>
 				))}

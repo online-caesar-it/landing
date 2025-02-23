@@ -1,15 +1,10 @@
 export const directionColorPalette: Record<string, string> = {
-	фронтенд: '#B4BEFE',
-	'ux/uiдизайн': '#89B4FA',
-	python: '#74C7EC',
-	go: '#D9D9D9',
-	'javascript/typescript': '#94E2D5',
-	'версткасайтов/приложений': '#89DCEB',
-	иллюстрации: '',
-	эффективнаякоммуникация: '',
-	русскийязык: '',
-	математика: '',
-	английскийязык: '',
+	purple: '#B4BEFE',
+	blue: '#74C7EC',
+	orange: '#D9D9D9',
+	emerald: '#94E2D5',
+	'red-blue': '#89DCEB',
+	'orange-blue': '#D9D9D9',
 };
 
 export const directionIcons: Record<string, string> = {

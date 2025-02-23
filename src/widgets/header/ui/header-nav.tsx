@@ -14,7 +14,7 @@ const HeaderNav = () => {
 				<Nav />
 			</MotionDiv>
 			<div className='flex items-center gap-5'>
-				<MotionDiv delay={0.4} className='md:hidden'>
+				<MotionDiv delay={0.4} className=''>
 					<HeaderAuth />
 				</MotionDiv>
 				<MobileMenu />

@@ -1,22 +1,15 @@
 'use client';
 
-import { useMobileMenu } from '@/entities/mobile-menu/model';
 import If from '@/features/abstract/If';
 import { useSession } from '@/shared/hooks/use-session';
 import Link from 'next/link';
 
 const UserPanel = () => {
 	const { session, isLoading } = useSession();
-	const { setOpen: open } = useMobileMenu();
-
-	const handleChildClick = () => {
-		open!(false);
-	};
 
 	return (
 		<div
 			title='Перейти в профиль'
-			onClick={handleChildClick}
 			aria-label='Перейти в профиль'
 			className='text-white font-intro min-w-fit'
 			role='button'
@@ -32,8 +25,11 @@ const UserPanel = () => {
 				}
 			>
 				<Link href={'/profile'}>
-					<span className='leading-[1]'>
+					<span className='leading-[1] md:hidden'>
 						{session?.firstName} {session?.surname}
+					</span>
+					<span className='hidden leading-[1] md:block'>
+						{session?.firstName} {session?.surname[0]}.
 					</span>
 				</Link>
 			</If>

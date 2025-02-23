@@ -5,7 +5,11 @@ const Logo = () => {
 	return (
 		<Link href='/' className={'flex items-center gap-2'}>
 			<LogoIcon />
-			<p className={'text-blue-20 text-5xl uppercase font-greco leading-[1]'}>
+			<p
+				className={
+					'text-blue-20 text-5xl uppercase font-greco leading-[1] xsm:hidden'
+				}
+			>
 				caesar it
 			</p>
 		</Link>
