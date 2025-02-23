@@ -13,11 +13,6 @@ type TNavList = {
 
 export const navList: TNavList[] = [
 	{
-		title: 'Блог',
-		icon: <ChevronDownIcon />,
-		link: '/blog',
-	},
-	{
 		title: 'Контакты',
 		icon: <ChevronDownIcon />,
 		link: '/contacts',

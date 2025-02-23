@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm, useWatch } from 'react-hook-form';
 import { z } from 'zod';
 import { useState } from 'react';
+import { AxiosError } from 'axios';
 
 const signInSchema = z.object({
 	email: z
@@ -41,12 +42,22 @@ export const useSignIn = () => {
 					'Чтобы войти, перейдите по ссылке, которую мы направили вам на почту',
 			});
 		},
-		onError: () => {
+		onError: error => {
 			setLoading(false);
-			setMessage({
-				title: 'Ошибка при входе',
-				subTitle: 'Проверьте правильность почты или попробуйте позже',
-			});
+
+			const axiosError = error as AxiosError;
+
+			if (axiosError.response?.status === 400) {
+				setMessage({
+					title: 'Пользователь не найден.',
+					subTitle: ' Проверьте почту и попробуйте снова.',
+				});
+			} else {
+				setMessage({
+					title: 'Ошибка при входе',
+					subTitle: 'Произошла ошибка. Попробуйте позже.',
+				});
+			}
 
 			setTimeout(() => {
 				setMessage({

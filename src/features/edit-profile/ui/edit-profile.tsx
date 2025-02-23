@@ -70,23 +70,9 @@ export const EditProfile = () => {
 								</div>
 							</label>
 						</div>
-						<label
-							htmlFor='email'
-							className='flex items-end gap-4 mb-10 md:w-full'
-						>
-							<input
-								id='email'
-								type='email'
-								defaultValue={session ? session.config.email : 'Загрузка...'}
-								className='text-3xl text-blue-20 w-full max-w-[350px] font-intro bg-transparent leading-[1] 2xl:text-2xl 2xl:max-w-[320px] md:text-base lowercase md:w-full md:max-w-full'
-								{...register('email', {
-									required: 'Поле должно быть заполнено',
-								})}
-							/>
-							<div className='mb-[5px]'>
-								<EditIcon />
-							</div>
-						</label>
+						<div className='text-3xl 2xl:text-5xl md:text-3xl font-intro text-blue-20'>
+							{session?.config.email}
+						</div>
 					</div>
 				</div>
 				<div className='border-t-[5px] border-solid border-grey-55 pt-[35px] flex items-center justify-between gap-4 md:flex-col md:gap-8 md:items-start'>

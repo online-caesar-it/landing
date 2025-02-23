@@ -6,7 +6,7 @@ export const useSession = () => {
 	const token = localStorageToken.getAccessToken();
 
 	const { data, isLoading } = useQuery({
-		queryKey: ['get-self'],
+		queryKey: ['get-self', token],
 		queryFn: userApi.getSelf,
 		queryHash: '15m',
 		enabled: !!token,

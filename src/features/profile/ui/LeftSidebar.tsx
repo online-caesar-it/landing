@@ -8,14 +8,6 @@ export const LeftSidebar = () => {
 		<aside className=''>
 			<ul className='flex flex-col gap-[45px] font-intro text-xl xl:text-lg text-red-60 xl:hidden'>
 				<li>
-					<Link
-						href='/profile/settings'
-						className='block transition-all hover:text-red-80'
-					>
-						Настройки
-					</Link>
-				</li>
-				<li>
 					<Link href='#' className='block transition-all hover:text-red-80'>
 						ссылка на портал
 					</Link>
