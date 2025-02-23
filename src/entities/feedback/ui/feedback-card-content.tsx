@@ -6,8 +6,8 @@ type FeedbackCardContentProps = {
 const FeedbackCardContent = (props: FeedbackCardContentProps) => {
 	const { description, title } = props;
 	return (
-		<div className='p-5'>
-			<div className=''>{title}</div>
+		<div className='p-8'>
+			<h3 className='text-5xl md:text-3xl leading-[1] mb-12'>{title}</h3>
 			<div className=''>{description}</div>
 		</div>
 	);

@@ -1,4 +1,4 @@
-import { designerStack, programmingStack } from '@/shared/constants';
+import { communicationStack, programmingStack } from '@/shared/constants';
 import { ButtonLink, MotionDiv, StackList } from '@/shared/ui';
 import SectionLayout from '@/widgets/layouts/ui/section-layout';
 import Image from 'next/image';
@@ -14,13 +14,16 @@ export const Stack = () => {
 				</MotionDiv>
 				<div>
 					<div className='mb-[164px] md:mb-[80px]'>
-						<MotionDiv delay={0.2}>
-							<StackList array={designerStack} title='для дизайна' />
-						</MotionDiv>
 						<MotionDiv delay={0.3}>
 							<StackList
 								array={programmingStack}
 								title='для программирования'
+							/>
+						</MotionDiv>
+						<MotionDiv delay={0.2}>
+							<StackList
+								array={communicationStack}
+								title='для деловых коммуникаций и школьных предметов'
 							/>
 						</MotionDiv>
 					</div>

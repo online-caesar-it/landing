@@ -3,7 +3,6 @@ import {
 	About,
 	Stack,
 	Banner,
-	Teachers,
 	Recording,
 	Promotions,
 	Guarantees,
@@ -26,7 +25,6 @@ const Page = () => {
 			<Stack />
 			<CoursesBlock />
 			<Recording />
-			<Teachers />
 			<Promotions />
 			<ClientsReviews />
 			<NewVectors />
