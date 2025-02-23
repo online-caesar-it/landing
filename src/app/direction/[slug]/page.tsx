@@ -2,19 +2,22 @@ import { DirectionBanner, DirectionBubble, DirectionTeacher } from '@/features';
 import { directions } from '@/shared/constants';
 import { Metadata } from 'next';
 
-type PageProps = { params: { slug: string } };
+type PageProps = Promise<{ slug: string }>;
 
 export async function generateMetadata({
 	params,
-}: PageProps): Promise<Metadata> {
+}: {
+	params: PageProps;
+}): Promise<Metadata> {
 	const { slug } = await params;
+
 	const data = directions.find(direction => direction.slug === slug);
 	return {
 		title: `Направление - ${data?.title}`,
 	};
 }
 
-export default async function Page({ params }: PageProps) {
+export default async function Page({ params }: { params: PageProps }) {
 	const { slug } = await params;
 	const direction = directions.find(direction => direction.slug === slug);
 
