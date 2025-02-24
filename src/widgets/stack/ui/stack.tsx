@@ -28,7 +28,7 @@ export const Stack = () => {
 						</MotionDiv>
 					</div>
 					<MotionDiv delay={0.4} className='max-w-[632px] mx-auto'>
-						<ButtonLink icon href='#' variant='primary'>
+						<ButtonLink icon href='/resourses' variant='primary'>
 							больше ресурсов
 						</ButtonLink>
 					</MotionDiv>

@@ -16,3 +16,4 @@ export * from './edit-icon';
 export * from './tg-small-icon';
 export * from './back-arrow-btn';
 export * from './bubble-tail-icon';
+export * from './tooltip-icon';

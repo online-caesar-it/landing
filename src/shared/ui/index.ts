@@ -9,3 +9,4 @@ export * from './profile/ui';
 export * from './logout-btn/ui';
 export * from './back-button/ui';
 export * from './motion-div/ui';
+export * from './back-link/ui';
