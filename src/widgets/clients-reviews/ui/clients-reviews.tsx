@@ -8,7 +8,7 @@ import { FeedbackSwiper } from '@/features/feedback/ui/feedback-swiper';
 export const ClientsReviews = async () => {
 	return (
 		<SectionLayout className='mb-section-bottom md:mb-24'>
-			<div className='text-blue-0 text-center font-intro mb-[110px] md:mb-[30px]'>
+			<div className='text-blue-0 text-right font-intro mb-[110px] md:mb-[30px]'>
 				<h2 className='text-section-xl leading-[1] md:text-[40px]'>
 					ОТЗЫВЫ КЛИЕНТОВ
 				</h2>

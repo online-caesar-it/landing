@@ -7,7 +7,7 @@ import { useClientReviewsContext } from '@/widgets/clients-reviews/ui/client-rev
 const FeedbackListCascade = () => {
 	const { filteredData } = useClientReviewsContext();
 	return (
-		<div className='relative left-[15%] w-1/2 2xl:left-[10%] lg:left-0 md:hidden'>
+		<div className='relative left-[23%] w-1/2 2xl:left-[10%] lg:left-0 md:hidden'>
 			{filteredData ? (
 				filteredData.map((item, index) => (
 					<FeedbackCard color={item.color} index={index} key={index}>

@@ -12,13 +12,18 @@ export const Guarantees = () => {
 					variant='secondary'
 					title={
 						<>
-							47 выпускников сдали егэ по школьным предметам на
-							<span className='text-red-95'>
+							<span className='block mb-5'>
+								47 выпускников сдали егэ на
+								<span className='text-red-95'>
+									{' '}
+									90+ баллов <br className='lg:hidden' />
+								</span>{' '}
+							</span>
+							<span>
 								{' '}
-								90+ баллов <br className='lg:hidden' />
-							</span>{' '}
-							368 выпускноков стали{' '}
-							<span className='text-red-95'>специалистами в сфере it</span>
+								368 выпускноков стали{' '}
+								<span className='text-red-95'>специалистами в сфере it</span>
+							</span>
 						</>
 					}
 				/>

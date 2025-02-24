@@ -26,6 +26,14 @@ export const programmingStack = [
 	},
 ];
 
+export const communicationStack = [
+	{
+		icon: '/icons/logo.svg',
+		color: 'border-blue-20',
+		name: 'communication',
+	},
+];
+
 export const designerStack = [
 	{
 		icon: '/stack/ai.svg',

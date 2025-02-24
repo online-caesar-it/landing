@@ -1,8 +1,8 @@
 export const CONTACS_DATA = {
-	EMAIL: 'ceaserit_support@gmail.com',
-	PHONE: '88889998989',
+	EMAIL: 'info@caesar-it.ru',
+	PHONE: '+7 (995) 850-82-31',
 	TELEGRAM: {
-		link: '@ceaserit_tg',
+		link: 'https://t.me/caesar_it_online',
 		label: '@ceaserit_tg',
 	},
 	VK: {

@@ -15,7 +15,7 @@ export const promoItems = [
 		description:
 			'после окончания курса доступ к конспектам и дополнительным материалам останется навсегда',
 		icon: '/promo/courses.png',
-		link: '#',
+		link: '/profile',
 		color: 'bg-linear-blue-promo',
 		linkLabel: 'мои курсы',
 	},
@@ -25,7 +25,7 @@ export const promoItems = [
 		description:
 			'при успешном завершении обучения каждый ученик получит сертификат о прохождении учебной программы',
 		icon: '/promo/job.png',
-		link: '#',
+		link: '/docs/sert.pdf',
 		color: 'bg-linear-orange-promo',
 		linkLabel: 'информация',
 	},
@@ -41,21 +41,11 @@ export const promoItems = [
 	},
 	{
 		id: 5,
-		title: 'доступ к сообществу',
-		description:
-			'мы гарантируем участие в закрытых группах, где студенты смогут обмениваться опытом и получать поддержку от одногруппников и преподавателей.',
-		icon: '/promo/comunity.png',
-		link: '/blog',
-		color: 'bg-linear-blue-light-promo',
-		linkLabel: 'блог',
-	},
-	{
-		id: 6,
 		title: 'Обновления материалов',
 		description:
 			'регулярное обновление учебных материалов, чтобы соответствовать текущим стандартам и тенденциям в индустрии.',
 		icon: '/promo/update.png',
-		link: '#',
+		link: '/directions',
 		color: 'bg-linear-red-promo',
 		linkLabel: 'все направления',
 	},
@@ -73,14 +63,14 @@ export const childLearningItems = [
 		pb: 32,
 	},
 	{
-		text: 'понимать и принимать композиционные и цветовые решения',
-		icon: '/images/paints.png',
+		text: 'развивать навыки быстрой генерации идей и концепций',
+		icon: '/images/idea.png',
 		pb: 24,
 	},
 	{
-		text: 'развивать навыки быстрой генерации идей и концепций',
-		icon: '/images/idea.png',
-		pb: 21,
+		text: 'уверенно и грамотно строить свою речь. побороть страх перед публикой',
+		icon: '/images/learningPerson.png',
+		pb: 16,
 	},
 	{
 		text: 'участвовать в командной работе, развивать навыки коммуникации',

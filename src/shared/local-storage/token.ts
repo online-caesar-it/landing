@@ -11,7 +11,10 @@ const deleteAccessToken = () => localStorage.removeItem('access-token');
 const setRefreshToken = (token: string) =>
 	localStorage.setItem('refresh-token', token);
 
-const getRefreshToken = () => localStorage.getItem('refresh-token');
+const getRefreshToken = () => {
+	if (typeof window === 'undefined') return null;
+	return localStorage.getItem('refresh-token');
+};
 
 const deleteRefreshToken = () => localStorage.removeItem('refresh-token');
 

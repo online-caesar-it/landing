@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useSignIn } from '../hooks';
-import { AuthSocials, Button, FormSnackbar, Separator } from '@/shared/ui';
+import { Button, FormSnackbar, Separator } from '@/shared/ui';
 import { CustomInput } from '@/entities/custom-input/ui';
 import { SpeakerIcon } from '@/shared/ui/icons';
 
@@ -48,11 +48,10 @@ const SignInForm = () => {
 					</Button>
 					<Separator className='mb-[55px]' />
 					<div>
-						<AuthSocials />
 						<Separator className='mb-[20px]' />
-						<div className='text-[#8F97C7] text-4xl font-intro md:text-xl'>
+						<div className='text-[#8F97C7] text-xl font-intro md:text-xl'>
 							Нет аккаунта?{' '}
-							<Link className='text-[#B5B8F8] underline' href='/auth/sign-in'>
+							<Link className='text-[#B5B8F8] underline' href='/auth/sign-up'>
 								Зарегистрироваться
 							</Link>
 						</div>

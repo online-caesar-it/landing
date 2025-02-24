@@ -2,6 +2,7 @@
 
 import { Button } from '@/shared/ui';
 import { useEditProfile } from './edit-profile-provider';
+import Link from 'next/link';
 
 export const RightSidebar = () => {
 	const { onSubmit, form } = useEditProfile();
@@ -20,19 +21,13 @@ export const RightSidebar = () => {
 						сохранить изменения
 					</Button>
 				</li>
-				<li className='md:w-full'>
-					<Button
-						variant='secondary'
-						className='w-full 2xl:text-sm md:w-full'
-						size='sm'
-					>
-						отменить изменения
-					</Button>
-				</li>
 				<li className='md:hidden'>
-					<button className='bg-red-60 border-red-60 border-solid border lowercase text-grey-30 w-full rounded-full text-sm px-[10px] py-[8px] transition-all hover:bg-transparent hover:text-red-60 2xl:text-sm'>
+					<Link
+						href='/profile'
+						className='bg-red-60 border-red-60 flex items-center justify-center border-solid border lowercase text-grey-30 w-full rounded-full text-sm px-[10px] py-[8px] transition-all hover:bg-transparent hover:text-red-60 2xl:text-sm'
+					>
 						Выйти
-					</button>
+					</Link>
 				</li>
 			</ul>
 		</aside>

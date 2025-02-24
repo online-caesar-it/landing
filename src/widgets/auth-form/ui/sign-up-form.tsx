@@ -5,7 +5,7 @@ import { useSignUp } from '../hooks';
 import { CustomCheckbox } from '@/entities';
 import { SpeakerIcon } from '@/shared/ui/icons';
 import { CustomInput } from '@/entities/custom-input/ui';
-import { AuthSocials, Button, FormSnackbar, Separator } from '@/shared/ui';
+import { Button, FormSnackbar, Separator } from '@/shared/ui';
 
 const SignUpForm = () => {
 	const { errors, handleSubmit, onSubmit, register, message, isLoading } =
@@ -106,7 +106,6 @@ const SignUpForm = () => {
 						</Button>
 					</form>
 					<Separator className='mb-[40px]' />
-					<AuthSocials />
 					<Separator className='mb-[60px]' />
 					<div className='text-[#8F97C7] text-xl font-intro'>
 						Уже есть аккаунт?{' '}

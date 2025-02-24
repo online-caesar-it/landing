@@ -7,5 +7,5 @@ export const EditFormStatus = () => {
 
 	if (!message.title) return null;
 
-	return <FormSnackbar title='' subTitle='' />;
+	return <FormSnackbar title={message.title} subTitle={message.subTitle} />;
 };

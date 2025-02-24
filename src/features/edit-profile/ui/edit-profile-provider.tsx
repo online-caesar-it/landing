@@ -44,6 +44,13 @@ export const EditProfileProvider = ({
 				title: 'Данные успешно обновлены',
 				subTitle: '',
 			});
+
+			setTimeout(() => {
+				setMessage({
+					title: '',
+					subTitle: '',
+				});
+			}, 1500);
 		},
 	});
 
