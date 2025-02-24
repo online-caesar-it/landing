@@ -1,9 +1,9 @@
-name: Deploy caesar web
+name: Deploy caesar landing to TEST
 
 on:
   push:
     branches:
-      - main
+      - stage-test
 
 jobs:
   build:
@@ -36,8 +36,8 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd landing
-            git pull origin main
+            cd ./test/landing
+            git pull origin stage-test
             npm install
             npm run build:prod
             pm2 restart web
