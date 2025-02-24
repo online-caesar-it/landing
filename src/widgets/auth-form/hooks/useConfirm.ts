@@ -35,6 +35,7 @@ export const useConfirm = () => {
 					response.data.user.config.refresh_token
 				);
 				await client.invalidateQueries({ queryKey: ['get-self'] });
+				await client.refetchQueries({ queryKey: ['get-self'] });
 			}
 			router.push('/');
 			console.log(response.data);
