@@ -10,7 +10,7 @@ export type ButtonLinkProps = LinkProps &
 type ButtonOwnLinkProps = Partial<{
 	icon?: boolean;
 	className: string;
-	size?: 'sm' | 'md';
+	size?: 'sm' | 'md' | 'xsm';
 	children: React.ReactNode;
 	variant?: 'outline' | 'underline' | 'primary' | 'blue';
 }>;
@@ -35,7 +35,8 @@ export const ButtonLink = (props: ButtonLinkProps) => {
 			'text-blue-20 underline hover:text-blue-70 active:text-blue-70 focus:text-blue-70',
 		size === 'md' &&
 			'text-[36px] px-[30px] py-[25px] lg:text-[28px] lg:px-[15px] lg:py-[20px] md:text-[22px] md:py-[15px]',
-		size === 'sm' && 'px-[30px] py-[10px] text-2xl'
+		size === 'sm' && 'px-[30px] py-[10px] text-2xl',
+		size === 'xsm' && 'py-2 px-3 text-sm w-fit'
 	);
 
 	const textCn = twMerge(icon && 'mr-[50px] lg:mr-0');

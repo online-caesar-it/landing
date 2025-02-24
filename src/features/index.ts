@@ -3,3 +3,4 @@ export * from './clients-reviews-filter/ui';
 export * from './accordion/ui';
 export * from './edit-profile/ui';
 export * from './direction/ui';
+export * from './directions/ui';
